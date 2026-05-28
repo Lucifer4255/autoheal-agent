@@ -1,0 +1,477 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AutoHeal Console</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        --bg: #0b0d10;
+        --panel: rgba(19, 23, 29, 0.82);
+        --panel-strong: #171d25;
+        --line: rgba(160, 180, 210, 0.16);
+        --text: #ecf2ff;
+        --muted: #92a1b8;
+        --accent: #6ee7b7;
+        --accent-2: #7dd3fc;
+        --warn: #fbbf24;
+        --bad: #fb7185;
+        --mono: "SFMono-Regular", "Cascadia Code", "Liberation Mono", monospace;
+        --sans: "Aptos", "Segoe UI", sans-serif;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        background:
+          radial-gradient(circle at 12% 10%, rgba(125, 211, 252, 0.18), transparent 28rem),
+          radial-gradient(circle at 88% 18%, rgba(110, 231, 183, 0.16), transparent 24rem),
+          linear-gradient(135deg, #080a0d 0%, var(--bg) 48%, #10151b 100%);
+        color: var(--text);
+        font-family: var(--sans);
+      }
+
+      .shell {
+        width: min(1180px, calc(100vw - 32px));
+        margin: 0 auto;
+        padding: 34px 0;
+      }
+
+      header {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        gap: 24px;
+        margin-bottom: 22px;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: clamp(34px, 5vw, 64px);
+        letter-spacing: -0.07em;
+        line-height: 0.92;
+      }
+
+      .tagline {
+        max-width: 540px;
+        color: var(--muted);
+        line-height: 1.5;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: minmax(300px, 0.85fr) minmax(420px, 1.15fr);
+        gap: 18px;
+      }
+
+      .card {
+        border: 1px solid var(--line);
+        border-radius: 24px;
+        background: var(--panel);
+        box-shadow: 0 24px 70px rgba(0, 0, 0, 0.34);
+        backdrop-filter: blur(18px);
+        overflow: hidden;
+      }
+
+      .card-head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 18px 20px;
+        border-bottom: 1px solid var(--line);
+        background: rgba(255, 255, 255, 0.02);
+      }
+
+      .card h2 {
+        margin: 0;
+        font-size: 14px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--accent);
+      }
+
+      .body {
+        padding: 20px;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 8px;
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      textarea,
+      input {
+        width: 100%;
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        background: rgba(3, 7, 18, 0.55);
+        color: var(--text);
+        font: 14px/1.5 var(--mono);
+        outline: none;
+        padding: 14px;
+      }
+
+      textarea:focus,
+      input:focus {
+        border-color: rgba(110, 231, 183, 0.6);
+        box-shadow: 0 0 0 3px rgba(110, 231, 183, 0.08);
+      }
+
+      textarea {
+        min-height: 165px;
+        resize: vertical;
+      }
+
+      .row {
+        display: grid;
+        grid-template-columns: 1fr 120px;
+        gap: 12px;
+        margin-top: 14px;
+      }
+
+      button {
+        border: 0;
+        border-radius: 999px;
+        background: linear-gradient(135deg, var(--accent), var(--accent-2));
+        color: #061018;
+        cursor: pointer;
+        font-weight: 800;
+        padding: 12px 18px;
+        transition:
+          transform 160ms ease,
+          filter 160ms ease;
+      }
+
+      button:hover {
+        filter: brightness(1.08);
+        transform: translateY(-1px);
+      }
+
+      button:disabled {
+        cursor: not-allowed;
+        filter: grayscale(0.8) brightness(0.7);
+        transform: none;
+      }
+
+      .pill {
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        color: var(--muted);
+        font: 12px var(--mono);
+        padding: 7px 10px;
+      }
+
+      .session {
+        display: grid;
+        gap: 10px;
+        margin-top: 14px;
+      }
+
+      .kv {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .chip {
+        border: 1px solid rgba(110, 231, 183, 0.26);
+        border-radius: 999px;
+        background: rgba(110, 231, 183, 0.08);
+        color: #c8ffe9;
+        font: 12px var(--mono);
+        padding: 7px 9px;
+      }
+
+      .chip.warn {
+        border-color: rgba(251, 191, 36, 0.3);
+        background: rgba(251, 191, 36, 0.08);
+        color: #fde68a;
+      }
+
+      .timeline {
+        min-height: 520px;
+        max-height: 640px;
+        overflow: auto;
+        padding: 20px;
+      }
+
+      .event {
+        position: relative;
+        margin-left: 14px;
+        padding: 0 0 18px 24px;
+        border-left: 1px solid rgba(146, 161, 184, 0.24);
+      }
+
+      .event::before {
+        content: "";
+        position: absolute;
+        left: -7px;
+        top: 2px;
+        width: 13px;
+        height: 13px;
+        border-radius: 999px;
+        background: var(--accent);
+        box-shadow: 0 0 20px rgba(110, 231, 183, 0.55);
+      }
+
+      .event.final::before {
+        background: var(--accent-2);
+      }
+
+      .event.error::before {
+        background: var(--bad);
+      }
+
+      .event-title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        margin-bottom: 7px;
+      }
+
+      .event-title strong {
+        font-size: 15px;
+      }
+
+      .event p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.5;
+      }
+
+      pre {
+        overflow: auto;
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        background: rgba(0, 0, 0, 0.28);
+        color: #c7d2fe;
+        padding: 14px;
+        font: 12px/1.45 var(--mono);
+      }
+
+      .empty {
+        display: grid;
+        min-height: 430px;
+        place-items: center;
+        color: var(--muted);
+        text-align: center;
+      }
+
+      @media (max-width: 880px) {
+        header,
+        .grid {
+          grid-template-columns: 1fr;
+          display: grid;
+        }
+
+        .row {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="shell">
+      <header>
+        <div>
+          <h1>AutoHeal<br />Console</h1>
+        </div>
+        <p class="tagline">
+          A testing cockpit for the debugging agent. This harness streams mock events now and
+          will plug into the real Jaeger, Loki, GitHub, Tavily, and E2B flow as phases land.
+        </p>
+      </header>
+
+      <section class="grid">
+        <div class="card">
+          <div class="card-head">
+            <h2>Session Setup</h2>
+            <span class="pill" id="sessionState">no session</span>
+          </div>
+          <div class="body">
+            <label for="setupText">Paste key: value lines</label>
+            <textarea id="setupText">repo: open-telemetry/opentelemetry-demo
+service_name: ad
+jaeger_url: http://localhost:8080/jaeger/ui
+loki_url: http://localhost:3100</textarea>
+            <div class="row">
+              <input id="sessionId" placeholder="session_id appears here" readonly />
+              <button id="createSession">Create</button>
+            </div>
+            <div class="session">
+              <label>Configured</label>
+              <div class="kv" id="configured"></div>
+              <label>Unavailable / Needed</label>
+              <div class="kv" id="needs"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-head">
+            <h2>Investigation</h2>
+            <span class="pill" id="streamState">idle</span>
+          </div>
+          <div class="body">
+            <label for="issueText">Issue description</label>
+            <textarea id="issueText">The ad service is returning errors after enabling the adFailure feature flag. Investigate root cause and suggest a fix.</textarea>
+            <div class="row">
+              <input id="serviceName" placeholder="service_name override (optional)" value="ad" />
+              <button id="investigate">Investigate</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="card" style="margin-top: 18px">
+        <div class="card-head">
+          <h2>Evidence Stream</h2>
+          <span class="pill">POST /investigate</span>
+        </div>
+        <div class="timeline" id="timeline">
+          <div class="empty">
+            <div>
+              <strong>No events yet.</strong>
+              <p>Create a session, then run an investigation.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      const $ = (id) => document.getElementById(id);
+      let activeSession = "";
+
+      function chips(node, values, tone = "") {
+        node.innerHTML = "";
+        if (!values || values.length === 0) {
+          const span = document.createElement("span");
+          span.className = `chip ${tone}`;
+          span.textContent = "none";
+          node.appendChild(span);
+          return;
+        }
+        for (const value of values) {
+          const span = document.createElement("span");
+          span.className = `chip ${tone}`;
+          span.textContent = value;
+          node.appendChild(span);
+        }
+      }
+
+      function clearTimeline() {
+        $("timeline").innerHTML = "";
+      }
+
+      function addEvent(type, title, body, raw) {
+        const item = document.createElement("article");
+        item.className = `event ${type}`;
+        const rawBlock = raw ? `<pre>${JSON.stringify(raw, null, 2)}</pre>` : "";
+        item.innerHTML = `
+          <div class="event-title">
+            <strong>${title}</strong>
+            <span class="pill">${type}</span>
+          </div>
+          <p>${body}</p>
+          ${rawBlock}
+        `;
+        $("timeline").appendChild(item);
+        $("timeline").scrollTop = $("timeline").scrollHeight;
+      }
+
+      async function createSession() {
+        $("createSession").disabled = true;
+        try {
+          const response = await fetch("/session", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ text: $("setupText").value }),
+          });
+          const data = await response.json();
+          activeSession = data.session_id;
+          $("sessionId").value = activeSession;
+          $("sessionState").textContent = "session ready";
+          chips($("configured"), data.configured);
+          chips($("needs"), [...data.needs_input, ...data.unavailable], "warn");
+        } catch (error) {
+          $("sessionState").textContent = "setup failed";
+          addEvent("error", "Session failed", String(error));
+        } finally {
+          $("createSession").disabled = false;
+        }
+      }
+
+      async function investigate() {
+        if (!activeSession) {
+          addEvent("error", "Missing session", "Create a session first.");
+          return;
+        }
+
+        clearTimeline();
+        $("investigate").disabled = true;
+        $("streamState").textContent = "streaming";
+
+        try {
+          const response = await fetch("/investigate", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              session_id: activeSession,
+              description: $("issueText").value,
+              service_name: $("serviceName").value || null,
+            }),
+          });
+
+          if (!response.ok || !response.body) {
+            throw new Error(`HTTP ${response.status}`);
+          }
+
+          const reader = response.body.getReader();
+          const decoder = new TextDecoder();
+          let buffer = "";
+
+          while (true) {
+            const { value, done } = await reader.read();
+            if (done) break;
+            buffer += decoder.decode(value, { stream: true });
+
+            const chunks = buffer.split("\n\n");
+            buffer = chunks.pop() || "";
+
+            for (const chunk of chunks) {
+              const line = chunk.split("\n").find((part) => part.startsWith("data: "));
+              if (!line) continue;
+              const payload = JSON.parse(line.slice(6));
+              if (payload.type === "final") {
+                addEvent("final", "Final HealResult", payload.result.recommended_fix, payload.result);
+              } else if (payload.type === "confidence") {
+                addEvent("confidence", `Confidence ${payload.value}`, payload.note || "", payload);
+              } else {
+                addEvent("step", payload.tool || "step", payload.result_summary || "", payload);
+              }
+            }
+          }
+
+          $("streamState").textContent = "complete";
+        } catch (error) {
+          $("streamState").textContent = "error";
+          addEvent("error", "Stream failed", String(error));
+        } finally {
+          $("investigate").disabled = false;
+        }
+      }
+
+      $("createSession").addEventListener("click", createSession);
+      $("investigate").addEventListener("click", investigate);
+    </script>
+  </body>
+</html>

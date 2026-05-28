@@ -1,0 +1,1 @@
+"""Session-gated investigation capabilities."""
