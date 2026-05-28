@@ -3,25 +3,13 @@
 from __future__ import annotations
 
 from pydantic_ai import Agent, ModelRetry, RunContext
-from pydantic_ai.models.openrouter import OpenRouterModel
-from pydantic_ai.providers.openrouter import OpenRouterProvider
 
 import config
+from agent.aimodel import make_model
 from agent.models import AgentDeps, HealResult
 from agent.prompts import SYSTEM_PROMPT_BASE, build_dynamic_prompt
+from agent.sandbox_subagent import sandbox_subagent as sandbox_subagent
 
-
-def _make_model() -> OpenRouterModel:
-    """Build an OpenRouter model from config.
-
-    MODEL_NAME may be 'openrouter/google/gemini-2.0-flash-001' (env format)
-    or 'google/gemini-2.0-flash-001' (slug format). Strip the prefix if present.
-    """
-    slug = config.MODEL_NAME.removeprefix("openrouter/")
-    return OpenRouterModel(
-        slug,
-        provider=OpenRouterProvider(api_key=config.OPENROUTER_API_KEY or "no-key-set"),
-    )
 
 # ---------------------------------------------------------------------------
 # Main investigation agent
@@ -38,7 +26,7 @@ def _make_model() -> OpenRouterModel:
 # ---------------------------------------------------------------------------
 
 agent: Agent[AgentDeps, HealResult] = Agent(
-    _make_model(),
+    make_model(),
     deps_type=AgentDeps,
     output_type=HealResult,
     instructions=SYSTEM_PROMPT_BASE,

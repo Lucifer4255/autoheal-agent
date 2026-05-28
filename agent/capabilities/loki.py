@@ -151,13 +151,13 @@ def _parse_loki_timestamp(timestamp: str) -> int:
     if "." in value:
         return int(float(value) * 1_000_000_000)
     parsed = int(value)
-    if parsed < 10_000_000_000:          # seconds
+    if parsed < 10_000_000_000:  # seconds
         return parsed * 1_000_000_000
-    if parsed < 10_000_000_000_000:      # milliseconds
+    if parsed < 10_000_000_000_000:  # milliseconds
         return parsed * 1_000_000
     if parsed < 10_000_000_000_000_000:  # microseconds (Jaeger)
         return parsed * 1_000
-    return parsed                        # already nanoseconds
+    return parsed  # already nanoseconds
 
 
 def _escape_label(value: str) -> str:
