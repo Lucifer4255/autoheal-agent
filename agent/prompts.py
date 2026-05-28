@@ -2,13 +2,9 @@
 
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
-
 import config
+from agent.fingerprint import FingerprintMatch
 from agent.models import AgentDeps, IssueContext
-
-if TYPE_CHECKING:
-    from agent.fingerprint import FingerprintMatch
 
 SYSTEM_PROMPT_BASE = """You are AutoHeal, an autonomous debugging agent for production incidents.
 
@@ -17,7 +13,7 @@ most likely root cause, and recommend a fix. You must be evidence-driven and rea
 
 Rules:
 - Never write code, open pull requests, modify infrastructure, or claim to have applied a fix.
-- Use observability evidence first when available: traces, then logs, then source code at anchored paths.
+- Use observability evidence first: traces, then logs, then source at anchored paths.
 - Treat any pre-investigation hypothesis as unverified until supported by tool evidence.
 - Populate RootCause.confidence honestly from the strength of the evidence you collected.
 - If evidence is weak or conflicting, say so in confidence_note and keep confidence below 0.85.
@@ -42,16 +38,22 @@ def build_dynamic_prompt(deps: AgentDeps) -> str:
         lines.append(f"- Default service name: {deps.service_name}")
 
     if "jaeger" in configured:
-        lines.append("- Start with trace evidence when the issue may involve service errors or latency.")
+        lines.append(
+            "- Start with trace evidence when the issue may involve service errors or latency."
+        )
     if "loki" in configured:
-        lines.append("- Correlate logs using the service label and error terms from traces or the issue.")
+        lines.append(
+            "- Correlate logs using the service label and error terms from traces or the issue."
+        )
     if "github" in configured:
         lines.append("- Read source only at file paths anchored by traces or strong log evidence.")
     if "web_search" in configured:
-        lines.append("- Use web search only after observability and source evidence are insufficient.")
+        lines.append(
+            "- Use web search only after observability and source evidence are insufficient."
+        )
     if "sandbox" in configured:
         lines.append(
-            "- Sandbox reproduction is optional and only for code/runtime hypotheses with a file anchor."
+            "- Sandbox reproduction is optional for code/runtime hypotheses with a file anchor."
         )
 
     return "\n".join(lines)
@@ -87,7 +89,7 @@ def build_user_prompt(
         )
         if fingerprint_match.confidence >= config.FASTPATH_CONFIDENCE:
             lines.append(
-                "This is a high-confidence hint. Prioritize confirming it with Jaeger and Loki first, "
+                "High-confidence hint: confirm with Jaeger and Loki first, "
                 "then GitHub if a file anchor appears. Do not finalize without verification."
             )
 

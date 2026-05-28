@@ -22,9 +22,17 @@ _http_client: httpx.AsyncClient | None = None
 
 # Keys the message parser recognises as config — anything else is free-form issue text
 _KNOWN_KEYS = {
-    "jaeger_url", "loki_url", "jaeger_auth", "loki_auth",
-    "github_token", "repo", "e2b_api_key", "e2b_key",
-    "tavily_key", "tavily_api_key", "service_name",
+    "jaeger_url",
+    "loki_url",
+    "jaeger_auth",
+    "loki_auth",
+    "github_token",
+    "repo",
+    "e2b_api_key",
+    "e2b_key",
+    "tavily_key",
+    "tavily_api_key",
+    "service_name",
 }
 
 
@@ -115,14 +123,16 @@ async def chat(request: ChatRequest) -> StreamingResponse:
     async def stream():
         # Acknowledge any config updates first
         if kv_pairs:
-            yield sse_event({
-                "type": "setup",
-                "session_id": session_id,
-                "configured": deps.configured_capabilities(),
-                "unavailable": deps.unavailable_capabilities(),
-                "needs_input": deps.needs_input(),
-                "message": _setup_summary(deps),
-            })
+            yield sse_event(
+                {
+                    "type": "setup",
+                    "session_id": session_id,
+                    "configured": deps.configured_capabilities(),
+                    "unavailable": deps.unavailable_capabilities(),
+                    "needs_input": deps.needs_input(),
+                    "message": _setup_summary(deps),
+                }
+            )
 
         if issue_text:
             issue = IssueContext(
@@ -130,72 +140,84 @@ async def chat(request: ChatRequest) -> StreamingResponse:
                 service_name=deps.service_name,
             )
 
-            yield sse_event({
-                "type": "step",
-                "round": 0,
-                "tool": "router",
-                "result_summary": f"Investigating: {issue_text[:120]}",
-                "confidence_after": 0.1,
-            })
+            yield sse_event(
+                {
+                    "type": "step",
+                    "round": 0,
+                    "tool": "router",
+                    "result_summary": (
+                        f"Investigating ({issue.service_name or 'unspecified'}): {issue_text[:100]}"
+                    ),
+                    "confidence_after": 0.1,
+                }
+            )
 
-            yield sse_event({
-                "type": "step",
-                "round": 1,
-                "tool": "session",
-                "result_summary": (
-                    f"Active capabilities: {', '.join(deps.configured_capabilities()) or 'none'}"
-                ),
-                "confidence_after": 0.2,
-            })
+            yield sse_event(
+                {
+                    "type": "step",
+                    "round": 1,
+                    "tool": "session",
+                    "result_summary": (
+                        f"Active capabilities: {', '.join(deps.configured_capabilities()) or 'none'}"
+                    ),
+                    "confidence_after": 0.2,
+                }
+            )
 
             unavailable = deps.unavailable_capabilities()
             if unavailable:
-                yield sse_event({
-                    "type": "elicit",
-                    "message": (
-                        f"I can go deeper with: **{', '.join(unavailable)}**. "
-                        "Paste the credentials in the chat to enable them and I'll continue."
-                    ),
-                    "wants": unavailable,
-                })
+                yield sse_event(
+                    {
+                        "type": "elicit",
+                        "message": (
+                            f"I can go deeper with: **{', '.join(unavailable)}**. "
+                            "Paste the credentials in the chat to enable them and I'll continue."
+                        ),
+                        "wants": unavailable,
+                    }
+                )
 
             # TODO Phase 5: replace body above with agent.loop.investigate(issue, deps)
-            yield sse_event({
-                "type": "final",
-                "session_id": session_id,
-                "result": {
-                    "issue_summary": issue_text,
-                    "investigation_steps": [],
-                    "root_cause": {
-                        "description": "UI harness placeholder — real agent wires in Phase 5.",
-                        "file_path": None,
-                        "line_number": None,
-                        "confidence": 0.0,
-                        "evidence": ["Session and IssueContext are wired correctly."],
-                        "error_type": "unknown",
+            yield sse_event(
+                {
+                    "type": "final",
+                    "session_id": session_id,
+                    "result": {
+                        "issue_summary": issue_text,
+                        "investigation_steps": [],
+                        "root_cause": {
+                            "description": "UI harness placeholder — real agent wires in Phase 5.",
+                            "file_path": None,
+                            "line_number": None,
+                            "confidence": 0.0,
+                            "evidence": ["Session and IssueContext are wired correctly."],
+                            "error_type": "unknown",
+                        },
+                        "recommended_fix": (
+                            "Continue with Phase 2 (fingerprint) and Phase 3 (capabilities)."
+                        ),
+                        "action_taken": "explained",
+                        "tools_used": [],
+                        "tools_unavailable": unavailable,
                     },
-                    "recommended_fix": (
-                        "Continue with Phase 2 (fingerprint) and Phase 3 (capabilities)."
-                    ),
-                    "action_taken": "explained",
-                    "tools_used": [],
-                    "tools_unavailable": unavailable,
-                },
-            })
+                }
+            )
 
         elif not kv_pairs:
             # Empty or unrecognised message — greet and guide
-            yield sse_event({
-                "type": "setup",
-                "session_id": session_id,
-                "configured": deps.configured_capabilities(),
-                "unavailable": deps.unavailable_capabilities(),
-                "needs_input": deps.needs_input(),
-                "message": (
-                    "Hi! Describe a production issue to start investigating, "
-                    "or paste credentials to configure tools (e.g. `repo: owner/name`)."
-                ),
-            })
+            yield sse_event(
+                {
+                    "type": "setup",
+                    "session_id": session_id,
+                    "configured": deps.configured_capabilities(),
+                    "unavailable": deps.unavailable_capabilities(),
+                    "needs_input": deps.needs_input(),
+                    "message": (
+                        "Hi! Describe a production issue to start investigating, "
+                        "or paste credentials to configure tools (e.g. `repo: owner/name`)."
+                    ),
+                }
+            )
 
     return StreamingResponse(
         stream(),

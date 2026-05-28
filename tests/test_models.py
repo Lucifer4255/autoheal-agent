@@ -63,7 +63,8 @@ def test_apply_overrides_merges_setup_chat_values(env_vars: None) -> None:
 
 
 def test_normalize_repo_accepts_slug() -> None:
-    assert normalize_repo("open-telemetry/opentelemetry-demo") == "open-telemetry/opentelemetry-demo"
+    slug = "open-telemetry/opentelemetry-demo"
+    assert normalize_repo(slug) == slug
 
 
 def test_capability_lists(env_vars: None) -> None:
