@@ -1,56 +1,88 @@
-"""FastAPI entrypoint and temporary UI test harness."""
+"""FastAPI entrypoint — single /chat endpoint, SSE streaming."""
 
 from __future__ import annotations
 
-import asyncio
 import json
+from contextlib import asynccontextmanager
 from pathlib import Path
 from typing import Any
 from uuid import uuid4
 
-from fastapi import FastAPI, HTTPException
+import httpx
+from fastapi import FastAPI
 from fastapi.responses import FileResponse, StreamingResponse
 from pydantic import BaseModel
 
-app = FastAPI(title="AutoHeal AI")
+from agent.models import AgentDeps, IssueContext
+
 STATIC_DIR = Path(__file__).parent / "static"
 
-# Temporary in-memory session store for the pre-agent UI harness.
-sessions: dict[str, dict[str, Any]] = {}
+sessions: dict[str, AgentDeps] = {}
+_http_client: httpx.AsyncClient | None = None
+
+# Keys the message parser recognises as config — anything else is free-form issue text
+_KNOWN_KEYS = {
+    "jaeger_url", "loki_url", "jaeger_auth", "loki_auth",
+    "github_token", "repo", "e2b_api_key", "e2b_key",
+    "tavily_key", "tavily_api_key", "service_name",
+}
 
 
-class SessionRequest(BaseModel):
-    text: str = ""
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    global _http_client
+    _http_client = httpx.AsyncClient()
+    yield
+    await _http_client.aclose()
+    _http_client = None
 
 
-class InvestigateRequest(BaseModel):
-    session_id: str
-    description: str
-    service_name: str | None = None
-    trace_id: str | None = None
-    time_window_minutes: int = 10
+app = FastAPI(title="AutoHeal AI", lifespan=lifespan)
 
 
-def parse_key_values(text: str) -> tuple[dict[str, str], list[str]]:
-    """Parse setup-chat key/value lines without failing on free-form text."""
-    parsed: dict[str, str] = {}
-    ignored: list[str] = []
+class ChatRequest(BaseModel):
+    message: str
+    session_id: str | None = None
+
+
+def parse_message(text: str) -> tuple[dict[str, str], str]:
+    """Split a chat message into known key:value config pairs and free-form issue text.
+
+    Lines whose key matches a known config field are extracted as config.
+    Everything else (including lines with ':' in URLs or descriptions) stays as issue text.
+    """
+    kv: dict[str, str] = {}
+    free_lines: list[str] = []
 
     for raw_line in text.splitlines():
         line = raw_line.strip()
         if not line:
             continue
-        if ":" not in line:
-            ignored.append(line)
-            continue
-        key, value = line.split(":", 1)
-        parsed[key.strip()] = value.strip()
+        if ":" in line:
+            key, value = line.split(":", 1)
+            if key.strip().lower() in _KNOWN_KEYS:
+                kv[key.strip()] = value.strip()
+                continue
+        free_lines.append(line)
 
-    return parsed, ignored
+    return kv, "\n".join(free_lines)
 
 
 def sse_event(payload: dict[str, Any]) -> str:
     return f"data: {json.dumps(payload)}\n\n"
+
+
+def _setup_summary(deps: AgentDeps) -> str:
+    configured = deps.configured_capabilities()
+    needs = deps.needs_input()
+    parts = []
+    if configured:
+        parts.append(f"Configured: {', '.join(configured)}.")
+    if needs:
+        parts.append(f"Still needed: {', '.join(needs)}.")
+    else:
+        parts.append("All set — describe your issue to start investigating.")
+    return " ".join(parts)
 
 
 @app.get("/")
@@ -63,94 +95,110 @@ async def health() -> dict[str, str]:
     return {"status": "ok"}
 
 
-@app.post("/session")
-async def create_session(request: SessionRequest) -> dict[str, Any]:
-    values, ignored = parse_key_values(request.text)
-    session_id = str(uuid4())
-    sessions[session_id] = values
+@app.post("/chat")
+async def chat(request: ChatRequest) -> StreamingResponse:
+    # Resolve or create session
+    session_id = request.session_id
+    if session_id and session_id in sessions:
+        deps = sessions[session_id]
+    else:
+        session_id = str(uuid4())
+        deps = AgentDeps.from_env(http_client=_http_client)
 
-    configured = sorted(key for key, value in values.items() if value)
-    needs_input = [] if values.get("repo") else ["repo"]
-    unavailable = [
-        name
-        for name, key in {
-            "github": "github_token",
-            "tavily": "tavily_key",
-            "e2b": "e2b_api_key",
-        }.items()
-        if not values.get(key)
-    ]
+    kv_pairs, issue_text = parse_message(request.message)
 
-    return {
-        "session_id": session_id,
-        "configured": configured,
-        "unavailable": unavailable,
-        "needs_input": needs_input,
-        "ignored": ignored,
-        "mode": "ui_harness",
-    }
+    if kv_pairs:
+        deps = deps.apply_overrides(kv_pairs)
 
-
-@app.post("/investigate")
-async def investigate(request: InvestigateRequest) -> StreamingResponse:
-    if request.session_id not in sessions:
-        raise HTTPException(status_code=404, detail="Unknown session_id")
+    sessions[session_id] = deps
 
     async def stream():
-        yield sse_event(
-            {
+        # Acknowledge any config updates first
+        if kv_pairs:
+            yield sse_event({
+                "type": "setup",
+                "session_id": session_id,
+                "configured": deps.configured_capabilities(),
+                "unavailable": deps.unavailable_capabilities(),
+                "needs_input": deps.needs_input(),
+                "message": _setup_summary(deps),
+            })
+
+        if issue_text:
+            issue = IssueContext(
+                description=issue_text,
+                service_name=deps.service_name,
+            )
+
+            yield sse_event({
                 "type": "step",
                 "round": 0,
-                "tool": "ui_harness",
-                "result_summary": "Received investigation request.",
+                "tool": "router",
+                "result_summary": f"Investigating: {issue_text[:120]}",
                 "confidence_after": 0.1,
-            }
-        )
-        await asyncio.sleep(0.4)
+            })
 
-        yield sse_event(
-            {
+            yield sse_event({
                 "type": "step",
                 "round": 1,
-                "tool": "fingerprint",
-                "result_summary": "Mock hypothesis generated. Real fingerprint runs in Phase 2.",
-                "confidence_after": 0.35,
-            }
-        )
-        await asyncio.sleep(0.4)
+                "tool": "session",
+                "result_summary": (
+                    f"Active capabilities: {', '.join(deps.configured_capabilities()) or 'none'}"
+                ),
+                "confidence_after": 0.2,
+            })
 
-        yield sse_event(
-            {
-                "type": "confidence",
-                "value": 0.35,
-                "note": "This is mock streaming only; agent tools are not wired yet.",
-            }
-        )
-        await asyncio.sleep(0.4)
+            unavailable = deps.unavailable_capabilities()
+            if unavailable:
+                yield sse_event({
+                    "type": "elicit",
+                    "message": (
+                        f"I can go deeper with: **{', '.join(unavailable)}**. "
+                        "Paste the credentials in the chat to enable them and I'll continue."
+                    ),
+                    "wants": unavailable,
+                })
 
-        yield sse_event(
-            {
+            # TODO Phase 5: replace body above with agent.loop.investigate(issue, deps)
+            yield sse_event({
                 "type": "final",
+                "session_id": session_id,
                 "result": {
-                    "issue_summary": request.description,
+                    "issue_summary": issue_text,
+                    "investigation_steps": [],
                     "root_cause": {
-                        "description": (
-                            "UI harness placeholder. Phase 1+ will return real HealResult."
-                        ),
+                        "description": "UI harness placeholder — real agent wires in Phase 5.",
                         "file_path": None,
                         "line_number": None,
                         "confidence": 0.0,
-                        "evidence": ["FastAPI POST streaming works."],
+                        "evidence": ["Session and IssueContext are wired correctly."],
                         "error_type": "unknown",
                     },
                     "recommended_fix": (
-                        "Continue implementation and wire server.py to agent.loop.investigate()."
+                        "Continue with Phase 2 (fingerprint) and Phase 3 (capabilities)."
                     ),
                     "action_taken": "explained",
-                    "tools_used": ["ui_harness"],
-                    "tools_unavailable": ["jaeger", "loki", "github", "web_search", "sandbox"],
+                    "tools_used": [],
+                    "tools_unavailable": unavailable,
                 },
-            }
-        )
+            })
 
-    return StreamingResponse(stream(), media_type="text/event-stream")
+        elif not kv_pairs:
+            # Empty or unrecognised message — greet and guide
+            yield sse_event({
+                "type": "setup",
+                "session_id": session_id,
+                "configured": deps.configured_capabilities(),
+                "unavailable": deps.unavailable_capabilities(),
+                "needs_input": deps.needs_input(),
+                "message": (
+                    "Hi! Describe a production issue to start investigating, "
+                    "or paste credentials to configure tools (e.g. `repo: owner/name`)."
+                ),
+            })
+
+    return StreamingResponse(
+        stream(),
+        media_type="text/event-stream",
+        headers={"X-Session-Id": session_id},
+    )
