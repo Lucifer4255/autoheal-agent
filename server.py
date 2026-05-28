@@ -158,7 +158,8 @@ async def chat(request: ChatRequest) -> StreamingResponse:
                     "round": 1,
                     "tool": "session",
                     "result_summary": (
-                        f"Active capabilities: {', '.join(deps.configured_capabilities()) or 'none'}"
+                        "Active capabilities: "
+                        f"{', '.join(deps.configured_capabilities()) or 'none'}"
                     ),
                     "confidence_after": 0.2,
                 }
