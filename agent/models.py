@@ -4,13 +4,15 @@ from __future__ import annotations
 
 import os
 import re
-from dataclasses import dataclass, replace
+from dataclasses import dataclass, field, replace
 from typing import Literal
 
 import httpx
 from pydantic import BaseModel, Field
 
 import config
+
+ConfidenceLevel = Literal["high", "medium", "low"]
 
 ErrorType = Literal[
     "code_logic",
@@ -30,6 +32,35 @@ ErrorType = Literal[
 
 ActionTaken = Literal["explained", "fast_path", "sandbox_enriched"]
 
+
+@dataclass
+class ToolCallRecord:
+    """One stamped receipt from a real tool execution."""
+    tool: str
+    family: str                     # jaeger | loki | github | other
+    success: bool
+    service: str | None = None      # extracted service name (for cross-source agreement)
+    file_path: str | None = None    # extracted file path
+    error_signal: str | None = None # extracted error hint
+
+
+@dataclass
+class RunEvidence:
+    """Per-run evidence ledger. Reset by the loop before each agent.run call."""
+    calls: list[ToolCallRecord] = field(default_factory=list)
+    sandbox_attempted: bool = False
+    sandbox_reproduced: bool = False        # authoritative HIGH kill-shot
+    sandbox_confirmed_file: str | None = None
+    overclaim_retried: bool = False         # single-fire guard
+
+    def family_ok(self, family: str) -> bool:
+        """True if at least one successful tool call belongs to this family."""
+        return any(c.family == family and c.success for c in self.calls)
+
+    def services_seen(self, family: str) -> set[str]:
+        """Set of service names seen in successful calls of this family."""
+        return {c.service for c in self.calls if c.family == family and c.success and c.service}
+
 # Matches only owner/repo — rejects deep paths like /tree/main/src
 _REPO_URL_PATTERN = re.compile(r"^https?://(?:www\.)?github\.com/([^/]+/[^/]+?)/?$")
 
@@ -43,9 +74,9 @@ class AgentDeps:
     github_token: str | None
     repo: str | None
     e2b_api_key: str | None
-    tavily_key: str | None
     service_name: str | None
     http_client: httpx.AsyncClient
+    run_evidence: RunEvidence = field(default_factory=RunEvidence)
 
     @classmethod
     def from_env(cls, http_client: httpx.AsyncClient | None = None) -> AgentDeps:
@@ -57,7 +88,6 @@ class AgentDeps:
             github_token=_empty_to_none(os.getenv("GITHUB_TOKEN")),
             repo=None,
             e2b_api_key=_empty_to_none(os.getenv("E2B_API_KEY")),
-            tavily_key=_empty_to_none(os.getenv("TAVILY_API_KEY")),
             service_name=None,
             http_client=http_client if http_client is not None else httpx.AsyncClient(),
         )
@@ -73,8 +103,6 @@ class AgentDeps:
             "repo": "repo",
             "e2b_api_key": "e2b_api_key",
             "e2b_key": "e2b_api_key",
-            "tavily_key": "tavily_key",
-            "tavily_api_key": "tavily_key",
             "service_name": "service_name",
         }
         updates: dict[str, str | None] = {}
@@ -100,8 +128,6 @@ class AgentDeps:
             configured.append("loki")
         if self.github_token and self.repo:
             configured.append("github")
-        if self.tavily_key:
-            configured.append("web_search")
         if self.e2b_api_key and self.github_token and self.repo:
             configured.append("sandbox")
         return configured
@@ -129,6 +155,7 @@ class RootCause(BaseModel):
     file_path: str | None = None
     line_number: int | None = None
     confidence: float = Field(ge=0.0, le=1.0)
+    confidence_level: ConfidenceLevel = "low"
     evidence: list[str]
     error_type: ErrorType
 

@@ -16,7 +16,6 @@ def env_vars(monkeypatch: pytest.MonkeyPatch) -> None:
     monkeypatch.setenv("JAEGER_URL", "http://localhost:8080/jaeger/ui")
     monkeypatch.setenv("LOKI_URL", "http://localhost:3100")
     monkeypatch.setenv("GITHUB_TOKEN", "ghp_test")
-    monkeypatch.setenv("TAVILY_API_KEY", "tvly_test")
     monkeypatch.setenv("E2B_API_KEY", "e2b_test")
 
 
@@ -43,7 +42,6 @@ def test_from_env_reads_defaults(env_vars: None) -> None:
         assert deps.jaeger_url == "http://localhost:8080/jaeger/ui"
         assert deps.loki_url == "http://localhost:3100"
         assert deps.github_token == "ghp_test"
-        assert deps.tavily_key == "tvly_test"
         assert deps.e2b_api_key == "e2b_test"
         assert deps.repo is None
         assert deps.service_name is None
@@ -74,7 +72,6 @@ def test_capability_lists(env_vars: None) -> None:
     assert "jaeger" in partial.configured_capabilities()
     assert "loki" in partial.configured_capabilities()
     assert "github" in partial.configured_capabilities()
-    assert "web_search" in partial.configured_capabilities()
     assert "sandbox" in partial.configured_capabilities()
     assert partial.unavailable_capabilities() == []
     assert partial.needs_input() == []

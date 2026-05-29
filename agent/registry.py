@@ -8,7 +8,6 @@ from agent.capabilities.github import GitHubCapability
 from agent.capabilities.jaeger import JaegerCapability
 from agent.capabilities.loki import LokiCapability
 from agent.capabilities.sandbox import SandboxCapability
-from agent.capabilities.web_search import WebSearchCapability
 from agent.models import AgentDeps
 
 
@@ -22,7 +21,6 @@ def build_capabilities(deps: AgentDeps) -> list[AbstractCapability[AgentDeps]]:
         JaegerCapability(enabled=bool(deps.jaeger_url)),
         LokiCapability(enabled=bool(deps.loki_url)),
         GitHubCapability(github_token=deps.github_token, repo=deps.repo),
-        WebSearchCapability(enabled=bool(deps.tavily_key)),
         SandboxCapability(
             e2b_api_key=deps.e2b_api_key,
             github_token=deps.github_token,

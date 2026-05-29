@@ -1,0 +1,4577 @@
+{
+  "6be18bb27b78e94c": {
+    "tool": "search_code",
+    "args": {
+      "q": "Can't access cart storage repo:Lucifer4255/opentelemetry-demo"
+    },
+    "result": "Tool 'search_code' failed: McpError: Permission Denied: API rate limit exceeded for user ID 50608734. If you reach out to GitHub Support for help, please include the request ID E20E:12A0FE:F7D486:10DE8EC:6A199F82 and timestamp 2026-05-29 14:15:30 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service)"
+  },
+  "a3870ea94946b0b0": {
+    "tool": "get_file_contents",
+    "args": {
+      "owner": "Lucifer4255",
+      "repo": "opentelemetry-demo",
+      "path": "src/cart"
+    },
+    "result": [
+      {
+        "type": "file",
+        "size": 381,
+        "name": "Directory.Build.props",
+        "path": "src/cart/Directory.Build.props",
+        "sha": "92cd6f4444ae6155d312528c85fb73331f07cba4",
+        "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/cart/Directory.Build.props?ref=main",
+        "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/blobs/92cd6f4444ae6155d312528c85fb73331f07cba4",
+        "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/blob/main/src/cart/Directory.Build.props",
+        "download_url": "https://raw.githubusercontent.com/Lucifer4255/opentelemetry-demo/main/src/cart/Directory.Build.props"
+      },
+      {
+        "type": "file",
+        "size": 222,
+        "name": "NuGet.config",
+        "path": "src/cart/NuGet.config",
+        "sha": "adcb2a925ffa1120b8a47227e6f832f55d58474e",
+        "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/cart/NuGet.config?ref=main",
+        "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/blobs/adcb2a925ffa1120b8a47227e6f832f55d58474e",
+        "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/blob/main/src/cart/NuGet.config",
+        "download_url": "https://raw.githubusercontent.com/Lucifer4255/opentelemetry-demo/main/src/cart/NuGet.config"
+      },
+      {
+        "type": "file",
+        "size": 229,
+        "name": "README.md",
+        "path": "src/cart/README.md",
+        "sha": "f2b2db648459ea97fcd06ba02db223ef46615eac",
+        "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/cart/README.md?ref=main",
+        "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/blobs/f2b2db648459ea97fcd06ba02db223ef46615eac",
+        "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/blob/main/src/cart/README.md",
+        "download_url": "https://raw.githubusercontent.com/Lucifer4255/opentelemetry-demo/main/src/cart/README.md"
+      },
+      {
+        "type": "file",
+        "size": 232,
+        "name": "cart.slnx",
+        "path": "src/cart/cart.slnx",
+        "sha": "f92c994d55391922287de561012ef93ce12293b2",
+        "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/cart/cart.slnx?ref=main",
+        "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/blobs/f92c994d55391922287de561012ef93ce12293b2",
+        "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/blob/main/src/cart/cart.slnx",
+        "download_url": "https://raw.githubusercontent.com/Lucifer4255/opentelemetry-demo/main/src/cart/cart.slnx"
+      },
+      {
+        "type": "dir",
+        "size": 0,
+        "name": "src",
+        "path": "src/cart/src",
+        "sha": "ebd0524581bc418030de381751f5b4169ed8eb8e",
+        "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/cart/src?ref=main",
+        "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/trees/ebd0524581bc418030de381751f5b4169ed8eb8e",
+        "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/tree/main/src/cart/src",
+        "download_url": null
+      },
+      {
+        "type": "dir",
+        "size": 0,
+        "name": "tests",
+        "path": "src/cart/tests",
+        "sha": "f2c85202b85f189300f859a235cb50621cc2d893",
+        "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/cart/tests?ref=main",
+        "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/trees/f2c85202b85f189300f859a235cb50621cc2d893",
+        "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/tree/main/src/cart/tests",
+        "download_url": null
+      }
+    ]
+  },
+  "225eb4e0741050da": {
+    "tool": "get_file_contents",
+    "args": {
+      "owner": "Lucifer4255",
+      "repo": "opentelemetry-demo",
+      "path": "src/cart/src"
+    },
+    "result": [
+      {
+        "type": "file",
+        "size": 52,
+        "name": ".dockerignore",
+        "path": "src/cart/src/.dockerignore",
+        "sha": "0224086eb21866570bd8bfbee26a1c34449f5f5f",
+        "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/cart/src/.dockerignore?ref=main",
+        "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/blobs/0224086eb21866570bd8bfbee26a1c34449f5f5f",
+        "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/blob/main/src/cart/src/.dockerignore",
+        "download_url": "https://raw.githubusercontent.com/Lucifer4255/opentelemetry-demo/main/src/cart/src/.dockerignore"
+      },
+      {
+        "type": "file",
+        "size": 1358,
+        "name": "Dockerfile",
+        "path": "src/cart/src/Dockerfile",
+        "sha": "80305cf7de30e705353aeb2d189ffba9ce783d20",
+        "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/cart/src/Dockerfile?ref=main",
+        "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/blobs/80305cf7de30e705353aeb2d189ffba9ce783d20",
+        "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/blob/main/src/cart/src/Dockerfile",
+        "download_url": "https://raw.githubusercontent.com/Lucifer4255/opentelemetry-demo/main/src/cart/src/Dockerfile"
+      },
+      {
+        "type": "file",
+        "size": 3485,
+        "name": "Program.cs",
+        "path": "src/cart/src/Program.cs",
+        "sha": "ff383aad370ddbf3f647c60a35b24a47120761c3",
+        "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/cart/src/Program.cs?ref=main",
+        "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/blobs/ff383aad370ddbf3f647c60a35b24a47120761c3",
+        "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/blob/main/src/cart/src/Program.cs",
+        "download_url": "https://raw.githubusercontent.com/Lucifer4255/opentelemetry-demo/main/src/cart/src/Program.cs"
+      },
+      {
+        "type": "file",
+        "size": 260,
+        "name": "appsettings.json",
+        "path": "src/cart/src/appsettings.json",
+        "sha": "db76fce3939a095fd2028b589eaae56f678ec34e",
+        "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/cart/src/appsettings.json?ref=main",
+        "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/blobs/db76fce3939a095fd2028b589eaae56f678ec34e",
+        "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/blob/main/src/cart/src/appsettings.json",
+        "download_url": "https://raw.githubusercontent.com/Lucifer4255/opentelemetry-demo/main/src/cart/src/appsettings.json"
+      },
+      {
+        "type": "file",
+        "size": 2230,
+        "name": "cart.csproj",
+        "path": "src/cart/src/cart.csproj",
+        "sha": "0b71e88e33286466c5030631203a1f69ca398206",
+        "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/cart/src/cart.csproj?ref=main",
+        "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/blobs/0b71e88e33286466c5030631203a1f69ca398206",
+        "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/blob/main/src/cart/src/cart.csproj",
+        "download_url": "https://raw.githubusercontent.com/Lucifer4255/opentelemetry-demo/main/src/cart/src/cart.csproj"
+      },
+      {
+        "type": "dir",
+        "size": 0,
+        "name": "cartstore",
+        "path": "src/cart/src/cartstore",
+        "sha": "22b0464eea5888aa6b532453219c9666985a5a27",
+        "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/cart/src/cartstore?ref=main",
+        "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/trees/22b0464eea5888aa6b532453219c9666985a5a27",
+        "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/tree/main/src/cart/src/cartstore",
+        "download_url": null
+      },
+      {
+        "type": "dir",
+        "size": 0,
+        "name": "services",
+        "path": "src/cart/src/services",
+        "sha": "7e9f9a5f197f623981b4970d97662328e9f045ca",
+        "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/cart/src/services?ref=main",
+        "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/trees/7e9f9a5f197f623981b4970d97662328e9f045ca",
+        "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/tree/main/src/cart/src/services",
+        "download_url": null
+      }
+    ]
+  },
+  "fdbb786a9d387f0e": {
+    "tool": "get_file_contents",
+    "args": {
+      "owner": "Lucifer4255",
+      "path": "src/cart/src/cartstore",
+      "repo": "opentelemetry-demo"
+    },
+    "result": [
+      {
+        "type": "file",
+        "size": 374,
+        "name": "ICartStore.cs",
+        "path": "src/cart/src/cartstore/ICartStore.cs",
+        "sha": "80e249e5d68f00c95925c13b45acd28f39c2a595",
+        "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/cart/src/cartstore/ICartStore.cs?ref=main",
+        "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/blobs/80e249e5d68f00c95925c13b45acd28f39c2a595",
+        "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/blob/main/src/cart/src/cartstore/ICartStore.cs",
+        "download_url": "https://raw.githubusercontent.com/Lucifer4255/opentelemetry-demo/main/src/cart/src/cartstore/ICartStore.cs"
+      },
+      {
+        "type": "file",
+        "size": 8373,
+        "name": "ValkeyCartStore.cs",
+        "path": "src/cart/src/cartstore/ValkeyCartStore.cs",
+        "sha": "4f0c5a1e28da2416b97dad544516e554101855bc",
+        "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/cart/src/cartstore/ValkeyCartStore.cs?ref=main",
+        "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/blobs/4f0c5a1e28da2416b97dad544516e554101855bc",
+        "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/blob/main/src/cart/src/cartstore/ValkeyCartStore.cs",
+        "download_url": "https://raw.githubusercontent.com/Lucifer4255/opentelemetry-demo/main/src/cart/src/cartstore/ValkeyCartStore.cs"
+      }
+    ]
+  },
+  "06b390f63956c99d": {
+    "tool": "get_file_contents",
+    "args": {
+      "owner": "Lucifer4255",
+      "path": "src/cart/src/Program.cs",
+      "repo": "opentelemetry-demo"
+    },
+    "result": {
+      "name": "Program.cs",
+      "path": "src/cart/src/Program.cs",
+      "sha": "ff383aad370ddbf3f647c60a35b24a47120761c3",
+      "size": 3485,
+      "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/cart/src/Program.cs?ref=main",
+      "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/blob/main/src/cart/src/Program.cs",
+      "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/blobs/ff383aad370ddbf3f647c60a35b24a47120761c3",
+      "download_url": "https://raw.githubusercontent.com/Lucifer4255/opentelemetry-demo/main/src/cart/src/Program.cs",
+      "type": "file",
+      "content": "// Copyright The OpenTelemetry Authors\n// SPDX-License-Identifier: Apache-2.0\nusing System;\n\nusing Grpc.Health.V1;\nusing Microsoft.AspNetCore.Diagnostics.HealthChecks;\nusing System.Threading.Tasks;\nusing System.Threading;\n\nusing Grpc.Core;\n\nusing cart.cartstore;\nusing cart.services;\nusing cart.healthcheck;\n\nusing Microsoft.AspNetCore.Builder;\nusing Microsoft.AspNetCore.Http;\nusing Microsoft.Extensions.DependencyInjection;\nusing Microsoft.Extensions.Diagnostics.HealthChecks;\nusing Microsoft.Extensions.Logging;\nusing OpenTelemetry.Instrumentation.StackExchangeRedis;\nusing OpenTelemetry.Logs;\nusing OpenTelemetry.Metrics;\nusing OpenTelemetry.Resources;\nusing OpenTelemetry.Trace;\nusing OpenFeature;\nusing OpenFeature.Hooks;\nusing OpenFeature.Providers.Flagd;\n\nvar builder = WebApplication.CreateBuilder(args);\nstring valkeyAddress = builder.Configuration[\"VALKEY_ADDR\"];\nif (string.IsNullOrEmpty(valkeyAddress))\n{\n    Console.WriteLine(\"VALKEY_ADDR environment variable is required.\");\n    Environment.Exit(1);\n}\n\nbuilder.Logging\n    .AddOpenTelemetry(options => options.AddOtlpExporter())\n    .AddConsole();\n\nbuilder.Services.AddSingleton<ICartStore>(x =>\n{\n    var store = new ValkeyCartStore(x.GetRequiredService<ILogger<ValkeyCartStore>>(), valkeyAddress);\n    store.Initialize();\n    return store;\n});\n\nbuilder.Services.AddOpenFeature(openFeatureBuilder =>\n{\n    openFeatureBuilder\n        .AddProvider(_ => new FlagdProvider())\n        .AddHook<MetricsHook>()\n        .AddHook<TraceEnricherHook>();\n});\n\nbuilder.Services.AddSingleton(x =>\n    new CartService(\n        x.GetRequiredService<ICartStore>(),\n        new ValkeyCartStore(x.GetRequiredService<ILogger<ValkeyCartStore>>(), \"badhost:1234\"),\n        x.GetRequiredService<IFeatureClient>()\n));\n\n\nAction<ResourceBuilder> appResourceBuilder =\n    resource => resource\n        .AddService(builder.Environment.ApplicationName)\n        .AddContainerDetector()\n        .AddHostDetector();\n\nbuilder.Services.AddOpenTelemetry()\n    .ConfigureResource(appResourceBuilder)\n    .WithTracing(tracerBuilder => tracerBuilder\n        .AddSource(\"OpenTelemetry.Demo.Cart\")\n        .AddRedisInstrumentation(\n            options => options.SetVerboseDatabaseStatements = true)\n        .AddAspNetCoreInstrumentation()\n        .AddGrpcClientInstrumentation()\n        .AddHttpClientInstrumentation()\n        .AddOtlpExporter())\n    .WithMetrics(meterBuilder => meterBuilder\n        .AddMeter(\"OpenTelemetry.Demo.Cart\")\n        .AddMeter(\"OpenFeature\")\n        .AddProcessInstrumentation()\n        .AddRuntimeInstrumentation()\n        .AddAspNetCoreInstrumentation()\n        .SetExemplarFilter(ExemplarFilterType.TraceBased)\n        .AddOtlpExporter());\nbuilder.Services.AddGrpc();\nbuilder.Services.AddSingleton<readinessCheck>();\nbuilder.Services.AddGrpcHealthChecks()\n    .AddCheck<readinessCheck>(\"oteldemo.CartService\");\n\nbuilder.Services.AddSingleton<HealthServiceImpl>();\n\nvar app = builder.Build();\n\nvar ValkeyCartStore = (ValkeyCartStore)app.Services.GetRequiredService<ICartStore>();\napp.Services.GetRequiredService<StackExchangeRedisInstrumentation>().AddConnection(ValkeyCartStore.GetConnection());\n\napp.MapGrpcService<CartService>();\napp.MapGrpcService<HealthServiceImpl>();\n\napp.MapGet(\"/\", async context =>\n{\n    await context.Response.WriteAsync(\"Communication with gRPC endpoints must be made through a gRPC client. To learn how to create a client, visit: https://go.microsoft.com/fwlink/?linkid=2086909\");\n});\n\napp.Run();\n\n\n",
+      "encoding": "base64",
+      "_links": {
+        "self": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/cart/src/Program.cs?ref=main",
+        "git": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/blobs/ff383aad370ddbf3f647c60a35b24a47120761c3",
+        "html": "https://github.com/Lucifer4255/opentelemetry-demo/blob/main/src/cart/src/Program.cs"
+      }
+    }
+  },
+  "b8589eed9e7c65f0": {
+    "tool": "get_file_contents",
+    "args": {
+      "owner": "Lucifer4255",
+      "path": "src/cart/src/cartstore/ValkeyCartStore.cs",
+      "repo": "opentelemetry-demo"
+    },
+    "result": {
+      "name": "ValkeyCartStore.cs",
+      "path": "src/cart/src/cartstore/ValkeyCartStore.cs",
+      "sha": "4f0c5a1e28da2416b97dad544516e554101855bc",
+      "size": 8373,
+      "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/cart/src/cartstore/ValkeyCartStore.cs?ref=main",
+      "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/blob/main/src/cart/src/cartstore/ValkeyCartStore.cs",
+      "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/blobs/4f0c5a1e28da2416b97dad544516e554101855bc",
+      "download_url": "https://raw.githubusercontent.com/Lucifer4255/opentelemetry-demo/main/src/cart/src/cartstore/ValkeyCartStore.cs",
+      "type": "file",
+      "content": "// Copyright The OpenTelemetry Authors\n// SPDX-License-Identifier: Apache-2.0\nusing System;\nusing System.Linq;\nusing System.Threading.Tasks;\nusing Grpc.Core;\nusing StackExchange.Redis;\nusing Google.Protobuf;\nusing Microsoft.Extensions.Logging;\nusing System.Diagnostics.Metrics;\nusing System.Diagnostics;\n\nnamespace cart.cartstore;\n\npublic class ValkeyCartStore : ICartStore\n{\n    private readonly ILogger _logger;\n    private const string CartFieldName = \"cart\";\n    private const int RedisRetryNumber = 30;\n\n    private volatile ConnectionMultiplexer _redis;\n    private volatile bool _isRedisConnectionOpened;\n\n    private readonly object _locker = new();\n    private readonly byte[] _emptyCartBytes;\n    private readonly string _connectionString;\n\n    private static readonly ActivitySource CartActivitySource = new(\"OpenTelemetry.Demo.Cart\");\n    private static readonly Meter CartMeter = new Meter(\"OpenTelemetry.Demo.Cart\");\n    private static readonly Histogram<double> addItemHistogram = CartMeter.CreateHistogram(\n        \"demo.cart.add_item.latency\",\n        unit: \"s\",\n        advice: new InstrumentAdvice<double>\n        {\n            HistogramBucketBoundaries = [ 0.005, 0.01, 0.025, 0.05, 0.075, 0.1, 0.25, 0.5, 0.75, 1, 2.5, 5, 7.5, 10 ]\n        });\n    private static readonly Histogram<double> getCartHistogram = CartMeter.CreateHistogram(\n        \"demo.cart.get_cart.latency\",\n        unit: \"s\",\n        advice: new InstrumentAdvice<double>\n        {\n            HistogramBucketBoundaries = [ 0.005, 0.01, 0.025, 0.05, 0.075, 0.1, 0.25, 0.5, 0.75, 1, 2.5, 5, 7.5, 10 ]\n        });\n    private readonly ConfigurationOptions _redisConnectionOptions;\n\n    public ValkeyCartStore(ILogger<ValkeyCartStore> logger, string valkeyAddress)\n    {\n        _logger = logger;\n        // Serialize empty cart into byte array.\n        var cart = new Oteldemo.Cart();\n        _emptyCartBytes = cart.ToByteArray();\n        _connectionString = $\"{valkeyAddress},ssl=false,allowAdmin=true,abortConnect=false\";\n\n        _redisConnectionOptions = ConfigurationOptions.Parse(_connectionString);\n\n        // Try to reconnect multiple times if the first retry fails.\n        _redisConnectionOptions.ConnectRetry = RedisRetryNumber;\n        _redisConnectionOptions.ReconnectRetryPolicy = new ExponentialRetry(1000);\n\n        _redisConnectionOptions.KeepAlive = 180;\n    }\n\n    public ConnectionMultiplexer GetConnection()\n    {\n        EnsureRedisConnected();\n        return _redis;\n    }\n\n    public void Initialize()\n    {\n        EnsureRedisConnected();\n    }\n\n    private void EnsureRedisConnected()\n    {\n        if (_isRedisConnectionOpened)\n        {\n            return;\n        }\n\n        // Connection is closed or failed - open a new one but only at the first thread\n        lock (_locker)\n        {\n            if (_isRedisConnectionOpened)\n            {\n                return;\n            }\n\n            if (_logger.IsEnabled(LogLevel.Debug))\n            {\n                _logger.LogDebug(\"Connecting to Redis: {connectionString}\", _connectionString);\n            }\n\n            _redis = ConnectionMultiplexer.Connect(_redisConnectionOptions);\n\n            if (_redis == null || !_redis.IsConnected)\n            {\n                _logger.LogError(\"Wasn't able to connect to redis\");\n\n                // We weren't able to connect to Redis despite some retries with exponential backoff.\n                throw new ApplicationException(\"Wasn't able to connect to redis\");\n            }\n\n            _logger.LogInformation(\"Successfully connected to Redis\");\n            var cache = _redis.GetDatabase();\n\n            _logger.LogDebug(\"Performing small test\");\n            cache.StringSet(\"cart\", \"OK\" );\n            object res = cache.StringGet(\"cart\");\n\n            if (_logger.IsEnabled(LogLevel.Debug))\n            {\n                _logger.LogDebug(\"Small test result: {result}\", res);\n            }\n\n            _redis.InternalError += (_, e) => { Console.WriteLine(e.Exception); };\n            _redis.ConnectionRestored += (_, _) =>\n            {\n                _isRedisConnectionOpened = true;\n                _logger.LogInformation(\"Connection to redis was restored successfully.\");\n            };\n            _redis.ConnectionFailed += (_, _) =>\n            {\n                _logger.LogInformation(\"Connection failed. Disposing the object\");\n                _isRedisConnectionOpened = false;\n            };\n\n            _isRedisConnectionOpened = true;\n        }\n    }\n\n    public async Task AddItemAsync(string userId, string productId, int quantity)\n    {\n        var stopwatch = Stopwatch.StartNew();\n\n        if (_logger.IsEnabled(LogLevel.Information))\n        {\n            _logger.LogInformation(\"AddItemAsync called with userId={userId}, productId={productId}, quantity={quantity}\", userId, productId, quantity);\n        }\n\n        try\n        {\n            EnsureRedisConnected();\n\n            var db = _redis.GetDatabase();\n\n            // Access the cart from the cache\n            var value = await db.HashGetAsync(userId, CartFieldName);\n\n            Oteldemo.Cart cart;\n            if (value.IsNull)\n            {\n                cart = new Oteldemo.Cart\n                {\n                    UserId = userId\n                };\n                cart.Items.Add(new Oteldemo.CartItem { ProductId = productId, Quantity = quantity });\n            }\n            else\n            {\n                cart = Oteldemo.Cart.Parser.ParseFrom(value);\n                var existingItem = cart.Items.SingleOrDefault(i => i.ProductId == productId);\n                if (existingItem == null)\n                {\n                    cart.Items.Add(new Oteldemo.CartItem { ProductId = productId, Quantity = quantity });\n                }\n                else\n                {\n                    existingItem.Quantity += quantity;\n                }\n            }\n\n            await db.HashSetAsync(userId, new[]{ new HashEntry(CartFieldName, cart.ToByteArray()) });\n            await db.KeyExpireAsync(userId, TimeSpan.FromMinutes(60));\n        }\n        catch (Exception ex)\n        {\n            throw new RpcException(new Status(StatusCode.FailedPrecondition, $\"Can't access cart storage. {ex}\"));\n        }\n        finally\n        {\n            addItemHistogram.Record(stopwatch.Elapsed.TotalSeconds);\n        }\n    }\n\n    public async Task EmptyCartAsync(string userId)\n    {\n        if (_logger.IsEnabled(LogLevel.Information))\n        {\n            _logger.LogInformation(\"EmptyCartAsync called with userId={userId}\", userId);\n        }\n        try\n        {\n            EnsureRedisConnected();\n            var db = _redis.GetDatabase();\n\n            // Update the cache with empty cart for given user\n            await db.HashSetAsync(userId, new[] { new HashEntry(CartFieldName, _emptyCartBytes) });\n            await db.KeyExpireAsync(userId, TimeSpan.FromMinutes(60));\n        }\n        catch (Exception ex)\n        {\n            throw new RpcException(new Status(StatusCode.FailedPrecondition, $\"Can't access cart storage. {ex}\"));\n        }\n    }\n\n    public async Task<Oteldemo.Cart> GetCartAsync(string userId)\n    {\n        var stopwatch = Stopwatch.StartNew();\n\n        if (_logger.IsEnabled(LogLevel.Information))\n        {\n            _logger.LogInformation(\"GetCartAsync called with userId={userId}\", userId);\n        }\n\n        try\n        {\n            EnsureRedisConnected();\n\n            var db = _redis.GetDatabase();\n\n            // Access the cart from the cache\n            var value = await db.HashGetAsync(userId, CartFieldName);\n\n            if (!value.IsNull)\n            {\n                return Oteldemo.Cart.Parser.ParseFrom(value);\n            }\n\n            // We decided to return empty cart in cases when user wasn't in the cache before\n            return new Oteldemo.Cart();\n        }\n        catch (Exception ex)\n        {\n            throw new RpcException(new Status(StatusCode.FailedPrecondition, $\"Can't access cart storage. {ex}\"));\n        }\n        finally\n        {\n            getCartHistogram.Record(stopwatch.Elapsed.TotalSeconds);\n        }\n    }\n\n    public bool Ping()\n    {\n        try\n        {\n            var cache = _redis.GetDatabase();\n            var res = cache.Ping();\n            return res != TimeSpan.Zero;\n        }\n        catch (Exception)\n        {\n            return false;\n        }\n    }\n}\n",
+      "encoding": "base64",
+      "_links": {
+        "self": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/cart/src/cartstore/ValkeyCartStore.cs?ref=main",
+        "git": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/blobs/4f0c5a1e28da2416b97dad544516e554101855bc",
+        "html": "https://github.com/Lucifer4255/opentelemetry-demo/blob/main/src/cart/src/cartstore/ValkeyCartStore.cs"
+      }
+    }
+  },
+  "42b9484fd4964df2": {
+    "tool": "get_file_contents",
+    "args": {
+      "owner": "Lucifer4255",
+      "path": "src/cart/src/services",
+      "repo": "opentelemetry-demo"
+    },
+    "result": [
+      {
+        "type": "file",
+        "size": 3071,
+        "name": "CartService.cs",
+        "path": "src/cart/src/services/CartService.cs",
+        "sha": "6218040959b27c4a98d63686149f91ffc1d6edd6",
+        "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/cart/src/services/CartService.cs?ref=main",
+        "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/blobs/6218040959b27c4a98d63686149f91ffc1d6edd6",
+        "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/blob/main/src/cart/src/services/CartService.cs",
+        "download_url": "https://raw.githubusercontent.com/Lucifer4255/opentelemetry-demo/main/src/cart/src/services/CartService.cs"
+      },
+      {
+        "type": "file",
+        "size": 4503,
+        "name": "HealthCheckService.cs",
+        "path": "src/cart/src/services/HealthCheckService.cs",
+        "sha": "91cf68baacb2642c8316803a5d92b2c6564d2407",
+        "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/cart/src/services/HealthCheckService.cs?ref=main",
+        "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/blobs/91cf68baacb2642c8316803a5d92b2c6564d2407",
+        "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/blob/main/src/cart/src/services/HealthCheckService.cs",
+        "download_url": "https://raw.githubusercontent.com/Lucifer4255/opentelemetry-demo/main/src/cart/src/services/HealthCheckService.cs"
+      }
+    ]
+  },
+  "3e7f694278ef860a": {
+    "tool": "get_file_contents",
+    "args": {
+      "owner": "Lucifer4255",
+      "path": "src/cart/src/services/CartService.cs",
+      "repo": "opentelemetry-demo"
+    },
+    "result": {
+      "name": "CartService.cs",
+      "path": "src/cart/src/services/CartService.cs",
+      "sha": "6218040959b27c4a98d63686149f91ffc1d6edd6",
+      "size": 3071,
+      "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/cart/src/services/CartService.cs?ref=main",
+      "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/blob/main/src/cart/src/services/CartService.cs",
+      "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/blobs/6218040959b27c4a98d63686149f91ffc1d6edd6",
+      "download_url": "https://raw.githubusercontent.com/Lucifer4255/opentelemetry-demo/main/src/cart/src/services/CartService.cs",
+      "type": "file",
+      "content": "// Copyright The OpenTelemetry Authors\n// SPDX-License-Identifier: Apache-2.0\nusing System.Diagnostics;\nusing System.Threading.Tasks;\nusing System;\nusing Grpc.Core;\nusing cart.cartstore;\nusing OpenFeature;\nusing Oteldemo;\n\nnamespace cart.services;\n\npublic class CartService : Oteldemo.CartService.CartServiceBase\n{\n    private static readonly Empty Empty = new();\n    private readonly Random random = new Random();\n    private readonly ICartStore _badCartStore;\n    private readonly ICartStore _cartStore;\n    private readonly IFeatureClient _featureFlagHelper;\n\n    public CartService(ICartStore cartStore, ICartStore badCartStore, IFeatureClient featureFlagService)\n    {\n        _badCartStore = badCartStore;\n        _cartStore = cartStore;\n        _featureFlagHelper = featureFlagService;\n    }\n\n    public override async Task<Empty> AddItem(AddItemRequest request, ServerCallContext context)\n    {\n        var activity = Activity.Current;\n        activity?.SetTag(\"user.id\", request.UserId);\n        activity?.SetTag(\"demo.product.id\", request.Item.ProductId);\n        activity?.SetTag(\"demo.product.quantity\", request.Item.Quantity);\n\n        try\n        {\n            await _cartStore.AddItemAsync(request.UserId, request.Item.ProductId, request.Item.Quantity);\n\n            return Empty;\n        }\n        catch (RpcException ex)\n        {\n            activity?.AddException(ex);\n            activity?.SetStatus(ActivityStatusCode.Error, ex.Message);\n            throw;\n        }\n    }\n\n    public override async Task<Cart> GetCart(GetCartRequest request, ServerCallContext context)\n    {\n        var activity = Activity.Current;\n        activity?.SetTag(\"user.id\", request.UserId);\n        activity?.AddEvent(new(\"Fetch cart\"));\n\n        try\n        {\n            var cart = await _cartStore.GetCartAsync(request.UserId);\n            var totalCart = 0;\n            foreach (var item in cart.Items)\n            {\n                totalCart += item.Quantity;\n            }\n            activity?.SetTag(\"demo.cart.items.count\", totalCart);\n\n            return cart;\n        }\n        catch (RpcException ex)\n        {\n            activity?.AddException(ex);\n            activity?.SetStatus(ActivityStatusCode.Error, ex.Message);\n            throw;\n        }\n    }\n\n    public override async Task<Empty> EmptyCart(EmptyCartRequest request, ServerCallContext context)\n    {\n        var activity = Activity.Current;\n        activity?.SetTag(\"user.id\", request.UserId);\n        activity?.AddEvent(new(\"Empty cart\"));\n\n        try\n        {\n            if (await _featureFlagHelper.GetBooleanValueAsync(\"cartFailure\", false))\n            {\n                await _badCartStore.EmptyCartAsync(request.UserId);\n            }\n            else\n            {\n                await _cartStore.EmptyCartAsync(request.UserId);\n            }\n        }\n        catch (RpcException ex)\n        {\n            Activity.Current?.AddException(ex);\n            Activity.Current?.SetStatus(ActivityStatusCode.Error, ex.Message);\n            throw;\n        }\n\n        return Empty;\n    }\n}\n",
+      "encoding": "base64",
+      "_links": {
+        "self": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/cart/src/services/CartService.cs?ref=main",
+        "git": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/blobs/6218040959b27c4a98d63686149f91ffc1d6edd6",
+        "html": "https://github.com/Lucifer4255/opentelemetry-demo/blob/main/src/cart/src/services/CartService.cs"
+      }
+    }
+  },
+  "6562ac52ef10122d": {
+    "tool": "get_file_contents",
+    "args": {
+      "owner": "Lucifer4255",
+      "path": "src/flagd",
+      "repo": "opentelemetry-demo"
+    },
+    "result": [
+      {
+        "type": "file",
+        "size": 4208,
+        "name": "demo.flagd.json",
+        "path": "src/flagd/demo.flagd.json",
+        "sha": "12704a2e85c922522f0fec883933a907fb165e33",
+        "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/flagd/demo.flagd.json?ref=main",
+        "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/blobs/12704a2e85c922522f0fec883933a907fb165e33",
+        "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/blob/main/src/flagd/demo.flagd.json",
+        "download_url": "https://raw.githubusercontent.com/Lucifer4255/opentelemetry-demo/main/src/flagd/demo.flagd.json"
+      }
+    ]
+  },
+  "2123728924a2f894": {
+    "tool": "get_file_contents",
+    "args": {
+      "owner": "Lucifer4255",
+      "path": "src/flagd/demo.flagd.json",
+      "repo": "opentelemetry-demo"
+    },
+    "result": {
+      "name": "demo.flagd.json",
+      "path": "src/flagd/demo.flagd.json",
+      "sha": "12704a2e85c922522f0fec883933a907fb165e33",
+      "size": 4208,
+      "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/flagd/demo.flagd.json?ref=main",
+      "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/blob/main/src/flagd/demo.flagd.json",
+      "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/blobs/12704a2e85c922522f0fec883933a907fb165e33",
+      "download_url": "https://raw.githubusercontent.com/Lucifer4255/opentelemetry-demo/main/src/flagd/demo.flagd.json",
+      "type": "file",
+      "content": "{\n  \"$schema\": \"https://flagd.dev/schema/v0/flags.json\",\n  \"flags\": {\n    \"llmInaccurateResponse\": {\n      \"defaultVariant\": \"off\",\n      \"description\": \"LLM returns an inaccurate product summary for product ID L9ECAV7KIM\",\n      \"state\": \"ENABLED\",\n      \"variants\": {\n        \"off\": false,\n        \"on\": true\n      }\n    },\n    \"llmRateLimitError\": {\n      \"defaultVariant\": \"off\",\n      \"description\": \"LLM intermittently returns a rate limit error\",\n      \"state\": \"ENABLED\",\n      \"variants\": {\n        \"off\": false,\n        \"on\": true\n      }\n    },\n    \"productCatalogFailure\": {\n      \"description\": \"Fail product catalog service on a specific product\",\n      \"state\": \"ENABLED\",\n      \"variants\": {\n        \"on\": true,\n        \"off\": false\n      },\n      \"defaultVariant\": \"off\",\n      \"targeting\": {\n        \"if\": [\n          {\n            \"==\": [\n              {\n                \"var\": \"product_id\"\n              },\n              \"OLJCESPC7Z\"\n            ]\n          },\n          \"on\",\n          \"off\"\n        ]\n      }\n    },\n    \"recommendationCacheFailure\": {\n      \"description\": \"Fail recommendation service cache\",\n      \"state\": \"ENABLED\",\n      \"variants\": {\n        \"on\": true,\n        \"off\": false\n      },\n      \"defaultVariant\": \"off\"\n    },\n    \"adManualGc\": {\n      \"description\": \"Triggers full manual garbage collections in the ad service\",\n      \"state\": \"ENABLED\",\n      \"variants\": {\n        \"on\": true,\n        \"off\": false\n      },\n      \"defaultVariant\": \"off\"\n    },\n    \"adHighCpu\": {\n      \"description\": \"Triggers high cpu load in the ad service\",\n      \"state\": \"ENABLED\",\n      \"variants\": {\n        \"on\": true,\n        \"off\": false\n      },\n      \"defaultVariant\": \"off\"\n    },\n    \"adFailure\": {\n      \"description\": \"Fail ad service\",\n      \"state\": \"ENABLED\",\n      \"variants\": {\n        \"on\": true,\n        \"off\": false\n      },\n      \"defaultVariant\": \"off\"\n    },\n    \"kafkaQueueProblems\": {\n      \"description\": \"Overloads Kafka queue while simultaneously introducing a consumer side delay leading to a lag spike\",\n      \"state\": \"ENABLED\",\n      \"variants\": {\n        \"on\": 100,\n        \"off\": 0\n      },\n      \"defaultVariant\": \"off\"\n    },\n    \"cartFailure\": {\n      \"description\": \"Fail cart service\",\n      \"state\": \"ENABLED\",\n      \"variants\": {\n        \"on\": true,\n        \"off\": false\n      },\n      \"defaultVariant\": \"off\"\n    },\n    \"paymentFailure\": {\n      \"description\": \"Fail payment service charge requests n%\",\n      \"state\": \"ENABLED\",\n      \"variants\": {\n        \"100%\": 1,\n        \"90%\": 0.95,\n        \"75%\": 0.75,\n        \"50%\": 0.5,\n        \"25%\": 0.25,\n        \"10%\": 0.1,\n        \"off\": 0\n      },\n      \"defaultVariant\": \"off\"\n    },\n    \"paymentUnreachable\": {\n      \"description\": \"Payment service is unavailable\",\n      \"state\": \"ENABLED\",\n      \"variants\": {\n        \"on\": true,\n        \"off\": false\n      },\n      \"defaultVariant\": \"off\"\n    },\n    \"loadGeneratorFloodHomepage\": {\n      \"description\": \"Flood the frontend with a large amount of requests.\",\n      \"state\": \"ENABLED\",\n      \"variants\": {\n        \"on\": 100,\n        \"off\": 0\n      },\n      \"defaultVariant\": \"off\"\n    },\n    \"imageSlowLoad\": {\n      \"description\": \"slow loading images in the frontend\",\n      \"state\": \"ENABLED\",\n      \"variants\": {\n        \"10sec\": 10000,\n        \"5sec\": 5000,\n        \"off\": 0\n      },\n      \"defaultVariant\": \"off\"\n    },\n    \"failedReadinessProbe\": {\n      \"description\": \"readiness probe failure for cart service\",\n      \"state\": \"ENABLED\",\n      \"variants\": {\n        \"on\": true,\n        \"off\": false\n      },\n      \"defaultVariant\": \"off\"\n    },\n    \"emailMemoryLeak\": {\n      \"description\": \"Memory leak in the email service.\",\n      \"state\": \"ENABLED\",\n      \"variants\": {\n        \"off\": 0,\n        \"1x\": 1,\n        \"10x\": 10,\n        \"100x\": 100,\n        \"1000x\": 1000,\n        \"10000x\": 10000\n      },\n      \"defaultVariant\": \"off\"\n    },\n    \"intlShippingSlowdown\": {\n      \"description\": \"Delays international shipping responses to simulate overseas shipping delay\",\n      \"state\": \"ENABLED\",\n      \"variants\": {\n        \"10sec\": 10,\n        \"5sec\": 5,\n        \"off\": 0\n      },\n      \"defaultVariant\": \"off\"\n    }\n  }\n}\n",
+      "encoding": "base64",
+      "_links": {
+        "self": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/flagd/demo.flagd.json?ref=main",
+        "git": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/blobs/12704a2e85c922522f0fec883933a907fb165e33",
+        "html": "https://github.com/Lucifer4255/opentelemetry-demo/blob/main/src/flagd/demo.flagd.json"
+      }
+    }
+  },
+  "ef8394550dec7044": {
+    "tool": "get_file_contents",
+    "args": {
+      "owner": "Lucifer4255",
+      "path": "docker-compose.yml",
+      "repo": "opentelemetry-demo"
+    },
+    "result": "Tool 'get_file_contents' failed: McpError: Not Found: Resource not found: Not Found"
+  },
+  "419bcee6cb033272": {
+    "tool": "query_logs",
+    "args": {
+      "service": "cart",
+      "query": "FailedPrecondition",
+      "time_window_minutes": 10,
+      "limit": 100
+    },
+    "result": {
+      "tool_name": "query_logs",
+      "success": true,
+      "data": {
+        "service": "cart",
+        "query": "FailedPrecondition",
+        "logql": "{compose_service=\"cart\"} |= \"FailedPrecondition\"",
+        "entries": [
+          {
+            "timestamp": "1780065304251952774",
+            "line": "      Error status code 'FailedPrecondition' with detail 'Can't access cart storage. System.ApplicationException: Wasn't able to connect to redis",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065168470040620",
+            "line": "      Error status code 'FailedPrecondition' with detail 'Can't access cart storage. System.ApplicationException: Wasn't able to connect to redis",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065023441800736",
+            "line": "      Error status code 'FailedPrecondition' with detail 'Can't access cart storage. System.ApplicationException: Wasn't able to connect to redis",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780064880175280591",
+            "line": "      Error status code 'FailedPrecondition' with detail 'Can't access cart storage. System.ApplicationException: Wasn't able to connect to redis",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          }
+        ]
+      },
+      "error": null
+    }
+  },
+  "19f082fede4814d9": {
+    "tool": "get_log_context",
+    "args": {
+      "timestamp": "1780065304251952774",
+      "service": "cart",
+      "lines": 30
+    },
+    "result": {
+      "tool_name": "get_log_context",
+      "success": true,
+      "data": {
+        "service": "cart",
+        "timestamp": "1780065304251952774",
+        "logql": "{compose_service=\"cart\"}",
+        "entries": [
+          {
+            "timestamp": "1780065304251945621",
+            "line": "info: Grpc.AspNetCore.Server.ServerCallHandler[7]",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065304251609559",
+            "line": "      Wasn't able to connect to redis",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065304251582118",
+            "line": "fail: cart.cartstore.ValkeyCartStore[0]",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065302604779398",
+            "line": "      GetCartAsync called with userId=e55c6a45-7098-44ed-a27e-505f45a79bda",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065302604758419",
+            "line": "info: cart.cartstore.ValkeyCartStore[0]",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065302602302575",
+            "line": "      GetCartAsync called with userId=60c115a4-a47a-4b5e-a8a0-2c0857dcad94",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065302602278179",
+            "line": "info: cart.cartstore.ValkeyCartStore[0]",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065302585370593",
+            "line": "      GetCartAsync called with userId=e55c6a45-7098-44ed-a27e-505f45a79bda",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065302585353661",
+            "line": "info: cart.cartstore.ValkeyCartStore[0]",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065302582955095",
+            "line": "      GetCartAsync called with userId=60c115a4-a47a-4b5e-a8a0-2c0857dcad94",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065302582929597",
+            "line": "info: cart.cartstore.ValkeyCartStore[0]",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065302554038287",
+            "line": "      GetCartAsync called with userId=e55c6a45-7098-44ed-a27e-505f45a79bda",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065302553987412",
+            "line": "info: cart.cartstore.ValkeyCartStore[0]",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065302548577297",
+            "line": "      GetCartAsync called with userId=60c115a4-a47a-4b5e-a8a0-2c0857dcad94",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065302548550286",
+            "line": "info: cart.cartstore.ValkeyCartStore[0]",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065302481080095",
+            "line": "      GetCartAsync called with userId=760004b8-5b88-4b21-b9c4-9c4af7ea92fb",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065302481058204",
+            "line": "info: cart.cartstore.ValkeyCartStore[0]",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065302455758212",
+            "line": "      GetCartAsync called with userId=760004b8-5b88-4b21-b9c4-9c4af7ea92fb",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065302455733034",
+            "line": "info: cart.cartstore.ValkeyCartStore[0]",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065302343820637",
+            "line": "      GetCartAsync called with userId=760004b8-5b88-4b21-b9c4-9c4af7ea92fb",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065302343785731",
+            "line": "info: cart.cartstore.ValkeyCartStore[0]",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065299266027577",
+            "line": "      GetCartAsync called with userId=c6b93a93-9b25-4986-937a-ff358cc61c03",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065299266009153",
+            "line": "info: cart.cartstore.ValkeyCartStore[0]",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065299263206087",
+            "line": "      GetCartAsync called with userId=351cb92f-9b6c-497a-8b4e-1afdd849e6cb",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065299263193713",
+            "line": "info: cart.cartstore.ValkeyCartStore[0]",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065299262599758",
+            "line": "      GetCartAsync called with userId=c367051c-aa69-4801-9f86-c2d28492a33b",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065299262576724",
+            "line": "info: cart.cartstore.ValkeyCartStore[0]",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065299252859868",
+            "line": "      GetCartAsync called with userId=c367051c-aa69-4801-9f86-c2d28492a33b",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065299252849108",
+            "line": "info: cart.cartstore.ValkeyCartStore[0]",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065299252840111",
+            "line": "      GetCartAsync called with userId=c6b93a93-9b25-4986-937a-ff358cc61c03",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          }
+        ]
+      },
+      "error": null
+    }
+  },
+  "6eeea0e5a5a10ba8": {
+    "tool": "query_logs",
+    "args": {
+      "service": "valkey-cart",
+      "query": "error",
+      "time_window_minutes": 10,
+      "limit": 50
+    },
+    "result": {
+      "tool_name": "query_logs",
+      "success": true,
+      "data": {
+        "service": "valkey-cart",
+        "query": "error",
+        "logql": "{compose_service=\"valkey-cart\"} |= \"error\"",
+        "entries": []
+      },
+      "error": null
+    }
+  },
+  "cc39b07df828a709": {
+    "tool": "query_logs",
+    "args": {
+      "service": "cart",
+      "query": "Can't access cart storage",
+      "time_window_minutes": 10,
+      "limit": 20
+    },
+    "result": {
+      "tool_name": "query_logs",
+      "success": true,
+      "data": {
+        "service": "cart",
+        "query": "Can't access cart storage",
+        "logql": "{compose_service=\"cart\"} |= \"Can't access cart storage\"",
+        "entries": [
+          {
+            "timestamp": "1780065441510515729",
+            "line": "      Error status code 'FailedPrecondition' with detail 'Can't access cart storage. System.ApplicationException: Wasn't able to connect to redis",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065304251952774",
+            "line": "      Error status code 'FailedPrecondition' with detail 'Can't access cart storage. System.ApplicationException: Wasn't able to connect to redis",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065168470040620",
+            "line": "      Error status code 'FailedPrecondition' with detail 'Can't access cart storage. System.ApplicationException: Wasn't able to connect to redis",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065023441800736",
+            "line": "      Error status code 'FailedPrecondition' with detail 'Can't access cart storage. System.ApplicationException: Wasn't able to connect to redis",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780064880175280591",
+            "line": "      Error status code 'FailedPrecondition' with detail 'Can't access cart storage. System.ApplicationException: Wasn't able to connect to redis",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          }
+        ]
+      },
+      "error": null
+    }
+  },
+  "167998a2415f96ca": {
+    "tool": "query_logs",
+    "args": {
+      "service": "cart",
+      "query": "connection refused OR timeout OR redis",
+      "time_window_minutes": 10,
+      "limit": 50
+    },
+    "result": {
+      "tool_name": "query_logs",
+      "success": true,
+      "data": {
+        "service": "cart",
+        "query": "connection refused OR timeout OR redis",
+        "logql": "{compose_service=\"cart\"} |= \"connection refused OR timeout OR redis\"",
+        "entries": []
+      },
+      "error": null
+    }
+  },
+  "c48824da26f07af6": {
+    "tool": "query_logs",
+    "args": {
+      "service": "valkey-cart",
+      "query": "ready",
+      "time_window_minutes": 10,
+      "limit": 20
+    },
+    "result": {
+      "tool_name": "query_logs",
+      "success": true,
+      "data": {
+        "service": "valkey-cart",
+        "query": "ready",
+        "logql": "{compose_service=\"valkey-cart\"} |= \"ready\"",
+        "entries": []
+      },
+      "error": null
+    }
+  },
+  "6009e85a85e95d57": {
+    "tool": "query_logs",
+    "args": {
+      "service": "valkey-cart",
+      "query": "*",
+      "time_window_minutes": 10,
+      "limit": 30
+    },
+    "result": {
+      "tool_name": "query_logs",
+      "success": true,
+      "data": {
+        "service": "valkey-cart",
+        "query": "*",
+        "logql": "{compose_service=\"valkey-cart\"} |= \"*\"",
+        "entries": [
+          {
+            "timestamp": "1780065300334549267",
+            "line": "1:M 29 May 2026 14:35:00.334 * Background saving terminated with success",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "valkey-cart",
+              "container": "valkey-cart"
+            }
+          },
+          {
+            "timestamp": "1780065300266220002",
+            "line": "110:C 29 May 2026 14:35:00.266 * Fork CoW for RDB: current 1 MB, peak 1 MB, average 0 MB",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "valkey-cart",
+              "container": "valkey-cart"
+            }
+          },
+          {
+            "timestamp": "1780065300265731424",
+            "line": "110:C 29 May 2026 14:35:00.265 * DB saved on disk",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "valkey-cart",
+              "container": "valkey-cart"
+            }
+          },
+          {
+            "timestamp": "1780065300033517797",
+            "line": "1:M 29 May 2026 14:35:00.033 * Background saving started by pid 110",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "valkey-cart",
+              "container": "valkey-cart"
+            }
+          },
+          {
+            "timestamp": "1780065300033166838",
+            "line": "1:M 29 May 2026 14:35:00.033 * 100 changes in 300 seconds. Saving...",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "valkey-cart",
+              "container": "valkey-cart"
+            }
+          },
+          {
+            "timestamp": "1780064999161219339",
+            "line": "1:M 29 May 2026 14:29:59.161 * Background saving terminated with success",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "valkey-cart",
+              "container": "valkey-cart"
+            }
+          },
+          {
+            "timestamp": "1780064999085233170",
+            "line": "109:C 29 May 2026 14:29:59.085 * Fork CoW for RDB: current 0 MB, peak 0 MB, average 0 MB",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "valkey-cart",
+              "container": "valkey-cart"
+            }
+          },
+          {
+            "timestamp": "1780064999084796991",
+            "line": "109:C 29 May 2026 14:29:59.084 * DB saved on disk",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "valkey-cart",
+              "container": "valkey-cart"
+            }
+          },
+          {
+            "timestamp": "1780064999060822641",
+            "line": "1:M 29 May 2026 14:29:59.060 * Background saving started by pid 109",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "valkey-cart",
+              "container": "valkey-cart"
+            }
+          },
+          {
+            "timestamp": "1780064999060516917",
+            "line": "1:M 29 May 2026 14:29:59.060 * 100 changes in 300 seconds. Saving...",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "valkey-cart",
+              "container": "valkey-cart"
+            }
+          }
+        ]
+      },
+      "error": null
+    }
+  },
+  "e512159ca7772afd": {
+    "tool": "query_logs",
+    "args": {
+      "service": "cart",
+      "query": "Connection failed OR ConnectionRestored OR Connecting OR successfully connected OR Wasn't able",
+      "time_window_minutes": 10,
+      "limit": 50
+    },
+    "result": {
+      "tool_name": "query_logs",
+      "success": true,
+      "data": {
+        "service": "cart",
+        "query": "Connection failed OR ConnectionRestored OR Connecting OR successfully connected OR Wasn't able",
+        "logql": "{compose_service=\"cart\"} |= \"Connection failed OR ConnectionRestored OR Connecting OR successfully connected OR Wasn't able\"",
+        "entries": []
+      },
+      "error": null
+    }
+  },
+  "149c6f8933d6d727": {
+    "tool": "query_logs",
+    "args": {
+      "service": "cart",
+      "query": "EmptyCartAsync",
+      "time_window_minutes": 10,
+      "limit": 30
+    },
+    "result": {
+      "tool_name": "query_logs",
+      "success": true,
+      "data": {
+        "service": "cart",
+        "query": "EmptyCartAsync",
+        "logql": "{compose_service=\"cart\"} |= \"EmptyCartAsync\"",
+        "entries": [
+          {
+            "timestamp": "1780065700159126580",
+            "line": "         at cart.cartstore.ValkeyCartStore.EmptyCartAsync(String userId) in /usr/src/app/src/cartstore/ValkeyCartStore.cs:line 194' raised.",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065589329844851",
+            "line": "      EmptyCartAsync called with userId=23f86ec4-5b6c-11f1-90ae-16b9ecad2408",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065563267108628",
+            "line": "         at cart.cartstore.ValkeyCartStore.EmptyCartAsync(String userId) in /usr/src/app/src/cartstore/ValkeyCartStore.cs:line 194' raised.",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065543818691802",
+            "line": "      EmptyCartAsync called with userId=0d7becca-5b6c-11f1-90ae-16b9ecad2408",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065498536257320",
+            "line": "      EmptyCartAsync called with userId=ff43b098-5b6b-11f1-90ae-16b9ecad2408",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065441510526469",
+            "line": "         at cart.cartstore.ValkeyCartStore.EmptyCartAsync(String userId) in /usr/src/app/src/cartstore/ValkeyCartStore.cs:line 194' raised.",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065304251957423",
+            "line": "         at cart.cartstore.ValkeyCartStore.EmptyCartAsync(String userId) in /usr/src/app/src/cartstore/ValkeyCartStore.cs:line 194' raised.",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065168470047443",
+            "line": "         at cart.cartstore.ValkeyCartStore.EmptyCartAsync(String userId) in /usr/src/app/src/cartstore/ValkeyCartStore.cs:line 194' raised.",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          }
+        ]
+      },
+      "error": null
+    }
+  },
+  "06bf6bcd6b7c1e9b": {
+    "tool": "query_logs",
+    "args": {
+      "service": "cart",
+      "query": "AddItemAsync",
+      "time_window_minutes": 10,
+      "limit": 30
+    },
+    "result": {
+      "tool_name": "query_logs",
+      "success": true,
+      "data": {
+        "service": "cart",
+        "query": "AddItemAsync",
+        "logql": "{compose_service=\"cart\"} |= \"AddItemAsync\"",
+        "entries": [
+          {
+            "timestamp": "1780065727551198158",
+            "line": "      AddItemAsync called with userId=883c9b08-5b6c-11f1-90ae-16b9ecad2408, productId=66VCHSJNUP, quantity=2",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065725142992179",
+            "line": "      AddItemAsync called with userId=3c5d5253-ed71-416b-8e79-cc7bfc6909a6, productId=2ZYFJ3GM2N, quantity=1",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065719973076755",
+            "line": "      AddItemAsync called with userId=a3c771ba-bf6d-4011-b63b-6042956d2837, productId=2ZYFJ3GM2N, quantity=1",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065717728368609",
+            "line": "      AddItemAsync called with userId=74cd364b-5100-412d-ade6-c4f1b61af896, productId=2ZYFJ3GM2N, quantity=1",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065693312223692",
+            "line": "      AddItemAsync called with userId=87000bca-0164-49a0-88a9-58cc8ca7771e, productId=2ZYFJ3GM2N, quantity=1",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065693076604124",
+            "line": "      AddItemAsync called with userId=4c54838e-b2d6-4815-9200-1e71c84a5f4e, productId=2ZYFJ3GM2N, quantity=1",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065689246881336",
+            "line": "      AddItemAsync called with userId=4deafb7f-8bec-4439-a791-30f8162519c4, productId=2ZYFJ3GM2N, quantity=1",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065688414165225",
+            "line": "      AddItemAsync called with userId=3c8c44d7-2f78-4ca6-9c35-f6382f58942b, productId=2ZYFJ3GM2N, quantity=1",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065685632710493",
+            "line": "      AddItemAsync called with userId=f04a93b6-e291-41ff-a3da-e1164e451e5a, productId=2ZYFJ3GM2N, quantity=1",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065668763941490",
+            "line": "      AddItemAsync called with userId=e423b715-8774-48d2-8d70-657e4d41dbe5, productId=2ZYFJ3GM2N, quantity=1",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065664831494050",
+            "line": "      AddItemAsync called with userId=d04d985d-a66d-4b86-b833-852e1bd0ab0b, productId=2ZYFJ3GM2N, quantity=1",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065655109273133",
+            "line": "      AddItemAsync called with userId=b1a615c5-2a66-4cf9-b3e2-ed32c2b926b7, productId=2ZYFJ3GM2N, quantity=1",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065654544600926",
+            "line": "      AddItemAsync called with userId=6d8cd51b-93c2-4264-8b94-07b0d41faa70, productId=2ZYFJ3GM2N, quantity=1",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065642330851552",
+            "line": "      AddItemAsync called with userId=995af409-9a2d-43ad-88da-557fe7f391d3, productId=2ZYFJ3GM2N, quantity=1",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065640976869069",
+            "line": "      AddItemAsync called with userId=c93b47c1-2c8a-4c93-8d52-748eea0887a0, productId=2ZYFJ3GM2N, quantity=1",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065640013167043",
+            "line": "      AddItemAsync called with userId=f5e270f5-e9b7-4a88-b246-b36f87eb0a89, productId=2ZYFJ3GM2N, quantity=1",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065630023132638",
+            "line": "      AddItemAsync called with userId=55ee7d38-5b6c-11f1-90ae-16b9ecad2408, productId=LS4PSXUNUM, quantity=1",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065629771582475",
+            "line": "      AddItemAsync called with userId=1a80af10-cb21-4d18-8f29-42b7127703ba, productId=2ZYFJ3GM2N, quantity=1",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065629550181865",
+            "line": "      AddItemAsync called with userId=a3473150-b002-4e3f-88ae-4f360492e8c6, productId=2ZYFJ3GM2N, quantity=1",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065629279334072",
+            "line": "      AddItemAsync called with userId=d824f641-239d-4ac9-a9cb-19c8f12ec26b, productId=2ZYFJ3GM2N, quantity=1",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065617380801434",
+            "line": "      AddItemAsync called with userId=1a6ae599-2717-47c3-af32-86c4dd3ef55c, productId=2ZYFJ3GM2N, quantity=1",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065613727302723",
+            "line": "      AddItemAsync called with userId=9eadce7a-098f-4e81-9b1d-28a941d545df, productId=2ZYFJ3GM2N, quantity=1",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065598848899059",
+            "line": "      AddItemAsync called with userId=977b6f04-5ba8-4452-bd77-5d3f9e5cd92f, productId=2ZYFJ3GM2N, quantity=1",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065597027757518",
+            "line": "      AddItemAsync called with userId=f864cee6-c0c8-4b24-941c-bd29d5b82c3f, productId=2ZYFJ3GM2N, quantity=1",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065594130092115",
+            "line": "      AddItemAsync called with userId=3ce75ade-b94f-4dd9-8f98-478c16614ad5, productId=2ZYFJ3GM2N, quantity=1",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065591003245504",
+            "line": "      AddItemAsync called with userId=e938f53d-bcbb-4718-a926-2d1bfc569f0e, productId=2ZYFJ3GM2N, quantity=1",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065589578253430",
+            "line": "      AddItemAsync called with userId=ac3cfb74-adbf-452d-805e-94ec0f795fdd, productId=2ZYFJ3GM2N, quantity=1",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065578482923817",
+            "line": "      AddItemAsync called with userId=a1bcca25-4886-4a55-9b81-c0d88e27613a, productId=2ZYFJ3GM2N, quantity=1",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065577499372751",
+            "line": "      AddItemAsync called with userId=9a1dd309-2bea-4a83-85f8-ee548ef533de, productId=2ZYFJ3GM2N, quantity=1",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065575583816826",
+            "line": "      AddItemAsync called with userId=23f86ec4-5b6c-11f1-90ae-16b9ecad2408, productId=2ZYFJ3GM2N, quantity=3",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          }
+        ]
+      },
+      "error": null
+    }
+  },
+  "2ee4fba511890161": {
+    "tool": "query_logs",
+    "args": {
+      "service": "cart",
+      "query": "FailedPrecondition",
+      "time_window_minutes": 10,
+      "limit": 50
+    },
+    "result": {
+      "tool_name": "query_logs",
+      "success": true,
+      "data": {
+        "service": "cart",
+        "query": "FailedPrecondition",
+        "logql": "{compose_service=\"cart\"} |= \"FailedPrecondition\"",
+        "entries": [
+          {
+            "timestamp": "1780066548196879674",
+            "line": "      Error status code 'FailedPrecondition' with detail 'Can't access cart storage. System.ApplicationException: Wasn't able to connect to redis",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066398187411016",
+            "line": "      Error status code 'FailedPrecondition' with detail 'Can't access cart storage. System.ApplicationException: Wasn't able to connect to redis",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066251678701301",
+            "line": "      Error status code 'FailedPrecondition' with detail 'Can't access cart storage. System.ApplicationException: Wasn't able to connect to redis",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066120200789202",
+            "line": "      Error status code 'FailedPrecondition' with detail 'Can't access cart storage. System.ApplicationException: Wasn't able to connect to redis",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065985191421995",
+            "line": "      Error status code 'FailedPrecondition' with detail 'Can't access cart storage. System.ApplicationException: Wasn't able to connect to redis",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          }
+        ]
+      },
+      "error": null
+    }
+  },
+  "80ab5470323b7e17": {
+    "tool": "query_logs",
+    "args": {
+      "service": "cart",
+      "query": "Can't access cart storage",
+      "time_window_minutes": 10,
+      "limit": 50
+    },
+    "result": {
+      "tool_name": "query_logs",
+      "success": true,
+      "data": {
+        "service": "cart",
+        "query": "Can't access cart storage",
+        "logql": "{compose_service=\"cart\"} |= \"Can't access cart storage\"",
+        "entries": [
+          {
+            "timestamp": "1780066548196879674",
+            "line": "      Error status code 'FailedPrecondition' with detail 'Can't access cart storage. System.ApplicationException: Wasn't able to connect to redis",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066398187411016",
+            "line": "      Error status code 'FailedPrecondition' with detail 'Can't access cart storage. System.ApplicationException: Wasn't able to connect to redis",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066251678701301",
+            "line": "      Error status code 'FailedPrecondition' with detail 'Can't access cart storage. System.ApplicationException: Wasn't able to connect to redis",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066120200789202",
+            "line": "      Error status code 'FailedPrecondition' with detail 'Can't access cart storage. System.ApplicationException: Wasn't able to connect to redis",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065985191421995",
+            "line": "      Error status code 'FailedPrecondition' with detail 'Can't access cart storage. System.ApplicationException: Wasn't able to connect to redis",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          }
+        ]
+      },
+      "error": null
+    }
+  },
+  "680f72611e352950": {
+    "tool": "get_log_context",
+    "args": {
+      "timestamp": "1780066548196879674",
+      "service": "cart",
+      "lines": 30
+    },
+    "result": {
+      "tool_name": "get_log_context",
+      "success": true,
+      "data": {
+        "service": "cart",
+        "timestamp": "1780066548196879674",
+        "logql": "{compose_service=\"cart\"}",
+        "entries": [
+          {
+            "timestamp": "1780066548196866760",
+            "line": "info: Grpc.AspNetCore.Server.ServerCallHandler[7]",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066548196573850",
+            "line": "      Wasn't able to connect to redis",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066548196548302",
+            "line": "fail: cart.cartstore.ValkeyCartStore[0]",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066546662887631",
+            "line": "      GetCartAsync called with userId=6a26a4e0-5b6e-11f1-90ae-16b9ecad2408",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066546662865750",
+            "line": "info: cart.cartstore.ValkeyCartStore[0]",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066546658725183",
+            "line": "      GetCartAsync called with userId=6a26a4e0-5b6e-11f1-90ae-16b9ecad2408",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066546658709083",
+            "line": "info: cart.cartstore.ValkeyCartStore[0]",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066546657694087",
+            "line": "      AddItemAsync called with userId=6a26a4e0-5b6e-11f1-90ae-16b9ecad2408, productId=66VCHSJNUP, quantity=2",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066546657659472",
+            "line": "info: cart.cartstore.ValkeyCartStore[0]",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066541046693969",
+            "line": "      GetCartAsync called with userId=b277bf1d-a787-404c-82bc-77a1a31101ea",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066541046674122",
+            "line": "info: cart.cartstore.ValkeyCartStore[0]",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066541037075354",
+            "line": "      GetCartAsync called with userId=b277bf1d-a787-404c-82bc-77a1a31101ea",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066541037046420",
+            "line": "info: cart.cartstore.ValkeyCartStore[0]",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066537572140301",
+            "line": "      GetCartAsync called with userId=fcb8a9f3-1069-44ba-9ada-bb5749a8841a",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066537572111678",
+            "line": "info: cart.cartstore.ValkeyCartStore[0]",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066537538221577",
+            "line": "      GetCartAsync called with userId=fcb8a9f3-1069-44ba-9ada-bb5749a8841a",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066537538205076",
+            "line": "info: cart.cartstore.ValkeyCartStore[0]",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066537534852239",
+            "line": "      GetCartAsync called with userId=fcb8a9f3-1069-44ba-9ada-bb5749a8841a",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066537534827071",
+            "line": "info: cart.cartstore.ValkeyCartStore[0]",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066534052705459",
+            "line": "      GetCartAsync called with userId=2f2f7d61-08bf-4734-a070-95c6240433e2",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066534052677707",
+            "line": "info: cart.cartstore.ValkeyCartStore[0]",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066534028385823",
+            "line": "      GetCartAsync called with userId=2f2f7d61-08bf-4734-a070-95c6240433e2",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066534028363762",
+            "line": "info: cart.cartstore.ValkeyCartStore[0]",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066534027566715",
+            "line": "      AddItemAsync called with userId=2f2f7d61-08bf-4734-a070-95c6240433e2, productId=2ZYFJ3GM2N, quantity=1",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066534027534404",
+            "line": "info: cart.cartstore.ValkeyCartStore[0]",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066533566894814",
+            "line": "      GetCartAsync called with userId=a1e49c61-7229-4a19-abae-30d31f003db6",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066533566864888",
+            "line": "info: cart.cartstore.ValkeyCartStore[0]",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066533535105349",
+            "line": "      GetCartAsync called with userId=a1e49c61-7229-4a19-abae-30d31f003db6",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066533535077807",
+            "line": "info: cart.cartstore.ValkeyCartStore[0]",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066532726200194",
+            "line": "      GetCartAsync called with userId=43eb9424-2705-42bb-83ab-2d0a38f49dc2",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          }
+        ]
+      },
+      "error": null
+    }
+  },
+  "95aca02c152f10b8": {
+    "tool": "query_logs",
+    "args": {
+      "service": "cart",
+      "query": "redis",
+      "time_window_minutes": 10,
+      "limit": 50
+    },
+    "result": {
+      "tool_name": "query_logs",
+      "success": true,
+      "data": {
+        "service": "cart",
+        "query": "redis",
+        "logql": "{compose_service=\"cart\"} |= \"redis\"",
+        "entries": [
+          {
+            "timestamp": "1780066548196879674",
+            "line": "      Error status code 'FailedPrecondition' with detail 'Can't access cart storage. System.ApplicationException: Wasn't able to connect to redis",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066548196573850",
+            "line": "      Wasn't able to connect to redis",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066398187411016",
+            "line": "      Error status code 'FailedPrecondition' with detail 'Can't access cart storage. System.ApplicationException: Wasn't able to connect to redis",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066398187160726",
+            "line": "      Wasn't able to connect to redis",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066251678701301",
+            "line": "      Error status code 'FailedPrecondition' with detail 'Can't access cart storage. System.ApplicationException: Wasn't able to connect to redis",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066251678448256",
+            "line": "      Wasn't able to connect to redis",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066120200789202",
+            "line": "      Error status code 'FailedPrecondition' with detail 'Can't access cart storage. System.ApplicationException: Wasn't able to connect to redis",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066120200537188",
+            "line": "      Wasn't able to connect to redis",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065985191421995",
+            "line": "      Error status code 'FailedPrecondition' with detail 'Can't access cart storage. System.ApplicationException: Wasn't able to connect to redis",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065985191184840",
+            "line": "      Wasn't able to connect to redis",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          }
+        ]
+      },
+      "error": null
+    }
+  },
+  "9b431fe233a46fc0": {
+    "tool": "query_logs",
+    "args": {
+      "service": "valkey-cart",
+      "query": "error",
+      "time_window_minutes": 10,
+      "limit": 30
+    },
+    "result": {
+      "tool_name": "query_logs",
+      "success": true,
+      "data": {
+        "service": "valkey-cart",
+        "query": "error",
+        "logql": "{compose_service=\"valkey-cart\"} |= \"error\"",
+        "entries": []
+      },
+      "error": null
+    }
+  },
+  "9d1824ffd0d05dff": {
+    "tool": "get_log_context",
+    "args": {
+      "timestamp": "1780066548196548302",
+      "service": "cart",
+      "lines": 40
+    },
+    "result": {
+      "tool_name": "get_log_context",
+      "success": true,
+      "data": {
+        "service": "cart",
+        "timestamp": "1780066548196548302",
+        "logql": "{compose_service=\"cart\"}",
+        "entries": [
+          {
+            "timestamp": "1780066546662887631",
+            "line": "      GetCartAsync called with userId=6a26a4e0-5b6e-11f1-90ae-16b9ecad2408",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066546662865750",
+            "line": "info: cart.cartstore.ValkeyCartStore[0]",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066546658725183",
+            "line": "      GetCartAsync called with userId=6a26a4e0-5b6e-11f1-90ae-16b9ecad2408",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066546658709083",
+            "line": "info: cart.cartstore.ValkeyCartStore[0]",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066546657694087",
+            "line": "      AddItemAsync called with userId=6a26a4e0-5b6e-11f1-90ae-16b9ecad2408, productId=66VCHSJNUP, quantity=2",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066546657659472",
+            "line": "info: cart.cartstore.ValkeyCartStore[0]",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066541046693969",
+            "line": "      GetCartAsync called with userId=b277bf1d-a787-404c-82bc-77a1a31101ea",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066541046674122",
+            "line": "info: cart.cartstore.ValkeyCartStore[0]",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066541037075354",
+            "line": "      GetCartAsync called with userId=b277bf1d-a787-404c-82bc-77a1a31101ea",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066541037046420",
+            "line": "info: cart.cartstore.ValkeyCartStore[0]",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066537572140301",
+            "line": "      GetCartAsync called with userId=fcb8a9f3-1069-44ba-9ada-bb5749a8841a",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066537572111678",
+            "line": "info: cart.cartstore.ValkeyCartStore[0]",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066537538221577",
+            "line": "      GetCartAsync called with userId=fcb8a9f3-1069-44ba-9ada-bb5749a8841a",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066537538205076",
+            "line": "info: cart.cartstore.ValkeyCartStore[0]",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066537534852239",
+            "line": "      GetCartAsync called with userId=fcb8a9f3-1069-44ba-9ada-bb5749a8841a",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066537534827071",
+            "line": "info: cart.cartstore.ValkeyCartStore[0]",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066534052705459",
+            "line": "      GetCartAsync called with userId=2f2f7d61-08bf-4734-a070-95c6240433e2",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066534052677707",
+            "line": "info: cart.cartstore.ValkeyCartStore[0]",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066534028385823",
+            "line": "      GetCartAsync called with userId=2f2f7d61-08bf-4734-a070-95c6240433e2",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066534028363762",
+            "line": "info: cart.cartstore.ValkeyCartStore[0]",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066534027566715",
+            "line": "      AddItemAsync called with userId=2f2f7d61-08bf-4734-a070-95c6240433e2, productId=2ZYFJ3GM2N, quantity=1",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066534027534404",
+            "line": "info: cart.cartstore.ValkeyCartStore[0]",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066533566894814",
+            "line": "      GetCartAsync called with userId=a1e49c61-7229-4a19-abae-30d31f003db6",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066533566864888",
+            "line": "info: cart.cartstore.ValkeyCartStore[0]",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066533535105349",
+            "line": "      GetCartAsync called with userId=a1e49c61-7229-4a19-abae-30d31f003db6",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066533535077807",
+            "line": "info: cart.cartstore.ValkeyCartStore[0]",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066532726200194",
+            "line": "      GetCartAsync called with userId=43eb9424-2705-42bb-83ab-2d0a38f49dc2",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066532726176930",
+            "line": "info: cart.cartstore.ValkeyCartStore[0]",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066532719462329",
+            "line": "      GetCartAsync called with userId=43eb9424-2705-42bb-83ab-2d0a38f49dc2",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066532719439546",
+            "line": "info: cart.cartstore.ValkeyCartStore[0]",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066531652172069",
+            "line": "      GetCartAsync called with userId=6a26a4e0-5b6e-11f1-90ae-16b9ecad2408",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066531652156330",
+            "line": "info: cart.cartstore.ValkeyCartStore[0]",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066531651318616",
+            "line": "      AddItemAsync called with userId=6a26a4e0-5b6e-11f1-90ae-16b9ecad2408, productId=0PUK6V6EV0, quantity=5",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066531651290253",
+            "line": "info: cart.cartstore.ValkeyCartStore[0]",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066529890934773",
+            "line": "      GetCartAsync called with userId=658e9aa9-5509-4467-8e03-9031d65d23a6",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066529890910547",
+            "line": "info: cart.cartstore.ValkeyCartStore[0]",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066529882934698",
+            "line": "      GetCartAsync called with userId=658e9aa9-5509-4467-8e03-9031d65d23a6",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066529882918417",
+            "line": "info: cart.cartstore.ValkeyCartStore[0]",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066529881857965",
+            "line": "      AddItemAsync called with userId=658e9aa9-5509-4467-8e03-9031d65d23a6, productId=2ZYFJ3GM2N, quantity=1",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066529881826506",
+            "line": "info: cart.cartstore.ValkeyCartStore[0]",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          }
+        ]
+      },
+      "error": null
+    }
+  },
+  "6c08188067e5494d": {
+    "tool": "query_logs",
+    "args": {
+      "service": "valkey-cart",
+      "query": "ready",
+      "time_window_minutes": 10,
+      "limit": 50
+    },
+    "result": {
+      "tool_name": "query_logs",
+      "success": true,
+      "data": {
+        "service": "valkey-cart",
+        "query": "ready",
+        "logql": "{compose_service=\"valkey-cart\"} |= \"ready\"",
+        "entries": []
+      },
+      "error": null
+    }
+  },
+  "a4ff52a658fd8fb6": {
+    "tool": "get_log_context",
+    "args": {
+      "timestamp": "1780065985191421995",
+      "service": "cart",
+      "lines": 40
+    },
+    "result": {
+      "tool_name": "get_log_context",
+      "success": true,
+      "data": {
+        "service": "cart",
+        "timestamp": "1780065985191421995",
+        "logql": "{compose_service=\"cart\"}",
+        "entries": [
+          {
+            "timestamp": "1780065985191401497",
+            "line": "info: Grpc.AspNetCore.Server.ServerCallHandler[7]",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065985191184840",
+            "line": "      Wasn't able to connect to redis",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065985191159432",
+            "line": "fail: cart.cartstore.ValkeyCartStore[0]",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065984550215668",
+            "line": "      GetCartAsync called with userId=ed2785ae-8853-4e65-846e-e6ab468882a3",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065984550184389",
+            "line": "info: cart.cartstore.ValkeyCartStore[0]",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065984522906334",
+            "line": "      GetCartAsync called with userId=ed2785ae-8853-4e65-846e-e6ab468882a3",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065984522882139",
+            "line": "info: cart.cartstore.ValkeyCartStore[0]",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065983220506270",
+            "line": "      GetCartAsync called with userId=d349c8c2-4b34-41ed-bef1-f234d04bd839",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065983220484730",
+            "line": "info: cart.cartstore.ValkeyCartStore[0]",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065983214723859",
+            "line": "      GetCartAsync called with userId=d349c8c2-4b34-41ed-bef1-f234d04bd839",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065983214700014",
+            "line": "info: cart.cartstore.ValkeyCartStore[0]",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065982886258654",
+            "line": "      GetCartAsync called with userId=235cdcb7-9364-4b23-ad64-bbf87808a77f",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065982886232424",
+            "line": "info: cart.cartstore.ValkeyCartStore[0]",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065982877511524",
+            "line": "      GetCartAsync called with userId=235cdcb7-9364-4b23-ad64-bbf87808a77f",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065982877455609",
+            "line": "info: cart.cartstore.ValkeyCartStore[0]",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065981070116321",
+            "line": "      GetCartAsync called with userId=810226e2-1eef-45e1-ad20-4676652b847c",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065981070091084",
+            "line": "info: cart.cartstore.ValkeyCartStore[0]",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065981048393139",
+            "line": "      GetCartAsync called with userId=810226e2-1eef-45e1-ad20-4676652b847c",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065981048370597",
+            "line": "info: cart.cartstore.ValkeyCartStore[0]",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065981044179314",
+            "line": "      GetCartAsync called with userId=810226e2-1eef-45e1-ad20-4676652b847c",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065981044157023",
+            "line": "info: cart.cartstore.ValkeyCartStore[0]",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065979762565098",
+            "line": "      GetCartAsync called with userId=1cd60df0-184d-41a4-b215-b0753c41847c",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065979762544439",
+            "line": "info: cart.cartstore.ValkeyCartStore[0]",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065979742793432",
+            "line": "      GetCartAsync called with userId=1cd60df0-184d-41a4-b215-b0753c41847c",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065979742772242",
+            "line": "info: cart.cartstore.ValkeyCartStore[0]",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065979736939927",
+            "line": "      GetCartAsync called with userId=1cd60df0-184d-41a4-b215-b0753c41847c",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065979736912876",
+            "line": "info: cart.cartstore.ValkeyCartStore[0]",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065979396270749",
+            "line": "      GetCartAsync called with userId=2b2ad2c9-6315-4974-b70f-5079c116af76",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065979396241644",
+            "line": "info: cart.cartstore.ValkeyCartStore[0]",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065979386259955",
+            "line": "      GetCartAsync called with userId=2b2ad2c9-6315-4974-b70f-5079c116af76",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065979386246661",
+            "line": "info: cart.cartstore.ValkeyCartStore[0]",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065979385200716",
+            "line": "      AddItemAsync called with userId=2b2ad2c9-6315-4974-b70f-5079c116af76, productId=2ZYFJ3GM2N, quantity=1",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065979385174086",
+            "line": "info: cart.cartstore.ValkeyCartStore[0]",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065977456200384",
+            "line": "      GetCartAsync called with userId=99f8049f-f96e-4968-ba6c-a25e4b50ebe2",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065977456170287",
+            "line": "info: cart.cartstore.ValkeyCartStore[0]",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065977433771657",
+            "line": "      GetCartAsync called with userId=99f8049f-f96e-4968-ba6c-a25e4b50ebe2",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065977433750477",
+            "line": "info: cart.cartstore.ValkeyCartStore[0]",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065977424049015",
+            "line": "      GetCartAsync called with userId=99f8049f-f96e-4968-ba6c-a25e4b50ebe2",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065977424016644",
+            "line": "info: cart.cartstore.ValkeyCartStore[0]",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065976240147829",
+            "line": "      GetCartAsync called with userId=550fc821-3e9f-48a3-8547-cd2b7db94ddd",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          }
+        ]
+      },
+      "error": null
+    }
+  },
+  "97a7db5acf690615": {
+    "tool": "query_logs",
+    "args": {
+      "service": "valkey-cart",
+      "query": "accept",
+      "time_window_minutes": 10,
+      "limit": 50
+    },
+    "result": {
+      "tool_name": "query_logs",
+      "success": true,
+      "data": {
+        "service": "valkey-cart",
+        "query": "accept",
+        "logql": "{compose_service=\"valkey-cart\"} |= \"accept\"",
+        "entries": []
+      },
+      "error": null
+    }
+  },
+  "d73af6527ec4156e": {
+    "tool": "query_logs",
+    "args": {
+      "service": "valkey-cart",
+      "query": ".",
+      "time_window_minutes": 10,
+      "limit": 50
+    },
+    "result": {
+      "tool_name": "query_logs",
+      "success": true,
+      "data": {
+        "service": "valkey-cart",
+        "query": ".",
+        "logql": "{compose_service=\"valkey-cart\"} |= \".\"",
+        "entries": [
+          {
+            "timestamp": "1780066508181832472",
+            "line": "1:M 29 May 2026 14:55:08.181 * Background saving terminated with success",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "valkey-cart",
+              "container": "valkey-cart"
+            }
+          },
+          {
+            "timestamp": "1780066508090082241",
+            "line": "114:C 29 May 2026 14:55:08.090 * Fork CoW for RDB: current 0 MB, peak 0 MB, average 0 MB",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "valkey-cart",
+              "container": "valkey-cart"
+            }
+          },
+          {
+            "timestamp": "1780066508089655550",
+            "line": "114:C 29 May 2026 14:55:08.089 * DB saved on disk",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "valkey-cart",
+              "container": "valkey-cart"
+            }
+          },
+          {
+            "timestamp": "1780066508081454978",
+            "line": "1:M 29 May 2026 14:55:08.081 * Background saving started by pid 114",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "valkey-cart",
+              "container": "valkey-cart"
+            }
+          },
+          {
+            "timestamp": "1780066508081116813",
+            "line": "1:M 29 May 2026 14:55:08.081 * 100 changes in 300 seconds. Saving...",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "valkey-cart",
+              "container": "valkey-cart"
+            }
+          },
+          {
+            "timestamp": "1780066207168246549",
+            "line": "1:M 29 May 2026 14:50:07.168 * Background saving terminated with success",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "valkey-cart",
+              "container": "valkey-cart"
+            }
+          },
+          {
+            "timestamp": "1780066207083303349",
+            "line": "113:C 29 May 2026 14:50:07.083 * Fork CoW for RDB: current 0 MB, peak 0 MB, average 0 MB",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "valkey-cart",
+              "container": "valkey-cart"
+            }
+          },
+          {
+            "timestamp": "1780066207082943513",
+            "line": "113:C 29 May 2026 14:50:07.082 * DB saved on disk",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "valkey-cart",
+              "container": "valkey-cart"
+            }
+          },
+          {
+            "timestamp": "1780066207067874239",
+            "line": "1:M 29 May 2026 14:50:07.067 * Background saving started by pid 113",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "valkey-cart",
+              "container": "valkey-cart"
+            }
+          },
+          {
+            "timestamp": "1780066207067586098",
+            "line": "1:M 29 May 2026 14:50:07.067 * 100 changes in 300 seconds. Saving...",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "valkey-cart",
+              "container": "valkey-cart"
+            }
+          }
+        ]
+      },
+      "error": null
+    }
+  },
+  "37cbb0e3f9b523a2": {
+    "tool": "query_logs",
+    "args": {
+      "service": "cart",
+      "query": "Successfully connected to Redis",
+      "time_window_minutes": 10,
+      "limit": 20
+    },
+    "result": {
+      "tool_name": "query_logs",
+      "success": true,
+      "data": {
+        "service": "cart",
+        "query": "Successfully connected to Redis",
+        "logql": "{compose_service=\"cart\"} |= \"Successfully connected to Redis\"",
+        "entries": []
+      },
+      "error": null
+    }
+  },
+  "629f3adacbc38f13": {
+    "tool": "query_logs",
+    "args": {
+      "service": "cart",
+      "query": "Connection failed",
+      "time_window_minutes": 10,
+      "limit": 10
+    },
+    "result": {
+      "tool_name": "query_logs",
+      "success": true,
+      "data": {
+        "service": "cart",
+        "query": "Connection failed",
+        "logql": "{compose_service=\"cart\"} |= \"Connection failed\"",
+        "entries": []
+      },
+      "error": null
+    }
+  },
+  "d4ba3687af44a814": {
+    "tool": "query_logs",
+    "args": {
+      "service": "cart",
+      "query": "Connected",
+      "time_window_minutes": 10,
+      "limit": 20
+    },
+    "result": {
+      "tool_name": "query_logs",
+      "success": true,
+      "data": {
+        "service": "cart",
+        "query": "Connected",
+        "logql": "{compose_service=\"cart\"} |= \"Connected\"",
+        "entries": [
+          {
+            "timestamp": "1780066837186252494",
+            "line": "         at cart.cartstore.ValkeyCartStore.EnsureRedisConnected() in /usr/src/app/src/cartstore/ValkeyCartStore.cs:line 101",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066693814195580",
+            "line": "         at cart.cartstore.ValkeyCartStore.EnsureRedisConnected() in /usr/src/app/src/cartstore/ValkeyCartStore.cs:line 101",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066548196885626",
+            "line": "         at cart.cartstore.ValkeyCartStore.EnsureRedisConnected() in /usr/src/app/src/cartstore/ValkeyCartStore.cs:line 101",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066398187419562",
+            "line": "         at cart.cartstore.ValkeyCartStore.EnsureRedisConnected() in /usr/src/app/src/cartstore/ValkeyCartStore.cs:line 101",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          }
+        ]
+      },
+      "error": null
+    }
+  },
+  "7114a5ce06e84797": {
+    "tool": "get_log_context",
+    "args": {
+      "timestamp": "1780066837186252494",
+      "service": "cart",
+      "lines": 50
+    },
+    "result": {
+      "tool_name": "get_log_context",
+      "success": true,
+      "data": {
+        "service": "cart",
+        "timestamp": "1780066837186252494",
+        "logql": "{compose_service=\"cart\"}",
+        "entries": [
+          {
+            "timestamp": "1780066837186236794",
+            "line": "      Error status code 'FailedPrecondition' with detail 'Can't access cart storage. System.ApplicationException: Wasn't able to connect to redis",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066837186226094",
+            "line": "info: Grpc.AspNetCore.Server.ServerCallHandler[7]",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066837185910451",
+            "line": "      Wasn't able to connect to redis",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066837185876177",
+            "line": "fail: cart.cartstore.ValkeyCartStore[0]",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066831315979526",
+            "line": "      GetCartAsync called with userId=8dcd8265-43d4-4486-a7a4-3473243cbac8",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066831315954409",
+            "line": "info: cart.cartstore.ValkeyCartStore[0]",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066831309765014",
+            "line": "      GetCartAsync called with userId=8dcd8265-43d4-4486-a7a4-3473243cbac8",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066831309743173",
+            "line": "info: cart.cartstore.ValkeyCartStore[0]",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066825737722557",
+            "line": "      GetCartAsync called with userId=d12f28c9-c1aa-4e19-8c55-5b1c9559a324",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066825737703301",
+            "line": "info: cart.cartstore.ValkeyCartStore[0]",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066825729305479",
+            "line": "      GetCartAsync called with userId=d12f28c9-c1aa-4e19-8c55-5b1c9559a324",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066825729274120",
+            "line": "info: cart.cartstore.ValkeyCartStore[0]",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066824880312727",
+            "line": "      GetCartAsync called with userId=c3aaf5b8-d2d7-472e-9500-449564a52d45",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066824880285646",
+            "line": "info: cart.cartstore.ValkeyCartStore[0]",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066824872757146",
+            "line": "      GetCartAsync called with userId=c3aaf5b8-d2d7-472e-9500-449564a52d45",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066824872742629",
+            "line": "info: cart.cartstore.ValkeyCartStore[0]",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066824871362217",
+            "line": "      AddItemAsync called with userId=c3aaf5b8-d2d7-472e-9500-449564a52d45, productId=2ZYFJ3GM2N, quantity=1",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066824871332791",
+            "line": "info: cart.cartstore.ValkeyCartStore[0]",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066822919251413",
+            "line": "      GetCartAsync called with userId=d4561530-22a9-4734-9094-d72a225f29bb",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066822919227598",
+            "line": "info: cart.cartstore.ValkeyCartStore[0]",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066822909853743",
+            "line": "      GetCartAsync called with userId=d4561530-22a9-4734-9094-d72a225f29bb",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066822909826632",
+            "line": "info: cart.cartstore.ValkeyCartStore[0]",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066822280353485",
+            "line": "      GetCartAsync called with userId=7bd8e64d-692d-4e17-8cda-1d9636f7008c",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066822280326143",
+            "line": "info: cart.cartstore.ValkeyCartStore[0]",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066822263468412",
+            "line": "      GetCartAsync called with userId=7bd8e64d-692d-4e17-8cda-1d9636f7008c",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066822263453574",
+            "line": "info: cart.cartstore.ValkeyCartStore[0]",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066822262208075",
+            "line": "      AddItemAsync called with userId=7bd8e64d-692d-4e17-8cda-1d9636f7008c, productId=2ZYFJ3GM2N, quantity=1",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066822262173019",
+            "line": "info: cart.cartstore.ValkeyCartStore[0]",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066820956424704",
+            "line": "      GetCartAsync called with userId=c3aaf5b8-d2d7-472e-9500-449564a52d45",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066820956375381",
+            "line": "info: cart.cartstore.ValkeyCartStore[0]",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066820923491862",
+            "line": "      GetCartAsync called with userId=c3aaf5b8-d2d7-472e-9500-449564a52d45",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066820923462487",
+            "line": "info: cart.cartstore.ValkeyCartStore[0]",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066819381151818",
+            "line": "      GetCartAsync called with userId=860420be-a013-4583-87b1-8d6457ed1a6d",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066819381128063",
+            "line": "info: cart.cartstore.ValkeyCartStore[0]",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066819363023781",
+            "line": "      GetCartAsync called with userId=860420be-a013-4583-87b1-8d6457ed1a6d",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066819362996941",
+            "line": "info: cart.cartstore.ValkeyCartStore[0]",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066819353751236",
+            "line": "      GetCartAsync called with userId=860420be-a013-4583-87b1-8d6457ed1a6d",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066819353634557",
+            "line": "info: cart.cartstore.ValkeyCartStore[0]",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066817432663507",
+            "line": "      GetCartAsync called with userId=2c7a7478-0827-4ba5-adf3-b2837b919bfa",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066817432642939",
+            "line": "info: cart.cartstore.ValkeyCartStore[0]",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066817425111033",
+            "line": "      GetCartAsync called with userId=2c7a7478-0827-4ba5-adf3-b2837b919bfa",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066817425096916",
+            "line": "info: cart.cartstore.ValkeyCartStore[0]",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066817424107969",
+            "line": "      AddItemAsync called with userId=2c7a7478-0827-4ba5-adf3-b2837b919bfa, productId=2ZYFJ3GM2N, quantity=1",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066817424079445",
+            "line": "info: cart.cartstore.ValkeyCartStore[0]",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066817188084678",
+            "line": "      GetCartAsync called with userId=7bd8e64d-692d-4e17-8cda-1d9636f7008c",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066817188064720",
+            "line": "info: cart.cartstore.ValkeyCartStore[0]",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066817178011269",
+            "line": "      GetCartAsync called with userId=7bd8e64d-692d-4e17-8cda-1d9636f7008c",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066817177983367",
+            "line": "info: cart.cartstore.ValkeyCartStore[0]",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066815933123997",
+            "line": "      GetCartAsync called with userId=638daa7a-dcf0-4c00-813e-b8dc66b47fb0",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066815933090995",
+            "line": "info: cart.cartstore.ValkeyCartStore[0]",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          }
+        ]
+      },
+      "error": null
+    }
+  },
+  "3f9cbcf04d417323": {
+    "tool": "get_log_context",
+    "args": {
+      "timestamp": "1780065304251952774",
+      "service": "cart",
+      "lines": 5
+    },
+    "result": {
+      "tool_name": "get_log_context",
+      "success": true,
+      "data": {
+        "service": "cart",
+        "timestamp": "1780065304251952774",
+        "logql": "{compose_service=\"cart\"}",
+        "entries": [
+          {
+            "timestamp": "1780065304251945621",
+            "line": "info: Grpc.AspNetCore.Server.ServerCallHandler[7]",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065304251609559",
+            "line": "      Wasn't able to connect to redis",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065304251582118",
+            "line": "fail: cart.cartstore.ValkeyCartStore[0]",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065302604779398",
+            "line": "      GetCartAsync called with userId=e55c6a45-7098-44ed-a27e-505f45a79bda",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065302604758419",
+            "line": "info: cart.cartstore.ValkeyCartStore[0]",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          }
+        ]
+      },
+      "error": null
+    }
+  },
+  "d0613e6616639358": {
+    "tool": "query_logs",
+    "args": {
+      "service": "cart",
+      "query": "error OR fail OR fatal",
+      "time_window_minutes": 10,
+      "limit": 40
+    },
+    "result": {
+      "tool_name": "query_logs",
+      "success": true,
+      "data": {
+        "service": "cart",
+        "query": "error OR fail OR fatal",
+        "logql": "{compose_service=\"cart\"} |= \"error OR fail OR fatal\"",
+        "entries": []
+      },
+      "error": null
+    }
+  },
+  "eb1bae015f8a85e2": {
+    "tool": "query_logs",
+    "args": {
+      "service": "valkey-cart",
+      "query": "ready OR started OR accept OR listening",
+      "time_window_minutes": 10,
+      "limit": 20
+    },
+    "result": {
+      "tool_name": "query_logs",
+      "success": true,
+      "data": {
+        "service": "valkey-cart",
+        "query": "ready OR started OR accept OR listening",
+        "logql": "{compose_service=\"valkey-cart\"} |= \"ready OR started OR accept OR listening\"",
+        "entries": []
+      },
+      "error": null
+    }
+  },
+  "271a5255da868765": {
+    "tool": "query_logs",
+    "args": {
+      "service": "valkey-cart",
+      "query": "error OR fail",
+      "time_window_minutes": 10,
+      "limit": 20
+    },
+    "result": {
+      "tool_name": "query_logs",
+      "success": true,
+      "data": {
+        "service": "valkey-cart",
+        "query": "error OR fail",
+        "logql": "{compose_service=\"valkey-cart\"} |= \"error OR fail\"",
+        "entries": []
+      },
+      "error": null
+    }
+  },
+  "0d6ee0c4e50a4df7": {
+    "tool": "get_log_context",
+    "args": {
+      "timestamp": "1780065304251952774",
+      "service": "valkey-cart",
+      "lines": 5
+    },
+    "result": {
+      "tool_name": "get_log_context",
+      "success": true,
+      "data": {
+        "service": "valkey-cart",
+        "timestamp": "1780065304251952774",
+        "logql": "{compose_service=\"valkey-cart\"}",
+        "entries": []
+      },
+      "error": null
+    }
+  },
+  "4e43378aa1bdce7c": {
+    "tool": "query_logs",
+    "args": {
+      "service": "cart",
+      "query": "Successfully connected",
+      "time_window_minutes": 10,
+      "limit": 20
+    },
+    "result": {
+      "tool_name": "query_logs",
+      "success": true,
+      "data": {
+        "service": "cart",
+        "query": "Successfully connected",
+        "logql": "{compose_service=\"cart\"} |= \"Successfully connected\"",
+        "entries": []
+      },
+      "error": null
+    }
+  },
+  "e5ab2ea4f1d4104d": {
+    "tool": "query_logs",
+    "args": {
+      "service": "valkey-cart",
+      "query": "",
+      "time_window_minutes": 10,
+      "limit": 20
+    },
+    "result": {
+      "tool_name": "query_logs",
+      "success": true,
+      "data": {
+        "service": "valkey-cart",
+        "query": "",
+        "logql": "{compose_service=\"valkey-cart\"} |= \"\"",
+        "entries": [
+          {
+            "timestamp": "1780068625331417488",
+            "line": "1:M 29 May 2026 15:30:25.331 * Background saving terminated with success",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "valkey-cart",
+              "container": "valkey-cart"
+            }
+          },
+          {
+            "timestamp": "1780068625315791567",
+            "line": "121:C 29 May 2026 15:30:25.315 * Fork CoW for RDB: current 1 MB, peak 1 MB, average 0 MB",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "valkey-cart",
+              "container": "valkey-cart"
+            }
+          },
+          {
+            "timestamp": "1780068625315341182",
+            "line": "121:C 29 May 2026 15:30:25.315 * DB saved on disk",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "valkey-cart",
+              "container": "valkey-cart"
+            }
+          },
+          {
+            "timestamp": "1780068625030496321",
+            "line": "1:M 29 May 2026 15:30:25.030 * Background saving started by pid 121",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "valkey-cart",
+              "container": "valkey-cart"
+            }
+          },
+          {
+            "timestamp": "1780068625030211988",
+            "line": "1:M 29 May 2026 15:30:25.030 * 100 changes in 300 seconds. Saving...",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "valkey-cart",
+              "container": "valkey-cart"
+            }
+          },
+          {
+            "timestamp": "1780068324681225628",
+            "line": "1:M 29 May 2026 15:25:24.681 * Background saving terminated with success",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "valkey-cart",
+              "container": "valkey-cart"
+            }
+          },
+          {
+            "timestamp": "1780068324605519123",
+            "line": "120:C 29 May 2026 15:25:24.605 * Fork CoW for RDB: current 1 MB, peak 1 MB, average 0 MB",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "valkey-cart",
+              "container": "valkey-cart"
+            }
+          },
+          {
+            "timestamp": "1780068324605052778",
+            "line": "120:C 29 May 2026 15:25:24.604 * DB saved on disk",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "valkey-cart",
+              "container": "valkey-cart"
+            }
+          },
+          {
+            "timestamp": "1780068323077507474",
+            "line": "1:M 29 May 2026 15:25:23.077 * Background saving started by pid 120",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "valkey-cart",
+              "container": "valkey-cart"
+            }
+          },
+          {
+            "timestamp": "1780068323077197352",
+            "line": "1:M 29 May 2026 15:25:23.077 * 100 changes in 300 seconds. Saving...",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "valkey-cart",
+              "container": "valkey-cart"
+            }
+          }
+        ]
+      },
+      "error": null
+    }
+  },
+  "06e421665f7c882f": {
+    "tool": "query_logs",
+    "args": {
+      "service": "cart",
+      "query": "Connection failed OR Connection restored OR Connecting to Redis",
+      "time_window_minutes": 60,
+      "limit": 100
+    },
+    "result": {
+      "tool_name": "query_logs",
+      "success": true,
+      "data": {
+        "service": "cart",
+        "query": "Connection failed OR Connection restored OR Connecting to Redis",
+        "logql": "{compose_service=\"cart\"} |= \"Connection failed OR Connection restored OR Connecting to Redis\"",
+        "entries": []
+      },
+      "error": null
+    }
+  },
+  "7a9fe8f62f5d8440": {
+    "tool": "query_logs",
+    "args": {
+      "service": "cart",
+      "query": "Connection failed OR Connection restored OR Successfully connected OR Wasn't able to connect",
+      "time_window_minutes": 60,
+      "limit": 50
+    },
+    "result": {
+      "tool_name": "query_logs",
+      "success": true,
+      "data": {
+        "service": "cart",
+        "query": "Connection failed OR Connection restored OR Successfully connected OR Wasn't able to connect",
+        "logql": "{compose_service=\"cart\"} |= \"Connection failed OR Connection restored OR Successfully connected OR Wasn't able to connect\"",
+        "entries": []
+      },
+      "error": null
+    }
+  },
+  "61df805244d441df": {
+    "tool": "query_logs",
+    "args": {
+      "service": "cart",
+      "query": "redis",
+      "time_window_minutes": 60,
+      "limit": 50
+    },
+    "result": {
+      "tool_name": "query_logs",
+      "success": true,
+      "data": {
+        "service": "cart",
+        "query": "redis",
+        "logql": "{compose_service=\"cart\"} |= \"redis\"",
+        "entries": [
+          {
+            "timestamp": "1780068884496995605",
+            "line": "      Error status code 'FailedPrecondition' with detail 'Can't access cart storage. System.ApplicationException: Wasn't able to connect to redis",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780068884496710189",
+            "line": "      Wasn't able to connect to redis",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780068736488666145",
+            "line": "      Error status code 'FailedPrecondition' with detail 'Can't access cart storage. System.ApplicationException: Wasn't able to connect to redis",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780068736488435992",
+            "line": "      Wasn't able to connect to redis",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780068594505064823",
+            "line": "      Error status code 'FailedPrecondition' with detail 'Can't access cart storage. System.ApplicationException: Wasn't able to connect to redis",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780068594504745323",
+            "line": "      Wasn't able to connect to redis",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780068444493957927",
+            "line": "      Error status code 'FailedPrecondition' with detail 'Can't access cart storage. System.ApplicationException: Wasn't able to connect to redis",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780068444493532028",
+            "line": "      Wasn't able to connect to redis",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780068303609856448",
+            "line": "      Error status code 'FailedPrecondition' with detail 'Can't access cart storage. System.ApplicationException: Wasn't able to connect to redis",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780068303609590529",
+            "line": "      Wasn't able to connect to redis",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780068177992976622",
+            "line": "      Error status code 'FailedPrecondition' with detail 'Can't access cart storage. System.ApplicationException: Wasn't able to connect to redis",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780068177992627116",
+            "line": "      Wasn't able to connect to redis",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780068051977324418",
+            "line": "      Error status code 'FailedPrecondition' with detail 'Can't access cart storage. System.ApplicationException: Wasn't able to connect to redis",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780068051977026438",
+            "line": "      Wasn't able to connect to redis",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780067914983086211",
+            "line": "      Error status code 'FailedPrecondition' with detail 'Can't access cart storage. System.ApplicationException: Wasn't able to connect to redis",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780067914982825913",
+            "line": "      Wasn't able to connect to redis",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780067769982461065",
+            "line": "      Error status code 'FailedPrecondition' with detail 'Can't access cart storage. System.ApplicationException: Wasn't able to connect to redis",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780067769982150292",
+            "line": "      Wasn't able to connect to redis",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780067641958627541",
+            "line": "      Error status code 'FailedPrecondition' with detail 'Can't access cart storage. System.ApplicationException: Wasn't able to connect to redis",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780067641958369227",
+            "line": "      Wasn't able to connect to redis",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780067524462456366",
+            "line": "      Error status code 'FailedPrecondition' with detail 'Can't access cart storage. System.ApplicationException: Wasn't able to connect to redis",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780067524462451156",
+            "line": "      Wasn't able to connect to redis",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780067392947595057",
+            "line": "      Error status code 'FailedPrecondition' with detail 'Can't access cart storage. System.ApplicationException: Wasn't able to connect to redis",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780067392947169830",
+            "line": "      Wasn't able to connect to redis",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780067257203990322",
+            "line": "      Error status code 'FailedPrecondition' with detail 'Can't access cart storage. System.ApplicationException: Wasn't able to connect to redis",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780067257203558594",
+            "line": "      Wasn't able to connect to redis",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780067124710416355",
+            "line": "      Error status code 'FailedPrecondition' with detail 'Can't access cart storage. System.ApplicationException: Wasn't able to connect to redis",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780067124710103720",
+            "line": "      Wasn't able to connect to redis",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066974209779626",
+            "line": "      Error status code 'FailedPrecondition' with detail 'Can't access cart storage. System.ApplicationException: Wasn't able to connect to redis",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066974209476457",
+            "line": "      Wasn't able to connect to redis",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066837186236794",
+            "line": "      Error status code 'FailedPrecondition' with detail 'Can't access cart storage. System.ApplicationException: Wasn't able to connect to redis",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066837185910451",
+            "line": "      Wasn't able to connect to redis",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066693814191362",
+            "line": "      Error status code 'FailedPrecondition' with detail 'Can't access cart storage. System.ApplicationException: Wasn't able to connect to redis",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066693813858887",
+            "line": "      Wasn't able to connect to redis",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066548196879674",
+            "line": "      Error status code 'FailedPrecondition' with detail 'Can't access cart storage. System.ApplicationException: Wasn't able to connect to redis",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066548196573850",
+            "line": "      Wasn't able to connect to redis",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066398187411016",
+            "line": "      Error status code 'FailedPrecondition' with detail 'Can't access cart storage. System.ApplicationException: Wasn't able to connect to redis",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066398187160726",
+            "line": "      Wasn't able to connect to redis",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066251678701301",
+            "line": "      Error status code 'FailedPrecondition' with detail 'Can't access cart storage. System.ApplicationException: Wasn't able to connect to redis",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066251678448256",
+            "line": "      Wasn't able to connect to redis",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066120200789202",
+            "line": "      Error status code 'FailedPrecondition' with detail 'Can't access cart storage. System.ApplicationException: Wasn't able to connect to redis",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066120200537188",
+            "line": "      Wasn't able to connect to redis",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065985191421995",
+            "line": "      Error status code 'FailedPrecondition' with detail 'Can't access cart storage. System.ApplicationException: Wasn't able to connect to redis",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065985191184840",
+            "line": "      Wasn't able to connect to redis",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065845182921995",
+            "line": "      Error status code 'FailedPrecondition' with detail 'Can't access cart storage. System.ApplicationException: Wasn't able to connect to redis",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065845182643442",
+            "line": "      Wasn't able to connect to redis",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065700159116681",
+            "line": "      Error status code 'FailedPrecondition' with detail 'Can't access cart storage. System.ApplicationException: Wasn't able to connect to redis",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065700158897018",
+            "line": "      Wasn't able to connect to redis",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065563267101034",
+            "line": "      Error status code 'FailedPrecondition' with detail 'Can't access cart storage. System.ApplicationException: Wasn't able to connect to redis",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780065563266863558",
+            "line": "      Wasn't able to connect to redis",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          }
+        ]
+      },
+      "error": null
+    }
+  },
+  "9a5e1b9985cdca35": {
+    "tool": "query_logs",
+    "args": {
+      "service": "cart",
+      "query": "AddItemAsync called",
+      "time_window_minutes": 60,
+      "limit": 20
+    },
+    "result": {
+      "tool_name": "query_logs",
+      "success": true,
+      "data": {
+        "service": "cart",
+        "query": "AddItemAsync called",
+        "logql": "{compose_service=\"cart\"} |= \"AddItemAsync called\"",
+        "entries": [
+          {
+            "timestamp": "1780069012946526065",
+            "line": "      AddItemAsync called with userId=2334ca16-5b74-11f1-90ae-16b9ecad2408, productId=9SIQT8TOJO, quantity=1",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780069003624482928",
+            "line": "      AddItemAsync called with userId=b42790da-f3a2-44a5-9dea-3077c594cd9a, productId=2ZYFJ3GM2N, quantity=1",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780069000440974015",
+            "line": "      AddItemAsync called with userId=498070a4-a6cc-4563-bffb-189dd73e3773, productId=2ZYFJ3GM2N, quantity=1",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780068997938599913",
+            "line": "      AddItemAsync called with userId=2334ca16-5b74-11f1-90ae-16b9ecad2408, productId=LS4PSXUNUM, quantity=10",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780068994692628540",
+            "line": "      AddItemAsync called with userId=c873ff6e-29c5-4e35-aad7-667afb63c7a0, productId=2ZYFJ3GM2N, quantity=1",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780068994323011315",
+            "line": "      AddItemAsync called with userId=7045e969-5136-479e-9d14-b5f6dcd4ab91, productId=2ZYFJ3GM2N, quantity=1",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780068992311413679",
+            "line": "      AddItemAsync called with userId=2334ca16-5b74-11f1-90ae-16b9ecad2408, productId=66VCHSJNUP, quantity=10",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780068981964644344",
+            "line": "      AddItemAsync called with userId=1491b4c3-df31-4ffc-a115-21cf00201a5a, productId=2ZYFJ3GM2N, quantity=1",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780068979658882539",
+            "line": "      AddItemAsync called with userId=a16825bc-b330-4be0-89f5-95d05772b10a, productId=2ZYFJ3GM2N, quantity=1",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780068970282028496",
+            "line": "      AddItemAsync called with userId=563e7fbf-e455-4b39-8573-8ae5bcbbf8f9, productId=2ZYFJ3GM2N, quantity=1",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780068963994218657",
+            "line": "      AddItemAsync called with userId=72922a01-d957-4a7a-8fb2-9c00cb4408f4, productId=2ZYFJ3GM2N, quantity=1",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780068963076643788",
+            "line": "      AddItemAsync called with userId=f0717ad0-69e6-4d4f-8f68-e40ab347c535, productId=2ZYFJ3GM2N, quantity=1",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780068963076611618",
+            "line": "      AddItemAsync called with userId=7c6d6495-16ca-408b-b7e2-b713e006e627, productId=2ZYFJ3GM2N, quantity=1",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780068954982625918",
+            "line": "      AddItemAsync called with userId=109715f5-a768-402a-b747-1b51183b9024, productId=2ZYFJ3GM2N, quantity=1",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780068941549647804",
+            "line": "      AddItemAsync called with userId=82b282c6-2c54-434c-9a46-6f62f453ab23, productId=2ZYFJ3GM2N, quantity=1",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780068941371164233",
+            "line": "      AddItemAsync called with userId=90f0a5d0-010a-49a5-89c5-9565f43ebe4d, productId=2ZYFJ3GM2N, quantity=1",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780068941211254888",
+            "line": "      AddItemAsync called with userId=7ca273bf-b800-4fb8-a379-84f440134e78, productId=2ZYFJ3GM2N, quantity=1",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780068935100380902",
+            "line": "      AddItemAsync called with userId=64c9824d-a055-4d2b-b0c8-96587f9f1585, productId=2ZYFJ3GM2N, quantity=1",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780068930999509700",
+            "line": "      AddItemAsync called with userId=584617bd-a639-46ec-ad64-a0758a84d6c7, productId=2ZYFJ3GM2N, quantity=1",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780068929664027084",
+            "line": "      AddItemAsync called with userId=c2184e55-edd8-4bb3-b063-30dcf4d059eb, productId=2ZYFJ3GM2N, quantity=1",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          }
+        ]
+      },
+      "error": null
+    }
+  },
+  "19824cdf16b14571": {
+    "tool": "query_logs",
+    "args": {
+      "service": "cart",
+      "query": "EmptyCartAsync called",
+      "time_window_minutes": 60,
+      "limit": 20
+    },
+    "result": {
+      "tool_name": "query_logs",
+      "success": true,
+      "data": {
+        "service": "cart",
+        "query": "EmptyCartAsync called",
+        "logql": "{compose_service=\"cart\"} |= \"EmptyCartAsync called\"",
+        "entries": [
+          {
+            "timestamp": "1780068931921291086",
+            "line": "      EmptyCartAsync called with userId=006071ac-5b74-11f1-90ae-16b9ecad2408",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780068899260506904",
+            "line": "      EmptyCartAsync called with userId=ef551764-5b73-11f1-90ae-16b9ecad2408",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780068872844213827",
+            "line": "      EmptyCartAsync called with userId=d5a2fc5a-5b73-11f1-90ae-16b9ecad2408",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780068798577379455",
+            "line": "      EmptyCartAsync called with userId=a77ac704-5b73-11f1-90ae-16b9ecad2408",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780068722372758244",
+            "line": "      EmptyCartAsync called with userId=6d823910-5b73-11f1-90ae-16b9ecad2408",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780068445955409517",
+            "line": "      EmptyCartAsync called with userId=d663c7ce-5b72-11f1-90ae-16b9ecad2408",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780068233409705822",
+            "line": "      EmptyCartAsync called with userId=5e846da8-5b72-11f1-90ae-16b9ecad2408",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780068176875419896",
+            "line": "      EmptyCartAsync called with userId=300923ba-5b72-11f1-90ae-16b9ecad2408",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780068137466411804",
+            "line": "      EmptyCartAsync called with userId=292803d6-5b72-11f1-90ae-16b9ecad2408",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780068068673280752",
+            "line": "      EmptyCartAsync called with userId=01d579da-5b72-11f1-90ae-16b9ecad2408",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780068029696040535",
+            "line": "      EmptyCartAsync called with userId=e2fc7130-5b71-11f1-90ae-16b9ecad2408",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780067631207356050",
+            "line": "      EmptyCartAsync called with userId=f1eb8dee-5b70-11f1-90ae-16b9ecad2408",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780067592615508265",
+            "line": "      EmptyCartAsync called with userId=d8d00ca4-5b70-11f1-90ae-16b9ecad2408",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780067537470475763",
+            "line": "      EmptyCartAsync called with userId=bd987070-5b70-11f1-90ae-16b9ecad2408",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780067319609512192",
+            "line": "      EmptyCartAsync called with userId=285406b4-5b70-11f1-90ae-16b9ecad2408",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780067240319254775",
+            "line": "      EmptyCartAsync called with userId=11f5ae86-5b70-11f1-90ae-16b9ecad2408",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780067168790366985",
+            "line": "      EmptyCartAsync called with userId=e4882118-5b6f-11f1-90ae-16b9ecad2408",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780067015542294785",
+            "line": "      EmptyCartAsync called with userId=7a74cef2-5b6f-11f1-90ae-16b9ecad2408",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780067014411621965",
+            "line": "      EmptyCartAsync called with userId=701a92fc-5b6f-11f1-90ae-16b9ecad2408",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          },
+          {
+            "timestamp": "1780066934672941286",
+            "line": "      EmptyCartAsync called with userId=4475554c-5b6f-11f1-90ae-16b9ecad2408",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "cart",
+              "container": "cart"
+            }
+          }
+        ]
+      },
+      "error": null
+    }
+  }
+}

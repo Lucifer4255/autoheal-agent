@@ -10,13 +10,12 @@ import pytest
 from pydantic_ai.mcp import MCPToolset
 from pydantic_ai.toolsets import FunctionToolset
 
-from agent import sandbox_subagent as sandbox_module
+from agent.subagents import sandbox as sandbox_module
 from agent.capabilities.github import GitHubCapability
 from agent.capabilities.jaeger import JaegerCapability, extract_error_spans, query_traces
 from agent.capabilities.loki import LokiCapability, build_logql, query_logs
 from agent.capabilities.sandbox import SandboxCapability, reproduce_in_sandbox
-from agent.capabilities.web_search import WebSearchCapability, web_search
-from agent.models import AgentDeps, SandboxResult
+from agent.models import AgentDeps, RunEvidence, SandboxResult
 from agent.registry import build_capabilities
 
 
@@ -32,9 +31,9 @@ def make_deps(
         "github_token": "ghp_test",
         "repo": "open-telemetry/opentelemetry-demo",
         "e2b_api_key": None,
-        "tavily_key": "tvly_test",
         "service_name": "ad",
         "http_client": client,
+        "run_evidence": RunEvidence(),
     }
     values.update(overrides)
     return AgentDeps(**values)
@@ -45,7 +44,6 @@ def ctx_for(deps: AgentDeps) -> SimpleNamespace:
 
 
 def test_capabilities_return_none_when_disabled() -> None:
-    assert WebSearchCapability(enabled=False).get_toolset() is None
     assert JaegerCapability(enabled=False).get_toolset() is None
     assert LokiCapability(enabled=False).get_toolset() is None
     assert GitHubCapability(github_token=None, repo="owner/repo").get_toolset() is None
@@ -69,7 +67,6 @@ def test_capabilities_return_none_when_disabled() -> None:
 
 
 def test_enabled_http_capabilities_return_function_toolsets() -> None:
-    assert isinstance(WebSearchCapability(enabled=True).get_toolset(), FunctionToolset)
     assert isinstance(JaegerCapability(enabled=True).get_toolset(), FunctionToolset)
     assert isinstance(LokiCapability(enabled=True).get_toolset(), FunctionToolset)
     assert isinstance(
@@ -101,22 +98,6 @@ async def test_registry_includes_sandbox_capability_when_configured() -> None:
         await client.aclose()
 
     assert any(isinstance(capability, SandboxCapability) for capability in capabilities)
-
-
-@pytest.mark.asyncio
-async def test_web_search_returns_tool_result_on_http_error() -> None:
-    async def handler(request: httpx.Request) -> httpx.Response:
-        return httpx.Response(500, request=request, json={"error": "boom"})
-
-    client = httpx.AsyncClient(transport=httpx.MockTransport(handler))
-    try:
-        result = await web_search(ctx_for(make_deps(client)), query="otel error")
-    finally:
-        await client.aclose()
-
-    assert result.tool_name == "web_search"
-    assert result.success is False
-    assert result.error
 
 
 @pytest.mark.asyncio
@@ -322,9 +303,13 @@ async def test_reproduce_in_sandbox_delegates_to_subagent(monkeypatch: pytest.Mo
 
     assert result == expected
     assert calls["kwargs"]["deps"] is deps
-    assert calls["kwargs"]["usage"] is None
-    assert calls["kwargs"]["usage_limits"].request_limit == 5
+    assert "usage" not in calls["kwargs"]
+    assert calls["kwargs"]["usage_limits"].request_limit == 50
     assert "src/ad.py" in calls["args"][0]
+    # ledger updated by reproduce_in_sandbox
+    assert deps.run_evidence.sandbox_attempted is True
+    assert deps.run_evidence.sandbox_reproduced is True
+    assert deps.run_evidence.sandbox_confirmed_file == "src/ad.py"
 
 
 @pytest.mark.asyncio

@@ -1,0 +1,1025 @@
+{
+  "8e35a534e70dd282": {
+    "tool": "query_logs",
+    "args": {
+      "service": "ad",
+      "query": "UNAVAILABLE",
+      "time_window_minutes": 10,
+      "limit": 100
+    },
+    "result": {
+      "tool_name": "query_logs",
+      "success": true,
+      "data": {
+        "service": "ad",
+        "query": "UNAVAILABLE",
+        "logql": "{compose_service=\"ad\"} |= \"UNAVAILABLE\"",
+        "entries": [
+          {
+            "timestamp": "1780064012699790410",
+            "line": "2026-05-29 14:13:32 - oteldemo.AdService - GetAds Failed with status Status{code=UNAVAILABLE, description=null, cause=null} trace_id=0a36ebb583ba833c77c01c240273775a span_id=7cdc8040784cd8be trace_flags=01 ",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "ad",
+              "container": "ad"
+            }
+          }
+        ]
+      },
+      "error": null
+    }
+  },
+  "24c4a465ccfd655e": {
+    "tool": "query_logs",
+    "args": {
+      "service": "ad",
+      "query": "Failed",
+      "time_window_minutes": 10,
+      "limit": 100
+    },
+    "result": {
+      "tool_name": "query_logs",
+      "success": true,
+      "data": {
+        "service": "ad",
+        "query": "Failed",
+        "logql": "{compose_service=\"ad\"} |= \"Failed\"",
+        "entries": [
+          {
+            "timestamp": "1780064012699790410",
+            "line": "2026-05-29 14:13:32 - oteldemo.AdService - GetAds Failed with status Status{code=UNAVAILABLE, description=null, cause=null} trace_id=0a36ebb583ba833c77c01c240273775a span_id=7cdc8040784cd8be trace_flags=01 ",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "ad",
+              "container": "ad"
+            }
+          },
+          {
+            "timestamp": "1780063895785346369",
+            "line": "[otel.javaagent 2026-05-29 14:11:35:785 +0000] [OkHttp http://otel-collector:4318/...] WARN io.opentelemetry.exporter.internal.http.HttpExporter - Failed to export logs. Server responded with HTTP status code 503. Error message: sending queue is full",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "ad",
+              "container": "ad"
+            }
+          },
+          {
+            "timestamp": "1780063637187535653",
+            "line": "[otel.javaagent 2026-05-29 14:07:17:187 +0000] [OkHttp http://otel-collector:4318/...] WARN io.opentelemetry.exporter.internal.http.HttpExporter - Failed to export logs. Server responded with HTTP status code 503. Error message: sending queue is full",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "ad",
+              "container": "ad"
+            }
+          },
+          {
+            "timestamp": "1780063624975069659",
+            "line": "[otel.javaagent 2026-05-29 14:07:04:974 +0000] [OkHttp http://otel-collector:4318/...] WARN io.opentelemetry.exporter.internal.http.HttpExporter - Failed to export logs. Server responded with HTTP status code 503. Error message: sending queue is full",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "ad",
+              "container": "ad"
+            }
+          },
+          {
+            "timestamp": "1780063573866563337",
+            "line": "[otel.javaagent 2026-05-29 14:06:13:866 +0000] [OkHttp http://otel-collector:4318/...] WARN io.opentelemetry.exporter.internal.http.HttpExporter - Failed to export logs. Server responded with HTTP status code 503. Error message: sending queue is full",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "ad",
+              "container": "ad"
+            }
+          },
+          {
+            "timestamp": "1780063553652246094",
+            "line": "[otel.javaagent 2026-05-29 14:05:53:652 +0000] [OkHttp http://otel-collector:4318/...] WARN io.opentelemetry.exporter.internal.http.HttpExporter - Failed to export logs. Server responded with HTTP status code 503. Error message: sending queue is full",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "ad",
+              "container": "ad"
+            }
+          },
+          {
+            "timestamp": "1780063543188339700",
+            "line": "[otel.javaagent 2026-05-29 14:05:43:188 +0000] [OkHttp http://otel-collector:4318/...] WARN io.opentelemetry.exporter.internal.http.HttpExporter - Failed to export logs. Server responded with HTTP status code 503. Error message: data refused due to high memory usage",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "ad",
+              "container": "ad"
+            }
+          }
+        ]
+      },
+      "error": null
+    }
+  },
+  "84dde39f0d5aa26f": {
+    "tool": "query_logs",
+    "args": {
+      "service": "ad",
+      "query": "GetAds Failed",
+      "time_window_minutes": 30,
+      "limit": 100
+    },
+    "result": {
+      "tool_name": "query_logs",
+      "success": true,
+      "data": {
+        "service": "ad",
+        "query": "GetAds Failed",
+        "logql": "{compose_service=\"ad\"} |= \"GetAds Failed\"",
+        "entries": [
+          {
+            "timestamp": "1780064012699790410",
+            "line": "2026-05-29 14:13:32 - oteldemo.AdService - GetAds Failed with status Status{code=UNAVAILABLE, description=null, cause=null} trace_id=0a36ebb583ba833c77c01c240273775a span_id=7cdc8040784cd8be trace_flags=01 ",
+            "labels": {
+              "compose_project": "opentelemetry-demo",
+              "compose_service": "ad",
+              "container": "ad"
+            }
+          }
+        ]
+      },
+      "error": null
+    }
+  },
+  "ef8394550dec7044": {
+    "tool": "get_file_contents",
+    "args": {
+      "owner": "Lucifer4255",
+      "repo": "opentelemetry-demo",
+      "path": "docker-compose.yml"
+    },
+    "result": "Tool 'get_file_contents' failed: McpError: Not Found: Resource not found: Not Found"
+  },
+  "c5536403540be20e": {
+    "tool": "get_file_contents",
+    "args": {
+      "owner": "Lucifer4255",
+      "repo": "opentelemetry-demo",
+      "path": "compose.yaml"
+    },
+    "result": {
+      "name": "compose.yaml",
+      "path": "compose.yaml",
+      "sha": "d21ba740d4a03ea7480caea85055c4e525e7a153",
+      "size": 22221,
+      "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/compose.yaml?ref=main",
+      "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/blob/main/compose.yaml",
+      "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/blobs/d21ba740d4a03ea7480caea85055c4e525e7a153",
+      "download_url": "https://raw.githubusercontent.com/Lucifer4255/opentelemetry-demo/main/compose.yaml",
+      "type": "file",
+      "content": "# Copyright The OpenTelemetry Authors\n# SPDX-License-Identifier: Apache-2.0\n\n# Core/minimal demo services. Run alone for the smallest footprint.\n# Layer additional files on top with -f:\n#   Full demo (adds Kafka, accounting, fraud-detection):\n#     docker compose -f compose.yaml -f compose.full.yaml up\n#   With observability stack (Jaeger, Prometheus, OpenSearch, Grafana):\n#     docker compose -f compose.yaml -f compose.observability.yaml up\n#   Default (full + observability):\n#     docker compose -f compose.yaml -f compose.full.yaml -f compose.observability.yaml up\n#   With extras (vendor customizations, additional components):\n#     docker compose -f compose.yaml [-f compose.full.yaml] -f compose.observability.yaml -f compose.extras.yaml up\n\nx-default-logging: &logging\n  driver: \"json-file\"\n  options:\n    max-size: \"5m\"\n    max-file: \"2\"\n\nnetworks:\n  default:\n    name: opentelemetry-demo\n    driver: bridge\n\nservices:\n  # ******************\n  # Core Demo Services\n  # ******************\n\n  # AdService\n  ad:\n    image: ${IMAGE_NAME}:${DEMO_VERSION}-ad\n    container_name: ad\n    build:\n      context: ./\n      dockerfile: ${AD_DOCKERFILE}\n      cache_from:\n        - ${IMAGE_NAME}:${IMAGE_VERSION}-ad\n      args:\n        OTEL_JAVA_AGENT_VERSION: ${OTEL_JAVA_AGENT_VERSION}\n    deploy:\n      resources:\n        limits:\n          memory: 300M\n    restart: unless-stopped\n    ports:\n      - \"${AD_PORT}\"\n      - \"${AD_PROMETHEUS_PORT}\"\n    environment:\n      - AD_PORT\n      - AD_PROMETHEUS_PORT\n      - FLAGD_HOST\n      - FLAGD_PORT\n      - OTEL_EXPORTER_OTLP_ENDPOINT=http://${OTEL_COLLECTOR_HOST}:${OTEL_COLLECTOR_PORT_HTTP}\n      - OTEL_EXPORTER_OTLP_METRICS_TEMPORALITY_PREFERENCE\n      - OTEL_RESOURCE_ATTRIBUTES=${OTEL_RESOURCE_ATTRIBUTES},service.criticality=medium\n      - OTEL_LOGS_EXPORTER=otlp\n      - OTEL_SERVICE_NAME=ad\n      # Workaround on OSX for https://bugs.openjdk.org/browse/JDK-8345296\n      - _JAVA_OPTIONS\n    depends_on:\n      otel-collector:\n        condition: service_started\n      flagd:\n        condition: service_started\n    logging: *logging\n\n  # Cart service\n  cart:\n    image: ${IMAGE_NAME}:${DEMO_VERSION}-cart\n    container_name: cart\n    build:\n      context: ./\n      dockerfile: ${CART_DOCKERFILE}\n      cache_from:\n        - ${IMAGE_NAME}:${IMAGE_VERSION}-cart\n    deploy:\n      resources:\n        limits:\n          memory: 160M\n    restart: unless-stopped\n    ports:\n      - \"${CART_PORT}\"\n    environment:\n      - CART_PORT\n      - FLAGD_HOST\n      - FLAGD_PORT\n      - VALKEY_ADDR\n      - OTEL_EXPORTER_OTLP_ENDPOINT\n      - OTEL_EXPORTER_OTLP_METRICS_TEMPORALITY_PREFERENCE\n      - OTEL_RESOURCE_ATTRIBUTES=${OTEL_RESOURCE_ATTRIBUTES},service.criticality=high\n      - OTEL_SERVICE_NAME=cart\n      - ASPNETCORE_URLS=http://*:${CART_PORT}\n    depends_on:\n      valkey-cart:\n        condition: service_started\n      otel-collector:\n        condition: service_started\n      flagd:\n        condition: service_started\n    logging: *logging\n\n  # Checkout service\n  checkout:\n    image: ${IMAGE_NAME}:${DEMO_VERSION}-checkout\n    container_name: checkout\n    build:\n      context: ./\n      dockerfile: ${CHECKOUT_DOCKERFILE}\n      cache_from:\n        - ${IMAGE_NAME}:${IMAGE_VERSION}-checkout\n    deploy:\n      resources:\n        limits:\n          memory: 20M\n    restart: unless-stopped\n    ports:\n      - \"${CHECKOUT_PORT}\"\n    environment:\n      - FLAGD_HOST\n      - FLAGD_PORT\n      - CHECKOUT_PORT\n      - CART_ADDR\n      - CURRENCY_ADDR\n      - EMAIL_ADDR\n      - PAYMENT_ADDR\n      - PRODUCT_CATALOG_ADDR\n      - SHIPPING_ADDR\n      - GOMEMLIMIT=16MiB\n      - OTEL_EXPORTER_OTLP_ENDPOINT\n      - OTEL_EXPORTER_OTLP_METRICS_TEMPORALITY_PREFERENCE\n      - OTEL_RESOURCE_ATTRIBUTES=${OTEL_RESOURCE_ATTRIBUTES},service.criticality=critical\n      - OTEL_SERVICE_NAME=checkout\n    depends_on:\n      cart:\n        condition: service_started\n      currency:\n        condition: service_started\n      email:\n        condition: service_started\n      payment:\n        condition: service_started\n      product-catalog:\n        condition: service_started\n      shipping:\n        condition: service_started\n      otel-collector:\n        condition: service_started\n      flagd:\n        condition: service_started\n    logging: *logging\n\n  # Currency service\n  currency:\n    image: ${IMAGE_NAME}:${DEMO_VERSION}-currency\n    container_name: currency\n    build:\n      context: ./\n      dockerfile: ${CURRENCY_DOCKERFILE}\n      cache_from:\n        - ${IMAGE_NAME}:${IMAGE_VERSION}-currency\n      args:\n        OPENTELEMETRY_CPP_VERSION: ${OPENTELEMETRY_CPP_VERSION}\n    deploy:\n      resources:\n        limits:\n          memory: 20M\n    restart: unless-stopped\n    ports:\n      - \"${CURRENCY_PORT}\"\n    environment:\n      - CURRENCY_PORT\n      - IPV6_ENABLED\n      - VERSION=${IMAGE_VERSION}\n      - OTEL_EXPORTER_OTLP_ENDPOINT\n      - OTEL_EXPORTER_OTLP_METRICS_TEMPORALITY_PREFERENCE\n      - OTEL_RESOURCE_ATTRIBUTES=${OTEL_RESOURCE_ATTRIBUTES},service.criticality=high\n      - OTEL_SERVICE_NAME=currency\n    depends_on:\n      otel-collector:\n        condition: service_started\n    logging: *logging\n\n  # Email service\n  email:\n    image: ${IMAGE_NAME}:${DEMO_VERSION}-email\n    container_name: email\n    build:\n      context: ./\n      dockerfile: ${EMAIL_DOCKERFILE}\n      cache_from:\n        - ${IMAGE_NAME}:${IMAGE_VERSION}-email\n    deploy:\n      resources:\n        limits:\n          memory: 100M\n    restart: unless-stopped\n    ports:\n      - \"${EMAIL_PORT}\"\n    environment:\n      - APP_ENV=production\n      - EMAIL_PORT\n      - FLAGD_HOST\n      - FLAGD_PORT\n      - OTEL_EXPORTER_OTLP_ENDPOINT=http://${OTEL_COLLECTOR_HOST}:${OTEL_COLLECTOR_PORT_HTTP}\n      - OTEL_EXPORTER_OTLP_METRICS_TEMPORALITY_PREFERENCE\n      - OTEL_RESOURCE_ATTRIBUTES=${OTEL_RESOURCE_ATTRIBUTES},service.criticality=medium\n      - OTEL_SERVICE_NAME=email\n    depends_on:\n      otel-collector:\n        condition: service_started\n    logging: *logging\n\n  # Frontend\n  frontend:\n    image: ${IMAGE_NAME}:${DEMO_VERSION}-frontend\n    container_name: frontend\n    build:\n      context: ./\n      dockerfile: ${FRONTEND_DOCKERFILE}\n      cache_from:\n        - ${IMAGE_NAME}:${IMAGE_VERSION}-frontend\n    deploy:\n      resources:\n        limits:\n          memory: 250M\n    restart: unless-stopped\n    ports:\n      - \"${FRONTEND_PORT}\"\n    environment:\n      - PORT=${FRONTEND_PORT}\n      - FRONTEND_ADDR\n      - AD_ADDR\n      - CART_ADDR\n      - CHECKOUT_ADDR\n      - CURRENCY_ADDR\n      - PRODUCT_CATALOG_ADDR\n      - PRODUCT_REVIEWS_ADDR\n      - RECOMMENDATION_ADDR\n      - SHIPPING_ADDR\n      - OTEL_EXPORTER_OTLP_ENDPOINT\n      - OTEL_RESOURCE_ATTRIBUTES=${OTEL_RESOURCE_ATTRIBUTES},service.criticality=critical\n      - ENV_PLATFORM\n      - OTEL_SERVICE_NAME=frontend\n      - PUBLIC_OTEL_EXPORTER_OTLP_TRACES_ENDPOINT\n      - OTEL_EXPORTER_OTLP_METRICS_TEMPORALITY_PREFERENCE\n      - WEB_OTEL_SERVICE_NAME=frontend-web\n      - OTEL_COLLECTOR_HOST\n      - FLAGD_HOST\n      - FLAGD_PORT\n    depends_on:\n      ad:\n        condition: service_started\n      cart:\n        condition: service_started\n      checkout:\n        condition: service_started\n      currency:\n        condition: service_started\n      product-catalog:\n        condition: service_started\n      quote:\n        condition: service_started\n      recommendation:\n        condition: service_started\n      shipping:\n        condition: service_started\n      otel-collector:\n        condition: service_started\n      image-provider:\n        condition: service_started\n      flagd:\n        condition: service_started\n    logging: *logging\n\n  # Frontend Proxy (Envoy)\n  frontend-proxy:\n    image: ${IMAGE_NAME}:${DEMO_VERSION}-frontend-proxy\n    container_name: frontend-proxy\n    build:\n      context: ./\n      dockerfile: ${FRONTEND_PROXY_DOCKERFILE}\n      cache_from:\n        - ${IMAGE_NAME}:${IMAGE_VERSION}-frontend-proxy\n    deploy:\n      resources:\n        limits:\n          memory: 65M\n    restart: unless-stopped\n    ports:\n      - \"${ENVOY_PORT}:${ENVOY_PORT}\"\n      - \"${ENVOY_ADMIN_PORT}:${ENVOY_ADMIN_PORT}\"\n    environment:\n      - FRONTEND_PORT\n      - FRONTEND_HOST\n      - LOCUST_WEB_HOST\n      - LOCUST_WEB_PORT\n      - GRAFANA_PORT\n      - GRAFANA_HOST\n      - JAEGER_UI_PORT\n      - JAEGER_HOST\n      - OTEL_COLLECTOR_HOST\n      - IMAGE_PROVIDER_HOST\n      - IMAGE_PROVIDER_PORT\n      - OTEL_COLLECTOR_PORT_GRPC\n      - OTEL_COLLECTOR_PORT_HTTP\n      - OTEL_RESOURCE_ATTRIBUTES=${OTEL_RESOURCE_ATTRIBUTES},service.criticality=critical\n      - OTEL_SERVICE_NAME=frontend-proxy\n      - ENVOY_PORT\n      - ENVOY_ADDR\n      - ENVOY_ADMIN_PORT\n      - FIREPIT_HOST\n      - FIREPIT_PORT\n      - FLAGD_HOST\n      - FLAGD_PORT\n      - FLAGD_UI_HOST\n      - FLAGD_UI_PORT\n      - TELEMETRY_DOCS_HOST\n      - TELEMETRY_DOCS_PORT\n    depends_on:\n      frontend:\n        condition: service_started\n      load-generator:\n        condition: service_started\n      flagd-ui:\n        condition: service_started\n      telemetry-docs:\n        condition: service_started\n    dns_search: \"\"\n\n  # image-provider\n  image-provider:\n    image: ${IMAGE_NAME}:${DEMO_VERSION}-image-provider\n    container_name: image-provider\n    build:\n      context: ./\n      dockerfile: ${IMAGE_PROVIDER_DOCKERFILE}\n      cache_from:\n        - ${IMAGE_NAME}:${IMAGE_VERSION}-image-provider\n    deploy:\n      resources:\n        limits:\n          memory: 120M\n    restart: unless-stopped\n    ports:\n      - \"${IMAGE_PROVIDER_PORT}\"\n    environment:\n      - IMAGE_PROVIDER_PORT\n      - OTEL_COLLECTOR_HOST\n      - OTEL_COLLECTOR_PORT_GRPC\n      - OTEL_RESOURCE_ATTRIBUTES=${OTEL_RESOURCE_ATTRIBUTES},service.criticality=low\n      - OTEL_SERVICE_NAME=image-provider\n    depends_on:\n      otel-collector:\n        condition: service_started\n    logging: *logging\n\n  # Load Generator\n  load-generator:\n    image: ${IMAGE_NAME}:${DEMO_VERSION}-load-generator\n    container_name: load-generator\n    build:\n      context: ./\n      dockerfile: ${LOAD_GENERATOR_DOCKERFILE}\n      cache_from:\n        - ${IMAGE_NAME}:${IMAGE_VERSION}-load-generator\n    deploy:\n      resources:\n        limits:\n          memory: 1500M\n    restart: unless-stopped\n    ports:\n      - \"${LOCUST_WEB_PORT}\"\n    environment:\n      - LOCUST_WEB_PORT\n      - LOCUST_USERS\n      - LOCUST_HOST\n      - LOCUST_HEADLESS\n      - LOCUST_AUTOSTART\n      - LOCUST_BROWSER_TRAFFIC_ENABLED=true\n      - OTEL_EXPORTER_OTLP_ENDPOINT\n      - OTEL_EXPORTER_OTLP_METRICS_TEMPORALITY_PREFERENCE\n      - OTEL_RESOURCE_ATTRIBUTES=${OTEL_RESOURCE_ATTRIBUTES},service.criticality=low\n      - OTEL_SERVICE_NAME=load-generator\n      - PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION=python\n      - LOCUST_WEB_HOST=0.0.0.0\n      - FLAGD_HOST\n      - FLAGD_PORT\n      - FLAGD_OFREP_PORT\n    depends_on:\n      frontend:\n        condition: service_started\n      flagd:\n        condition: service_started\n    logging: *logging\n\n  # Payment service\n  payment:\n    image: ${IMAGE_NAME}:${DEMO_VERSION}-payment\n    container_name: payment\n    build:\n      context: ./\n      dockerfile: ${PAYMENT_DOCKERFILE}\n      cache_from:\n        - ${IMAGE_NAME}:${IMAGE_VERSION}-payment\n    deploy:\n      resources:\n        limits:\n          memory: 140M\n    restart: unless-stopped\n    ports:\n      - \"${PAYMENT_PORT}\"\n    environment:\n      - IPV6_ENABLED\n      - PAYMENT_PORT\n      - FLAGD_HOST\n      - FLAGD_PORT\n      - OTEL_EXPORTER_OTLP_ENDPOINT\n      - OTEL_EXPORTER_OTLP_METRICS_TEMPORALITY_PREFERENCE\n      - OTEL_RESOURCE_ATTRIBUTES=${OTEL_RESOURCE_ATTRIBUTES},service.criticality=critical\n      - OTEL_SERVICE_NAME=payment\n    depends_on:\n      otel-collector:\n        condition: service_started\n      flagd:\n        condition: service_started\n    logging: *logging\n\n  # Product Catalog service\n  product-catalog:\n    image: ${IMAGE_NAME}:${DEMO_VERSION}-product-catalog\n    container_name: product-catalog\n    build:\n      context: ./\n      dockerfile: ${PRODUCT_CATALOG_DOCKERFILE}\n      cache_from:\n        - ${IMAGE_NAME}:${IMAGE_VERSION}-product-catalog\n    deploy:\n      resources:\n        limits:\n          memory: 20M\n    restart: unless-stopped\n    ports:\n      - \"${PRODUCT_CATALOG_PORT}\"\n    environment:\n      - PRODUCT_CATALOG_PORT\n      - FLAGD_HOST\n      - FLAGD_PORT\n      - GOMEMLIMIT=16MiB\n      - OTEL_EXPORTER_OTLP_ENDPOINT\n      - OTEL_EXPORTER_OTLP_METRICS_TEMPORALITY_PREFERENCE\n      - OTEL_RESOURCE_ATTRIBUTES=${OTEL_RESOURCE_ATTRIBUTES},service.criticality=high\n      - OTEL_SERVICE_NAME=product-catalog\n      - OTEL_CONFIG_FILE=/otel-config.yml\n      - OTEL_SEMCONV_STABILITY_OPT_IN=database\n      - DB_CONNECTION_STRING=postgres://astronomy_user:${POSTGRES_ASTRONOMY_PASSWORD}@${POSTGRES_HOST}/astronomy_db?sslmode=disable\n    depends_on:\n      otel-collector:\n        condition: service_started\n      flagd:\n        condition: service_started\n      astronomy-db:\n        condition: service_started\n    volumes:\n      - ./otel-config.yml:/otel-config.yml\n    logging: *logging\n\n  # Product reviews service\n  product-reviews:\n    image: ${IMAGE_NAME}:${DEMO_VERSION}-product-reviews\n    container_name: product-reviews\n    build:\n      context: ./\n      dockerfile: ${PRODUCT_REVIEWS_DOCKERFILE}\n      cache_from:\n        - ${IMAGE_NAME}:${IMAGE_VERSION}-product-reviews\n    deploy:\n      resources:\n        limits:\n          memory: 100M\n    restart: unless-stopped\n    ports:\n      - \"${PRODUCT_REVIEWS_PORT}\"\n    environment:\n      - PRODUCT_REVIEWS_PORT\n      - OTEL_PYTHON_LOG_CORRELATION=true\n      - OTEL_EXPORTER_OTLP_ENDPOINT\n      - OTEL_EXPORTER_OTLP_METRICS_TEMPORALITY_PREFERENCE\n      - OTEL_RESOURCE_ATTRIBUTES=${OTEL_RESOURCE_ATTRIBUTES},service.criticality=medium\n      - OTEL_SERVICE_NAME=product-reviews\n      - OTEL_INSTRUMENTATION_GENAI_CAPTURE_MESSAGE_CONTENT=true\n      - PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION=python\n      - DB_CONNECTION_STRING=host=${POSTGRES_HOST} user=astronomy_user password=${POSTGRES_ASTRONOMY_PASSWORD} dbname=astronomy_db\n      - LLM_BASE_URL\n      - OPENAI_API_KEY\n      - LLM_MODEL\n      - PRODUCT_CATALOG_ADDR\n      - FLAGD_HOST\n      - FLAGD_PORT\n      - LLM_HOST\n      - LLM_PORT\n    depends_on:\n      product-catalog:\n        condition: service_started\n      llm:\n        condition: service_started\n      astronomy-db:\n        condition: service_started\n      otel-collector:\n        condition: service_started\n    logging: *logging\n\n  # Quote service\n  quote:\n    image: ${IMAGE_NAME}:${DEMO_VERSION}-quote\n    container_name: quote\n    build:\n      context: ./\n      dockerfile: ${QUOTE_DOCKERFILE}\n      cache_from:\n        - ${IMAGE_NAME}:${IMAGE_VERSION}-quote\n    deploy:\n      resources:\n        limits:\n          memory: 40M\n    restart: unless-stopped\n    ports:\n      - \"${QUOTE_PORT}\"\n    environment:\n      - IPV6_ENABLED\n      - OTEL_EXPORTER_OTLP_ENDPOINT=http://${OTEL_COLLECTOR_HOST}:${OTEL_COLLECTOR_PORT_HTTP}\n      - OTEL_EXPORTER_OTLP_METRICS_TEMPORALITY_PREFERENCE\n      - OTEL_PHP_AUTOLOAD_ENABLED=true\n      - QUOTE_PORT\n      - OTEL_PHP_INTERNAL_METRICS_ENABLED=true\n      - OTEL_RESOURCE_ATTRIBUTES=${OTEL_RESOURCE_ATTRIBUTES},service.criticality=low\n      - OTEL_SERVICE_NAME=quote\n    depends_on:\n      otel-collector:\n        condition: service_started\n    logging: *logging\n\n  # Recommendation service\n  recommendation:\n    image: ${IMAGE_NAME}:${DEMO_VERSION}-recommendation\n    container_name: recommendation\n    build:\n      context: ./\n      dockerfile: ${RECOMMENDATION_DOCKERFILE}\n      cache_from:\n        - ${IMAGE_NAME}:${IMAGE_VERSION}-recommendation\n    deploy:\n      resources:\n        limits:\n          memory: 500M               # This is high to enable supporting the recommendationCache feature flag use case\n    restart: unless-stopped\n    ports:\n      - \"${RECOMMENDATION_PORT}\"\n    environment:\n      - RECOMMENDATION_PORT\n      - PRODUCT_CATALOG_ADDR\n      - FLAGD_HOST\n      - FLAGD_PORT\n      - OTEL_PYTHON_LOG_CORRELATION=true\n      - OTEL_EXPORTER_OTLP_ENDPOINT\n      - OTEL_EXPORTER_OTLP_METRICS_TEMPORALITY_PREFERENCE\n      - OTEL_RESOURCE_ATTRIBUTES=${OTEL_RESOURCE_ATTRIBUTES},service.criticality=medium\n      - OTEL_SERVICE_NAME=recommendation\n      - PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION=python\n    depends_on:\n      product-catalog:\n        condition: service_started\n      otel-collector:\n        condition: service_started\n      flagd:\n        condition: service_started\n    logging: *logging\n\n  # Shipping service\n  shipping:\n    image: ${IMAGE_NAME}:${DEMO_VERSION}-shipping\n    container_name: shipping\n    build:\n      context: ./\n      dockerfile: ${SHIPPING_DOCKERFILE}\n      cache_from:\n        - ${IMAGE_NAME}:${IMAGE_VERSION}-shipping\n    deploy:\n      resources:\n        limits:\n          memory: 20M\n    restart: unless-stopped\n    ports:\n      - \"${SHIPPING_PORT}\"\n    environment:\n      - IPV6_ENABLED\n      - SHIPPING_PORT\n      - QUOTE_ADDR\n      - FLAGD_HOST\n      - FLAGD_PORT\n      - OTEL_EXPORTER_OTLP_ENDPOINT\n      - OTEL_RESOURCE_ATTRIBUTES=${OTEL_RESOURCE_ATTRIBUTES},service.criticality=high\n      - OTEL_SERVICE_NAME=shipping\n      - OTEL_EXPORTER_OTLP_METRICS_TEMPORALITY_PREFERENCE\n    depends_on:\n      otel-collector:\n        condition: service_started\n      flagd:\n        condition: service_started\n    logging: *logging\n\n  # ******************\n  # Dependent Services\n  # ******************\n\n  # Flagd, feature flagging service\n  flagd:\n    image: ${FLAGD_IMAGE}\n    container_name: flagd\n    deploy:\n      resources:\n        limits:\n          memory: 75M\n    restart: unless-stopped\n    environment:\n      - FLAGD_OTEL_COLLECTOR_URI=${OTEL_COLLECTOR_HOST}:${OTEL_COLLECTOR_PORT_GRPC}\n      - FLAGD_METRICS_EXPORTER=otel\n      - GOMEMLIMIT=60MiB\n      - OTEL_RESOURCE_ATTRIBUTES=${OTEL_RESOURCE_ATTRIBUTES},service.criticality=low\n      - OTEL_SERVICE_NAME=flagd\n    command: [\n      \"start\",\n      \"--uri\",\n      \"file:./etc/flagd/demo.flagd.json\"\n    ]\n    ports:\n      - \"${FLAGD_PORT}\"\n      - \"${FLAGD_OFREP_PORT}\"\n    volumes:\n      - ./src/flagd:/etc/flagd\n    logging: *logging\n\n  # Flagd UI for configuring the feature flag service\n  flagd-ui:\n    image: ${IMAGE_NAME}:${DEMO_VERSION}-flagd-ui\n    container_name: flagd-ui\n    build:\n      context: ./\n      dockerfile: ${FLAGD_UI_DOCKERFILE}\n      cache_from:\n        - ${IMAGE_NAME}:${IMAGE_VERSION}-flagd-ui\n    deploy:\n      resources:\n        limits:\n          memory: 200M\n    restart: always\n    environment:\n      - FLAGD_UI_PORT\n      - OTEL_EXPORTER_OTLP_ENDPOINT=http://${OTEL_COLLECTOR_HOST}:${OTEL_COLLECTOR_PORT_HTTP}\n      - OTEL_EXPORTER_OTLP_METRICS_TEMPORALITY_PREFERENCE\n      - OTEL_RESOURCE_ATTRIBUTES=${OTEL_RESOURCE_ATTRIBUTES},service.criticality=low\n      - OTEL_SERVICE_NAME=flagd-ui\n      - SECRET_KEY_BASE=yYrECL4qbNwleYInGJYvVnSkwJuSQJ4ijPTx5tirGUXrbznFIBFVJdPl5t6O9ASw\n      - PHX_HOST=localhost\n    ports:\n      - \"${FLAGD_UI_PORT}\"\n    depends_on:\n      otel-collector:\n        condition: service_started\n      flagd:\n        condition: service_started\n    volumes:\n      - ./src/flagd:/app/data\n\n  # LLM used by Product Review service\n  llm:\n    image: ${IMAGE_NAME}:${DEMO_VERSION}-llm\n    container_name: llm\n    build:\n      context: ./\n      dockerfile: ${LLM_DOCKERFILE}\n      cache_from:\n        - ${IMAGE_NAME}:${IMAGE_VERSION}-llm\n    deploy:\n      resources:\n        limits:\n          memory: 50M\n    restart: unless-stopped\n    environment:\n      - FLAGD_HOST\n      - FLAGD_PORT\n    ports:\n      - \"${LLM_PORT}\"\n    depends_on:\n      flagd:\n        condition: service_started\n    logging: *logging\n\n  # Telemetry Documentation service\n  telemetry-docs:\n    image: ${IMAGE_NAME}:${DEMO_VERSION}-telemetry-docs\n    container_name: telemetry-docs\n    build:\n      context: ./\n      dockerfile: ${TELEMETRY_DOCS_DOCKERFILE}\n      cache_from:\n        - ${IMAGE_NAME}:${IMAGE_VERSION}-telemetry-docs\n    deploy:\n      resources:\n        limits:\n          memory: 100M\n    restart: unless-stopped\n    ports:\n      - \"${TELEMETRY_DOCS_PORT}\"\n    environment:\n      - TELEMETRY_DOCS_PORT\n      - OTEL_COLLECTOR_HOST\n      - OTEL_COLLECTOR_PORT_GRPC\n      - OTEL_SERVICE_NAME=telemetry-docs\n    logging: *logging\n\n  # PostgreSQL database for the astronomy demo\n  astronomy-db:\n    image: ${POSTGRES_IMAGE}\n    container_name: astronomy-db\n    deploy:\n      resources:\n        limits:\n          memory: 80M\n    restart: unless-stopped\n    ports:\n      - ${POSTGRES_PORT}\n    command: postgres -c shared_preload_libraries=pg_stat_statements\n    environment:\n      - POSTGRES_PASSWORD\n    volumes:\n      - ./src/postgresql/init.sql:/docker-entrypoint-initdb.d/init.sql\n    logging: *logging\n\n  # Valkey used by Cart service\n  valkey-cart:\n    image: ${VALKEY_IMAGE}\n    container_name: valkey-cart\n    user: valkey\n    deploy:\n      resources:\n        limits:\n          memory: 20M\n    restart: unless-stopped\n    ports:\n      - \"${VALKEY_PORT}\"\n    logging: *logging\n\n  # ********************\n  # Telemetry Components\n  # ********************\n\n  # OpenTelemetry Collector\n  # Base configuration: receives and processes telemetry, exports to debug only.\n  # Add compose.observability.yaml to enable Jaeger, Prometheus, OpenSearch, and Grafana.\n  otel-collector:\n    image: ${COLLECTOR_CONTRIB_IMAGE}\n    container_name: otel-collector\n    deploy:\n      resources:\n        limits:\n          memory: 200M\n    restart: unless-stopped\n    command:\n      - --config=/etc/otelcol-config.yml\n      - --config=/etc/otelcol-config-extras.yml\n      - --feature-gates=service.profilesSupport\n    user: 0:0\n    volumes:\n      - ${HOST_FILESYSTEM}:/hostfs:ro\n      - ${DOCKER_SOCK}:/var/run/docker.sock:ro\n      - ${OTEL_COLLECTOR_CONFIG}:/etc/otelcol-config.yml\n      - ${OTEL_COLLECTOR_CONFIG_EXTRAS}:/etc/otelcol-config-extras.yml\n    ports:\n      - \"${OTEL_COLLECTOR_PORT_GRPC}\"\n      - \"${OTEL_COLLECTOR_PORT_HTTP}\"\n    logging: *logging\n    environment:\n      - AD_PROMETHEUS_PORT\n      - FRONTEND_PROXY_ADDR\n      - HOST_FILESYSTEM\n      - IMAGE_PROVIDER_HOST\n      - IMAGE_PROVIDER_PORT\n      - OTEL_COLLECTOR_HOST\n      - OTEL_COLLECTOR_PORT_GRPC\n      - OTEL_COLLECTOR_PORT_HTTP\n      - POSTGRES_HOST\n      - POSTGRES_PORT\n      - POSTGRES_MONITORING_PASSWORD\n      - GOMEMLIMIT=160MiB\n",
+      "encoding": "base64",
+      "_links": {
+        "self": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/compose.yaml?ref=main",
+        "git": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/blobs/d21ba740d4a03ea7480caea85055c4e525e7a153",
+        "html": "https://github.com/Lucifer4255/opentelemetry-demo/blob/main/compose.yaml"
+      }
+    }
+  },
+  "197dc942b72eca6b": {
+    "tool": "search_code",
+    "args": {
+      "q": "repo:Lucifer4255/opentelemetry-demo AdService getAdsByCategory"
+    },
+    "result": {
+      "total_count": 0,
+      "incomplete_results": false,
+      "items": []
+    }
+  },
+  "d932ecbb06fdce5c": {
+    "tool": "search_code",
+    "args": {
+      "q": "repo:Lucifer4255/opentelemetry-demo AdService language:java"
+    },
+    "result": {
+      "total_count": 0,
+      "incomplete_results": false,
+      "items": []
+    }
+  },
+  "16e9fed8517c5b55": {
+    "tool": "search_code",
+    "args": {
+      "q": "repo:Lucifer4255/opentelemetry-demo GetAds language:java"
+    },
+    "result": {
+      "total_count": 0,
+      "incomplete_results": false,
+      "items": []
+    }
+  },
+  "97c1b18629d5e1e4": {
+    "tool": "search_code",
+    "args": {
+      "q": "repo:Lucifer4255/opentelemetry-demo AdService"
+    },
+    "result": {
+      "total_count": 0,
+      "incomplete_results": false,
+      "items": []
+    }
+  },
+  "4132cd5d54b72e35": {
+    "tool": "search_code",
+    "args": {
+      "q": "repo:Lucifer4255/opentelemetry-demo getAdsByCategory"
+    },
+    "result": {
+      "total_count": 0,
+      "incomplete_results": false,
+      "items": []
+    }
+  },
+  "f339508c619e01b6": {
+    "tool": "get_file_contents",
+    "args": {
+      "owner": "Lucifer4255",
+      "repo": "opentelemetry-demo",
+      "path": "src/ad"
+    },
+    "result": [
+      {
+        "type": "file",
+        "size": 5,
+        "name": ".java-version",
+        "path": "src/ad/.java-version",
+        "sha": "5f39e9144690bb1f6f33d3db3cbd58ab198165a3",
+        "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/ad/.java-version?ref=main",
+        "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/blobs/5f39e9144690bb1f6f33d3db3cbd58ab198165a3",
+        "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/blob/main/src/ad/.java-version",
+        "download_url": "https://raw.githubusercontent.com/Lucifer4255/opentelemetry-demo/main/src/ad/.java-version"
+      },
+      {
+        "type": "file",
+        "size": 1042,
+        "name": "Dockerfile",
+        "path": "src/ad/Dockerfile",
+        "sha": "52fc1233d59a218aaeb1d0d71f0d30de97d50c65",
+        "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/ad/Dockerfile?ref=main",
+        "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/blobs/52fc1233d59a218aaeb1d0d71f0d30de97d50c65",
+        "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/blob/main/src/ad/Dockerfile",
+        "download_url": "https://raw.githubusercontent.com/Lucifer4255/opentelemetry-demo/main/src/ad/Dockerfile"
+      },
+      {
+        "type": "file",
+        "size": 2331,
+        "name": "README.md",
+        "path": "src/ad/README.md",
+        "sha": "204eb1e1c42d704a2abdaccfaaf1ebbedc9dfacb",
+        "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/ad/README.md?ref=main",
+        "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/blobs/204eb1e1c42d704a2abdaccfaaf1ebbedc9dfacb",
+        "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/blob/main/src/ad/README.md",
+        "download_url": "https://raw.githubusercontent.com/Lucifer4255/opentelemetry-demo/main/src/ad/README.md"
+      },
+      {
+        "type": "file",
+        "size": 5046,
+        "name": "build.gradle",
+        "path": "src/ad/build.gradle",
+        "sha": "a9e48bc4777a93a1a62c32cc3d05b4d38e38d541",
+        "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/ad/build.gradle?ref=main",
+        "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/blobs/a9e48bc4777a93a1a62c32cc3d05b4d38e38d541",
+        "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/blob/main/src/ad/build.gradle",
+        "download_url": "https://raw.githubusercontent.com/Lucifer4255/opentelemetry-demo/main/src/ad/build.gradle"
+      },
+      {
+        "type": "dir",
+        "size": 0,
+        "name": "gradle",
+        "path": "src/ad/gradle",
+        "sha": "2f1c3c99b1279c9ed5706df9a2a5181429f57d20",
+        "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/ad/gradle?ref=main",
+        "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/trees/2f1c3c99b1279c9ed5706df9a2a5181429f57d20",
+        "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/tree/main/src/ad/gradle",
+        "download_url": null
+      },
+      {
+        "type": "file",
+        "size": 8654,
+        "name": "gradlew",
+        "path": "src/ad/gradlew",
+        "sha": "b9bb139f790567973216cd313e69ae65789c3754",
+        "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/ad/gradlew?ref=main",
+        "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/blobs/b9bb139f790567973216cd313e69ae65789c3754",
+        "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/blob/main/src/ad/gradlew",
+        "download_url": "https://raw.githubusercontent.com/Lucifer4255/opentelemetry-demo/main/src/ad/gradlew"
+      },
+      {
+        "type": "file",
+        "size": 2846,
+        "name": "gradlew.bat",
+        "path": "src/ad/gradlew.bat",
+        "sha": "aa5f10b069f900bc9fd9db60245e8f18403bb7a0",
+        "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/ad/gradlew.bat?ref=main",
+        "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/blobs/aa5f10b069f900bc9fd9db60245e8f18403bb7a0",
+        "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/blob/main/src/ad/gradlew.bat",
+        "download_url": "https://raw.githubusercontent.com/Lucifer4255/opentelemetry-demo/main/src/ad/gradlew.bat"
+      },
+      {
+        "type": "file",
+        "size": 123,
+        "name": "settings.gradle",
+        "path": "src/ad/settings.gradle",
+        "sha": "8e1be6f0d4aa876d5b4fccb35aff23e880f8c85f",
+        "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/ad/settings.gradle?ref=main",
+        "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/blobs/8e1be6f0d4aa876d5b4fccb35aff23e880f8c85f",
+        "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/blob/main/src/ad/settings.gradle",
+        "download_url": "https://raw.githubusercontent.com/Lucifer4255/opentelemetry-demo/main/src/ad/settings.gradle"
+      },
+      {
+        "type": "dir",
+        "size": 0,
+        "name": "src",
+        "path": "src/ad/src",
+        "sha": "754a5b3fe5672b7acb7e10c3fd9856c259242ce9",
+        "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/ad/src?ref=main",
+        "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/trees/754a5b3fe5672b7acb7e10c3fd9856c259242ce9",
+        "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/tree/main/src/ad/src",
+        "download_url": null
+      }
+    ]
+  },
+  "cdb976218a26c0f0": {
+    "tool": "get_file_contents",
+    "args": {
+      "owner": "Lucifer4255",
+      "path": "src/ad/src",
+      "repo": "opentelemetry-demo"
+    },
+    "result": [
+      {
+        "type": "dir",
+        "size": 0,
+        "name": "main",
+        "path": "src/ad/src/main",
+        "sha": "8f9891e801df17734c5e57b273938b7ff35eddbb",
+        "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/ad/src/main?ref=main",
+        "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/trees/8f9891e801df17734c5e57b273938b7ff35eddbb",
+        "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/tree/main/src/ad/src/main",
+        "download_url": null
+      }
+    ]
+  },
+  "3853be8d8afa75ed": {
+    "tool": "get_file_contents",
+    "args": {
+      "owner": "Lucifer4255",
+      "path": "src/ad/src/main",
+      "repo": "opentelemetry-demo"
+    },
+    "result": [
+      {
+        "type": "dir",
+        "size": 0,
+        "name": "java",
+        "path": "src/ad/src/main/java",
+        "sha": "220a51c7ee15d9e0e246a246070a10bb45a76105",
+        "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/ad/src/main/java?ref=main",
+        "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/trees/220a51c7ee15d9e0e246a246070a10bb45a76105",
+        "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/tree/main/src/ad/src/main/java",
+        "download_url": null
+      },
+      {
+        "type": "dir",
+        "size": 0,
+        "name": "resources",
+        "path": "src/ad/src/main/resources",
+        "sha": "53755ecc7fdf5bd609348a467270d9bd8a12eb56",
+        "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/ad/src/main/resources?ref=main",
+        "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/trees/53755ecc7fdf5bd609348a467270d9bd8a12eb56",
+        "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/tree/main/src/ad/src/main/resources",
+        "download_url": null
+      }
+    ]
+  },
+  "2f169d5db83d3686": {
+    "tool": "get_file_contents",
+    "args": {
+      "owner": "Lucifer4255",
+      "path": "src/ad/src/main/java",
+      "repo": "opentelemetry-demo"
+    },
+    "result": [
+      {
+        "type": "dir",
+        "size": 0,
+        "name": "oteldemo",
+        "path": "src/ad/src/main/java/oteldemo",
+        "sha": "2610319f680cf6aab340c733f98d721923c98a84",
+        "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/ad/src/main/java/oteldemo?ref=main",
+        "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/trees/2610319f680cf6aab340c733f98d721923c98a84",
+        "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/tree/main/src/ad/src/main/java/oteldemo",
+        "download_url": null
+      }
+    ]
+  },
+  "dbbdf76f9a203e24": {
+    "tool": "get_file_contents",
+    "args": {
+      "owner": "Lucifer4255",
+      "path": "src/ad/src/main/java/oteldemo",
+      "repo": "opentelemetry-demo"
+    },
+    "result": [
+      {
+        "type": "file",
+        "size": 14012,
+        "name": "AdService.java",
+        "path": "src/ad/src/main/java/oteldemo/AdService.java",
+        "sha": "67924e423fa49e53e702b61ba8f99117d0fb06c8",
+        "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/ad/src/main/java/oteldemo/AdService.java?ref=main",
+        "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/blobs/67924e423fa49e53e702b61ba8f99117d0fb06c8",
+        "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/blob/main/src/ad/src/main/java/oteldemo/AdService.java",
+        "download_url": "https://raw.githubusercontent.com/Lucifer4255/opentelemetry-demo/main/src/ad/src/main/java/oteldemo/AdService.java"
+      },
+      {
+        "type": "dir",
+        "size": 0,
+        "name": "problempattern",
+        "path": "src/ad/src/main/java/oteldemo/problempattern",
+        "sha": "20b974c63feca8f05ad66914dd95b840e2fcb785",
+        "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/ad/src/main/java/oteldemo/problempattern?ref=main",
+        "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/trees/20b974c63feca8f05ad66914dd95b840e2fcb785",
+        "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/tree/main/src/ad/src/main/java/oteldemo/problempattern",
+        "download_url": null
+      }
+    ]
+  },
+  "acfe0be2c83e598a": {
+    "tool": "get_file_contents",
+    "args": {
+      "owner": "Lucifer4255",
+      "path": "src/ad/src/main/java/oteldemo/problempattern",
+      "repo": "opentelemetry-demo"
+    },
+    "result": [
+      {
+        "type": "file",
+        "size": 3581,
+        "name": "CPULoad.java",
+        "path": "src/ad/src/main/java/oteldemo/problempattern/CPULoad.java",
+        "sha": "178f773370d00a4f221ee35e81bbdf935259a233",
+        "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/ad/src/main/java/oteldemo/problempattern/CPULoad.java?ref=main",
+        "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/blobs/178f773370d00a4f221ee35e81bbdf935259a233",
+        "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/blob/main/src/ad/src/main/java/oteldemo/problempattern/CPULoad.java",
+        "download_url": "https://raw.githubusercontent.com/Lucifer4255/opentelemetry-demo/main/src/ad/src/main/java/oteldemo/problempattern/CPULoad.java"
+      },
+      {
+        "type": "file",
+        "size": 2781,
+        "name": "GarbageCollectionTrigger.java",
+        "path": "src/ad/src/main/java/oteldemo/problempattern/GarbageCollectionTrigger.java",
+        "sha": "aa72bc1f2c696bffec698eed453e5fdcd0da03ae",
+        "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/ad/src/main/java/oteldemo/problempattern/GarbageCollectionTrigger.java?ref=main",
+        "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/blobs/aa72bc1f2c696bffec698eed453e5fdcd0da03ae",
+        "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/blob/main/src/ad/src/main/java/oteldemo/problempattern/GarbageCollectionTrigger.java",
+        "download_url": "https://raw.githubusercontent.com/Lucifer4255/opentelemetry-demo/main/src/ad/src/main/java/oteldemo/problempattern/GarbageCollectionTrigger.java"
+      },
+      {
+        "type": "file",
+        "size": 1804,
+        "name": "MemoryUtils.java",
+        "path": "src/ad/src/main/java/oteldemo/problempattern/MemoryUtils.java",
+        "sha": "6b314145fecadac942177f9a9a42d0bf2b195c6f",
+        "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/ad/src/main/java/oteldemo/problempattern/MemoryUtils.java?ref=main",
+        "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/blobs/6b314145fecadac942177f9a9a42d0bf2b195c6f",
+        "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/blob/main/src/ad/src/main/java/oteldemo/problempattern/MemoryUtils.java",
+        "download_url": "https://raw.githubusercontent.com/Lucifer4255/opentelemetry-demo/main/src/ad/src/main/java/oteldemo/problempattern/MemoryUtils.java"
+      }
+    ]
+  },
+  "5aa145c0daf59e15": {
+    "tool": "get_file_contents",
+    "args": {
+      "owner": "Lucifer4255",
+      "path": "src/ad/src/main/java/oteldemo/AdService.java",
+      "repo": "opentelemetry-demo"
+    },
+    "result": {
+      "name": "AdService.java",
+      "path": "src/ad/src/main/java/oteldemo/AdService.java",
+      "sha": "67924e423fa49e53e702b61ba8f99117d0fb06c8",
+      "size": 14012,
+      "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/ad/src/main/java/oteldemo/AdService.java?ref=main",
+      "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/blob/main/src/ad/src/main/java/oteldemo/AdService.java",
+      "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/blobs/67924e423fa49e53e702b61ba8f99117d0fb06c8",
+      "download_url": "https://raw.githubusercontent.com/Lucifer4255/opentelemetry-demo/main/src/ad/src/main/java/oteldemo/AdService.java",
+      "type": "file",
+      "content": "/*\n * Copyright The OpenTelemetry Authors\n * SPDX-License-Identifier: Apache-2.0\n */\n\npackage oteldemo;\n\nimport com.google.common.collect.ImmutableListMultimap;\nimport com.google.common.collect.Iterables;\nimport io.grpc.*;\nimport io.grpc.health.v1.HealthCheckResponse.ServingStatus;\nimport io.grpc.protobuf.services.*;\nimport io.grpc.stub.StreamObserver;\nimport io.opentelemetry.api.GlobalOpenTelemetry;\nimport io.opentelemetry.api.OpenTelemetry;\nimport io.opentelemetry.api.baggage.Baggage;\nimport io.opentelemetry.api.common.AttributeKey;\nimport io.opentelemetry.api.common.Attributes;\nimport io.opentelemetry.api.metrics.LongCounter;\nimport io.opentelemetry.api.metrics.Meter;\nimport io.opentelemetry.api.trace.Span;\nimport io.opentelemetry.api.trace.StatusCode;\nimport io.opentelemetry.api.trace.Tracer;\nimport io.opentelemetry.context.Context;\nimport io.opentelemetry.context.Scope;\nimport io.opentelemetry.instrumentation.annotations.SpanAttribute;\nimport io.opentelemetry.instrumentation.annotations.WithSpan;\nimport io.prometheus.metrics.core.metrics.Counter;\nimport io.prometheus.metrics.exporter.httpserver.HTTPServer;\nimport java.io.IOException;\nimport java.util.ArrayList;\nimport java.util.Collection;\nimport java.util.List;\nimport java.util.Optional;\nimport java.util.Random;\nimport org.apache.logging.log4j.Level;\nimport org.apache.logging.log4j.LogManager;\nimport org.apache.logging.log4j.Logger;\nimport oteldemo.Demo.Ad;\nimport oteldemo.Demo.AdRequest;\nimport oteldemo.Demo.AdResponse;\nimport oteldemo.problempattern.GarbageCollectionTrigger;\nimport oteldemo.problempattern.CPULoad;\nimport dev.openfeature.contrib.providers.flagd.FlagdOptions;\nimport dev.openfeature.contrib.providers.flagd.FlagdProvider;\nimport dev.openfeature.sdk.Client;\nimport dev.openfeature.sdk.EvaluationContext;\nimport dev.openfeature.sdk.MutableContext;\nimport dev.openfeature.sdk.OpenFeatureAPI;\nimport java.util.UUID;\n\n\npublic final class AdService {\n\n  private static final Logger logger = LogManager.getLogger(AdService.class);\n\n  @SuppressWarnings(\"FieldCanBeLocal\")\n  private static final int MAX_ADS_TO_SERVE = 2;\n\n  private Server server;\n  private HealthStatusManager healthMgr;\n  private HTTPServer prometheusServer;\n\n  // DEMO: this counter and its `/metrics` HTTP exporter use the Prometheus\n  // Java client library rather than the OpenTelemetry SDK. It is here to\n  // illustrate how non-OTel custom metrics (e.g. existing Prometheus\n  // instrumentation that an organization already owns) can be ingested into\n  // an OpenTelemetry pipeline via the Collector's `prometheus` receiver --\n  // a common bridging pattern during OTel adoption.\n  //\n  // Recommendation: this is a *transitional* pattern. New custom metrics\n  // should be created directly with the OpenTelemetry SDK (see the\n  // `adRequestsCounter` below), and existing Prometheus-client metrics\n  // should be migrated over time. See `src/ad/README.md` for details.\n  private static final Counter adsServedCounter =\n      Counter.builder()\n          .name(\"demo_ad_served_total\")\n          .help(\"Total number of ads served, labeled by category\")\n          .labelNames(\"category\")\n          .register();\n\n  private static final AdService service = new AdService();\n  private static final Tracer tracer = GlobalOpenTelemetry.getTracer(\"ad\");\n  private static final Meter meter = GlobalOpenTelemetry.getMeter(\"ad\");\n\n  private static final LongCounter adRequestsCounter =\n      meter\n          .counterBuilder(\"demo.ad.requests\")\n          .setDescription(\"Counts ad requests by request and response type\")\n          .build();\n\n  private static final AttributeKey<String> adRequestTypeKey =\n      AttributeKey.stringKey(\"demo.ad.request_type\");\n  private static final AttributeKey<String> adResponseTypeKey =\n      AttributeKey.stringKey(\"demo.ad.response_type\");\n\n  private void start() throws IOException {\n    int port =\n        Integer.parseInt(\n            Optional.ofNullable(System.getenv(\"AD_PORT\"))\n                .orElseThrow(\n                    () ->\n                        new IllegalStateException(\n                            \"environment vars: AD_PORT must not be null\")));\n    int prometheusPort =\n        Integer.parseInt(Optional.ofNullable(System.getenv(\"AD_PROMETHEUS_PORT\")).orElse(\"9465\"));\n    prometheusServer = HTTPServer.builder().port(prometheusPort).buildAndStart();\n    logger.info(\n        \"Prometheus metrics endpoint started, listening on \" + prometheusServer.getPort() + \"/metrics\");\n    healthMgr = new HealthStatusManager();\n\n    // Create a flagd instance with OpenTelemetry\n    FlagdOptions options =\n        FlagdOptions.builder()\n            .withGlobalTelemetry(true)\n            .build();\n\n    FlagdProvider flagdProvider = new FlagdProvider(options);\n    // Set flagd as the OpenFeature Provider\n    OpenFeatureAPI.getInstance().setProvider(flagdProvider);\n  \n    server =\n        ServerBuilder.forPort(port)\n            .addService(new AdServiceImpl())\n            .addService(healthMgr.getHealthService())\n            .build()\n            .start();\n    logger.info(\"Ad service started, listening on \" + port);\n    Runtime.getRuntime()\n        .addShutdownHook(\n            new Thread(\n                () -> {\n                  // Use stderr here since the logger may have been reset by its JVM shutdown hook.\n                  System.err.println(\n                      \"*** shutting down gRPC ads server since JVM is shutting down\");\n                  AdService.this.stop();\n                  System.err.println(\"*** server shut down\");\n                }));\n    healthMgr.setStatus(\"\", ServingStatus.SERVING);\n  }\n\n  private void stop() {\n    if (server != null) {\n      healthMgr.clearStatus(\"\");\n      server.shutdown();\n    }\n    if (prometheusServer != null) {\n      prometheusServer.stop();\n    }\n  }\n\n  private enum AdRequestType {\n    TARGETED,\n    NOT_TARGETED\n  }\n\n  private enum AdResponseType {\n    TARGETED,\n    RANDOM\n  }\n\n  private static class AdServiceImpl extends oteldemo.AdServiceGrpc.AdServiceImplBase {\n    \n    private static final String AD_FAILURE = \"adFailure\";\n    private static final String AD_MANUAL_GC_FEATURE_FLAG = \"adManualGc\";\n    private static final String AD_HIGH_CPU_FEATURE_FLAG = \"adHighCpu\";\n    private static final Client ffClient = OpenFeatureAPI.getInstance().getClient();\n    \n    private AdServiceImpl() {}\n\n    /**\n     * Retrieves ads based on context provided in the request {@code AdRequest}.\n     *\n     * @param req the request containing context.\n     * @param responseObserver the stream observer which gets notified with the value of {@code\n     *     AdResponse}\n     */\n    @Override\n    public void getAds(AdRequest req, StreamObserver<AdResponse> responseObserver) {\n      AdService service = AdService.getInstance();\n\n      // get the current span in context\n      Span span = Span.current();\n      try {\n        List<Ad> allAds = new ArrayList<>();\n        AdRequestType adRequestType;\n        AdResponseType adResponseType;\n\n        Baggage baggage = Baggage.fromContextOrNull(Context.current());\n        MutableContext evaluationContext = new MutableContext();\n        if (baggage != null) {\n          final String sessionId = baggage.getEntryValue(\"session.id\");\n          span.setAttribute(\"session.id\", sessionId);\n          evaluationContext.setTargetingKey(sessionId);\n          evaluationContext.add(\"session\", sessionId);\n          final String enduserId = baggage.getEntryValue(\"enduser.id\");\n          if (enduserId != null) {\n            span.setAttribute(\"enduser.id\", enduserId);\n          }\n        } else {\n          logger.info(\"no baggage found in context\");\n        }\n\n        CPULoad cpuload = CPULoad.getInstance();\n        cpuload.execute(ffClient.getBooleanValue(AD_HIGH_CPU_FEATURE_FLAG, false, evaluationContext));\n\n        span.setAttribute(\"demo.ad.context_keys\", req.getContextKeysList().toString());\n        span.setAttribute(\"demo.ad.context_keys.count\", req.getContextKeysCount());\n        if (req.getContextKeysCount() > 0) {\n          logger.info(\"Targeted ad request received for \" + req.getContextKeysList());\n          for (int i = 0; i < req.getContextKeysCount(); i++) {\n            Collection<Ad> ads = service.getAdsByCategory(req.getContextKeys(i));\n            allAds.addAll(ads);\n          }\n          adRequestType = AdRequestType.TARGETED;\n          adResponseType = AdResponseType.TARGETED;\n        } else {\n          logger.info(\"Non-targeted ad request received, preparing random response.\");\n          allAds = service.getRandomAds();\n          adRequestType = AdRequestType.NOT_TARGETED;\n          adResponseType = AdResponseType.RANDOM;\n        }\n        if (allAds.isEmpty()) {\n          // Serve random ads.\n          allAds = service.getRandomAds();\n          adResponseType = AdResponseType.RANDOM;\n        }\n        span.setAttribute(\"demo.ad.count\", allAds.size());\n        span.setAttribute(\"demo.ad.request_type\", adRequestType.name());\n        span.setAttribute(\"demo.ad.response_type\", adResponseType.name());\n\n        adRequestsCounter.add(\n            1,\n            Attributes.of(\n                adRequestTypeKey, adRequestType.name(), adResponseTypeKey, adResponseType.name()));\n\n        // Throw 1/10 of the time to simulate a failure when the feature flag is enabled\n        if (ffClient.getBooleanValue(AD_FAILURE, false, evaluationContext) && random.nextInt(10) == 0) {\n          throw new StatusRuntimeException(Status.UNAVAILABLE);\n        }\n\n        if (ffClient.getBooleanValue(AD_MANUAL_GC_FEATURE_FLAG, false, evaluationContext)) {\n          logger.warn(\"Feature Flag \" + AD_MANUAL_GC_FEATURE_FLAG + \" enabled, performing a manual gc now\");\n          GarbageCollectionTrigger gct = new GarbageCollectionTrigger();\n          gct.doExecute();\n        }\n\n        AdResponse reply = AdResponse.newBuilder().addAllAds(allAds).build();\n        responseObserver.onNext(reply);\n        responseObserver.onCompleted();\n      } catch (StatusRuntimeException e) {\n        span.addEvent(\n            \"Error\", Attributes.of(AttributeKey.stringKey(\"exception.message\"), e.getMessage()));\n        span.setStatus(StatusCode.ERROR);\n        logger.log(Level.WARN, \"GetAds Failed with status {}\", e.getStatus());\n        responseObserver.onError(e);\n      }\n    }\n  }\n\n  private static final ImmutableListMultimap<String, Ad> adsMap = createAdsMap();\n\n  @WithSpan(\"getAdsByCategory\")\n  private Collection<Ad> getAdsByCategory(@SpanAttribute(\"demo.ad.category\") String category) {\n    Collection<Ad> ads = adsMap.get(category);\n    Span.current().setAttribute(\"demo.ad.count\", ads.size());\n    adsServedCounter.labelValues(category).inc(ads.size());\n    return ads;\n  }\n\n  private static final Random random = new Random();\n\n  private List<Ad> getRandomAds() {\n\n    List<Ad> ads = new ArrayList<>(MAX_ADS_TO_SERVE);\n\n    // create and start a new span manually\n    Span span = tracer.spanBuilder(\"getRandomAds\").startSpan();\n\n    // put the span into context, so if any child span is started the parent will be set properly\n    try (Scope ignored = span.makeCurrent()) {\n\n      Collection<Ad> allAds = adsMap.values();\n      for (int i = 0; i < MAX_ADS_TO_SERVE; i++) {\n        ads.add(Iterables.get(allAds, random.nextInt(allAds.size())));\n      }\n      span.setAttribute(\"demo.ad.count\", ads.size());\n      adsServedCounter.labelValues(\"random\").inc(ads.size());\n\n    } finally {\n      span.end();\n    }\n\n    return ads;\n  }\n\n  private static AdService getInstance() {\n    return service;\n  }\n\n  /** Await termination on the main thread since the grpc library uses daemon threads. */\n  private void blockUntilShutdown() throws InterruptedException {\n    if (server != null) {\n      server.awaitTermination();\n    }\n  }\n\n  private static ImmutableListMultimap<String, Ad> createAdsMap() {\n    Ad binoculars =\n        Ad.newBuilder()\n            .setRedirectUrl(\"/product/2ZYFJ3GM2N\")\n            .setText(\"Roof Binoculars for sale. 50% off.\")\n            .build();\n    Ad explorerTelescope =\n        Ad.newBuilder()\n            .setRedirectUrl(\"/product/66VCHSJNUP\")\n            .setText(\"Starsense Explorer Refractor Telescope for sale. 20% off.\")\n            .build();\n    Ad colorImager =\n        Ad.newBuilder()\n            .setRedirectUrl(\"/product/0PUK6V6EV0\")\n            .setText(\"Solar System Color Imager for sale. 30% off.\")\n            .build();\n    Ad opticalTube =\n        Ad.newBuilder()\n            .setRedirectUrl(\"/product/9SIQT8TOJO\")\n            .setText(\"Optical Tube Assembly for sale. 10% off.\")\n            .build();\n    Ad travelTelescope =\n        Ad.newBuilder()\n            .setRedirectUrl(\"/product/1YMWWN1N4O\")\n            .setText(\n                \"Eclipsmart Travel Refractor Telescope for sale. Buy one, get second kit for free\")\n            .build();\n    Ad solarFilter =\n        Ad.newBuilder()\n            .setRedirectUrl(\"/product/6E92ZMYYFZ\")\n            .setText(\"Solar Filter for sale. Buy two, get third one for free\")\n            .build();\n    Ad cleaningKit =\n        Ad.newBuilder()\n            .setRedirectUrl(\"/product/L9ECAV7KIM\")\n            .setText(\"Lens Cleaning Kit for sale. Buy one, get second one for free\")\n            .build();\n    return ImmutableListMultimap.<String, Ad>builder()\n        .putAll(\"binoculars\", binoculars)\n        .putAll(\"telescopes\", explorerTelescope)\n        .putAll(\"accessories\", colorImager, solarFilter, cleaningKit)\n        .putAll(\"assembly\", opticalTube)\n        .putAll(\"travel\", travelTelescope)\n        // Keep the books category free of ads to ensure the random code branch is tested\n        .build();\n  }\n\n  /** Main launches the server from the command line. */\n  public static void main(String[] args) throws IOException, InterruptedException {\n    // Start the RPC server. You shouldn't see any output from gRPC before this.\n    logger.info(\"Ad service starting.\");\n    final AdService service = AdService.getInstance();\n    service.start();\n    service.blockUntilShutdown();\n  }\n}\n",
+      "encoding": "base64",
+      "_links": {
+        "self": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/ad/src/main/java/oteldemo/AdService.java?ref=main",
+        "git": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/blobs/67924e423fa49e53e702b61ba8f99117d0fb06c8",
+        "html": "https://github.com/Lucifer4255/opentelemetry-demo/blob/main/src/ad/src/main/java/oteldemo/AdService.java"
+      }
+    }
+  },
+  "2123728924a2f894": {
+    "tool": "get_file_contents",
+    "args": {
+      "owner": "Lucifer4255",
+      "path": "src/flagd/demo.flagd.json",
+      "repo": "opentelemetry-demo"
+    },
+    "result": {
+      "name": "demo.flagd.json",
+      "path": "src/flagd/demo.flagd.json",
+      "sha": "12704a2e85c922522f0fec883933a907fb165e33",
+      "size": 4208,
+      "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/flagd/demo.flagd.json?ref=main",
+      "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/blob/main/src/flagd/demo.flagd.json",
+      "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/blobs/12704a2e85c922522f0fec883933a907fb165e33",
+      "download_url": "https://raw.githubusercontent.com/Lucifer4255/opentelemetry-demo/main/src/flagd/demo.flagd.json",
+      "type": "file",
+      "content": "{\n  \"$schema\": \"https://flagd.dev/schema/v0/flags.json\",\n  \"flags\": {\n    \"llmInaccurateResponse\": {\n      \"defaultVariant\": \"off\",\n      \"description\": \"LLM returns an inaccurate product summary for product ID L9ECAV7KIM\",\n      \"state\": \"ENABLED\",\n      \"variants\": {\n        \"off\": false,\n        \"on\": true\n      }\n    },\n    \"llmRateLimitError\": {\n      \"defaultVariant\": \"off\",\n      \"description\": \"LLM intermittently returns a rate limit error\",\n      \"state\": \"ENABLED\",\n      \"variants\": {\n        \"off\": false,\n        \"on\": true\n      }\n    },\n    \"productCatalogFailure\": {\n      \"description\": \"Fail product catalog service on a specific product\",\n      \"state\": \"ENABLED\",\n      \"variants\": {\n        \"on\": true,\n        \"off\": false\n      },\n      \"defaultVariant\": \"off\",\n      \"targeting\": {\n        \"if\": [\n          {\n            \"==\": [\n              {\n                \"var\": \"product_id\"\n              },\n              \"OLJCESPC7Z\"\n            ]\n          },\n          \"on\",\n          \"off\"\n        ]\n      }\n    },\n    \"recommendationCacheFailure\": {\n      \"description\": \"Fail recommendation service cache\",\n      \"state\": \"ENABLED\",\n      \"variants\": {\n        \"on\": true,\n        \"off\": false\n      },\n      \"defaultVariant\": \"off\"\n    },\n    \"adManualGc\": {\n      \"description\": \"Triggers full manual garbage collections in the ad service\",\n      \"state\": \"ENABLED\",\n      \"variants\": {\n        \"on\": true,\n        \"off\": false\n      },\n      \"defaultVariant\": \"off\"\n    },\n    \"adHighCpu\": {\n      \"description\": \"Triggers high cpu load in the ad service\",\n      \"state\": \"ENABLED\",\n      \"variants\": {\n        \"on\": true,\n        \"off\": false\n      },\n      \"defaultVariant\": \"off\"\n    },\n    \"adFailure\": {\n      \"description\": \"Fail ad service\",\n      \"state\": \"ENABLED\",\n      \"variants\": {\n        \"on\": true,\n        \"off\": false\n      },\n      \"defaultVariant\": \"off\"\n    },\n    \"kafkaQueueProblems\": {\n      \"description\": \"Overloads Kafka queue while simultaneously introducing a consumer side delay leading to a lag spike\",\n      \"state\": \"ENABLED\",\n      \"variants\": {\n        \"on\": 100,\n        \"off\": 0\n      },\n      \"defaultVariant\": \"off\"\n    },\n    \"cartFailure\": {\n      \"description\": \"Fail cart service\",\n      \"state\": \"ENABLED\",\n      \"variants\": {\n        \"on\": true,\n        \"off\": false\n      },\n      \"defaultVariant\": \"off\"\n    },\n    \"paymentFailure\": {\n      \"description\": \"Fail payment service charge requests n%\",\n      \"state\": \"ENABLED\",\n      \"variants\": {\n        \"100%\": 1,\n        \"90%\": 0.95,\n        \"75%\": 0.75,\n        \"50%\": 0.5,\n        \"25%\": 0.25,\n        \"10%\": 0.1,\n        \"off\": 0\n      },\n      \"defaultVariant\": \"off\"\n    },\n    \"paymentUnreachable\": {\n      \"description\": \"Payment service is unavailable\",\n      \"state\": \"ENABLED\",\n      \"variants\": {\n        \"on\": true,\n        \"off\": false\n      },\n      \"defaultVariant\": \"off\"\n    },\n    \"loadGeneratorFloodHomepage\": {\n      \"description\": \"Flood the frontend with a large amount of requests.\",\n      \"state\": \"ENABLED\",\n      \"variants\": {\n        \"on\": 100,\n        \"off\": 0\n      },\n      \"defaultVariant\": \"off\"\n    },\n    \"imageSlowLoad\": {\n      \"description\": \"slow loading images in the frontend\",\n      \"state\": \"ENABLED\",\n      \"variants\": {\n        \"10sec\": 10000,\n        \"5sec\": 5000,\n        \"off\": 0\n      },\n      \"defaultVariant\": \"off\"\n    },\n    \"failedReadinessProbe\": {\n      \"description\": \"readiness probe failure for cart service\",\n      \"state\": \"ENABLED\",\n      \"variants\": {\n        \"on\": true,\n        \"off\": false\n      },\n      \"defaultVariant\": \"off\"\n    },\n    \"emailMemoryLeak\": {\n      \"description\": \"Memory leak in the email service.\",\n      \"state\": \"ENABLED\",\n      \"variants\": {\n        \"off\": 0,\n        \"1x\": 1,\n        \"10x\": 10,\n        \"100x\": 100,\n        \"1000x\": 1000,\n        \"10000x\": 10000\n      },\n      \"defaultVariant\": \"off\"\n    },\n    \"intlShippingSlowdown\": {\n      \"description\": \"Delays international shipping responses to simulate overseas shipping delay\",\n      \"state\": \"ENABLED\",\n      \"variants\": {\n        \"10sec\": 10,\n        \"5sec\": 5,\n        \"off\": 0\n      },\n      \"defaultVariant\": \"off\"\n    }\n  }\n}\n",
+      "encoding": "base64",
+      "_links": {
+        "self": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/flagd/demo.flagd.json?ref=main",
+        "git": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/blobs/12704a2e85c922522f0fec883933a907fb165e33",
+        "html": "https://github.com/Lucifer4255/opentelemetry-demo/blob/main/src/flagd/demo.flagd.json"
+      }
+    }
+  },
+  "c9c8c51951ff9d45": {
+    "tool": "search_code",
+    "args": {
+      "q": "getAdsByCategory repo:Lucifer4255/opentelemetry-demo"
+    },
+    "result": {
+      "total_count": 0,
+      "incomplete_results": false,
+      "items": []
+    }
+  },
+  "2ea422660e74226f": {
+    "tool": "search_code",
+    "args": {
+      "q": "GetAds repo:Lucifer4255/opentelemetry-demo language:java"
+    },
+    "result": {
+      "total_count": 0,
+      "incomplete_results": false,
+      "items": []
+    }
+  },
+  "9bfbc7b622219683": {
+    "tool": "search_code",
+    "args": {
+      "q": "AdService repo:Lucifer4255/opentelemetry-demo"
+    },
+    "result": {
+      "total_count": 0,
+      "incomplete_results": false,
+      "items": []
+    }
+  },
+  "b27d0134cb40292e": {
+    "tool": "get_file_contents",
+    "args": {
+      "owner": "Lucifer4255",
+      "repo": "opentelemetry-demo",
+      "path": "src"
+    },
+    "result": [
+      {
+        "type": "dir",
+        "size": 0,
+        "name": "accounting",
+        "path": "src/accounting",
+        "sha": "c43ed72e8428124f1274cff5a36311662196e1c3",
+        "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/accounting?ref=main",
+        "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/trees/c43ed72e8428124f1274cff5a36311662196e1c3",
+        "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/tree/main/src/accounting",
+        "download_url": null
+      },
+      {
+        "type": "dir",
+        "size": 0,
+        "name": "ad",
+        "path": "src/ad",
+        "sha": "e07bdb4c0ec320daf2cd12ea03aa6196cbfe154d",
+        "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/ad?ref=main",
+        "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/trees/e07bdb4c0ec320daf2cd12ea03aa6196cbfe154d",
+        "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/tree/main/src/ad",
+        "download_url": null
+      },
+      {
+        "type": "dir",
+        "size": 0,
+        "name": "cart",
+        "path": "src/cart",
+        "sha": "e1cfb284feb1095ad61cffbc7e4d95ed4f68d667",
+        "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/cart?ref=main",
+        "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/trees/e1cfb284feb1095ad61cffbc7e4d95ed4f68d667",
+        "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/tree/main/src/cart",
+        "download_url": null
+      },
+      {
+        "type": "dir",
+        "size": 0,
+        "name": "checkout",
+        "path": "src/checkout",
+        "sha": "4b06dcee4769f88a02cf2e1602b7bea758d5623c",
+        "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/checkout?ref=main",
+        "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/trees/4b06dcee4769f88a02cf2e1602b7bea758d5623c",
+        "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/tree/main/src/checkout",
+        "download_url": null
+      },
+      {
+        "type": "dir",
+        "size": 0,
+        "name": "currency",
+        "path": "src/currency",
+        "sha": "20c38ef048cebff4f3f55117acd60da03960a69e",
+        "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/currency?ref=main",
+        "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/trees/20c38ef048cebff4f3f55117acd60da03960a69e",
+        "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/tree/main/src/currency",
+        "download_url": null
+      },
+      {
+        "type": "dir",
+        "size": 0,
+        "name": "email",
+        "path": "src/email",
+        "sha": "036894a0ab52bb173bc01d33f332713b80063789",
+        "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/email?ref=main",
+        "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/trees/036894a0ab52bb173bc01d33f332713b80063789",
+        "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/tree/main/src/email",
+        "download_url": null
+      },
+      {
+        "type": "dir",
+        "size": 0,
+        "name": "flagd-ui",
+        "path": "src/flagd-ui",
+        "sha": "e13a91d463e3f2347d8f030628877417f50606fc",
+        "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/flagd-ui?ref=main",
+        "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/trees/e13a91d463e3f2347d8f030628877417f50606fc",
+        "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/tree/main/src/flagd-ui",
+        "download_url": null
+      },
+      {
+        "type": "dir",
+        "size": 0,
+        "name": "flagd",
+        "path": "src/flagd",
+        "sha": "5299de75eb52a2e0d6b14ff70b8c74e8c181c87f",
+        "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/flagd?ref=main",
+        "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/trees/5299de75eb52a2e0d6b14ff70b8c74e8c181c87f",
+        "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/tree/main/src/flagd",
+        "download_url": null
+      },
+      {
+        "type": "dir",
+        "size": 0,
+        "name": "fraud-detection",
+        "path": "src/fraud-detection",
+        "sha": "adb8a233b3fae55ceff7a631997cdf7b64839973",
+        "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/fraud-detection?ref=main",
+        "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/trees/adb8a233b3fae55ceff7a631997cdf7b64839973",
+        "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/tree/main/src/fraud-detection",
+        "download_url": null
+      },
+      {
+        "type": "dir",
+        "size": 0,
+        "name": "frontend-proxy",
+        "path": "src/frontend-proxy",
+        "sha": "3302821b2ff8daf27c17b9103c4c4f73ec7068ea",
+        "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/frontend-proxy?ref=main",
+        "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/trees/3302821b2ff8daf27c17b9103c4c4f73ec7068ea",
+        "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/tree/main/src/frontend-proxy",
+        "download_url": null
+      },
+      {
+        "type": "dir",
+        "size": 0,
+        "name": "frontend",
+        "path": "src/frontend",
+        "sha": "f7f2c1e4c47ffd0188a40fe897e09cbffa6cb503",
+        "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/frontend?ref=main",
+        "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/trees/f7f2c1e4c47ffd0188a40fe897e09cbffa6cb503",
+        "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/tree/main/src/frontend",
+        "download_url": null
+      },
+      {
+        "type": "dir",
+        "size": 0,
+        "name": "grafana",
+        "path": "src/grafana",
+        "sha": "4d9be83347c053b6d2bb0e1e0218b933f7cf9e9b",
+        "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/grafana?ref=main",
+        "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/trees/4d9be83347c053b6d2bb0e1e0218b933f7cf9e9b",
+        "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/tree/main/src/grafana",
+        "download_url": null
+      },
+      {
+        "type": "dir",
+        "size": 0,
+        "name": "image-provider",
+        "path": "src/image-provider",
+        "sha": "a4c1038b8f1fc2306efcc1aedffc92864aeb9f4b",
+        "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/image-provider?ref=main",
+        "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/trees/a4c1038b8f1fc2306efcc1aedffc92864aeb9f4b",
+        "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/tree/main/src/image-provider",
+        "download_url": null
+      },
+      {
+        "type": "dir",
+        "size": 0,
+        "name": "jaeger",
+        "path": "src/jaeger",
+        "sha": "110b96aecafd71a9f36a28f1448263a2e5c0ec2c",
+        "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/jaeger?ref=main",
+        "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/trees/110b96aecafd71a9f36a28f1448263a2e5c0ec2c",
+        "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/tree/main/src/jaeger",
+        "download_url": null
+      },
+      {
+        "type": "dir",
+        "size": 0,
+        "name": "kafka",
+        "path": "src/kafka",
+        "sha": "d77986666b99ef0732ad0d6745b646a002990e57",
+        "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/kafka?ref=main",
+        "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/trees/d77986666b99ef0732ad0d6745b646a002990e57",
+        "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/tree/main/src/kafka",
+        "download_url": null
+      },
+      {
+        "type": "dir",
+        "size": 0,
+        "name": "llm",
+        "path": "src/llm",
+        "sha": "31adc69008e3973ba7c0f86715f8057335860a94",
+        "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/llm?ref=main",
+        "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/trees/31adc69008e3973ba7c0f86715f8057335860a94",
+        "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/tree/main/src/llm",
+        "download_url": null
+      },
+      {
+        "type": "dir",
+        "size": 0,
+        "name": "load-generator",
+        "path": "src/load-generator",
+        "sha": "96358fbc234d74c336c964fa28d2954fb2126acb",
+        "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/load-generator?ref=main",
+        "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/trees/96358fbc234d74c336c964fa28d2954fb2126acb",
+        "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/tree/main/src/load-generator",
+        "download_url": null
+      },
+      {
+        "type": "dir",
+        "size": 0,
+        "name": "opensearch",
+        "path": "src/opensearch",
+        "sha": "6975cb5d5aa735935854d750693a16963c3bf0e1",
+        "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/opensearch?ref=main",
+        "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/trees/6975cb5d5aa735935854d750693a16963c3bf0e1",
+        "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/tree/main/src/opensearch",
+        "download_url": null
+      },
+      {
+        "type": "dir",
+        "size": 0,
+        "name": "otel-collector",
+        "path": "src/otel-collector",
+        "sha": "b4a7884bca9fa70d36bc034ca6a569260e6a282a",
+        "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/otel-collector?ref=main",
+        "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/trees/b4a7884bca9fa70d36bc034ca6a569260e6a282a",
+        "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/tree/main/src/otel-collector",
+        "download_url": null
+      },
+      {
+        "type": "dir",
+        "size": 0,
+        "name": "payment",
+        "path": "src/payment",
+        "sha": "bfd07ca549e57f176194e8378c40aa5d68f82748",
+        "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/payment?ref=main",
+        "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/trees/bfd07ca549e57f176194e8378c40aa5d68f82748",
+        "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/tree/main/src/payment",
+        "download_url": null
+      },
+      {
+        "type": "dir",
+        "size": 0,
+        "name": "postgresql",
+        "path": "src/postgresql",
+        "sha": "a496220429e31f2c04052d97948969a9762f91d5",
+        "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/postgresql?ref=main",
+        "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/trees/a496220429e31f2c04052d97948969a9762f91d5",
+        "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/tree/main/src/postgresql",
+        "download_url": null
+      },
+      {
+        "type": "dir",
+        "size": 0,
+        "name": "product-catalog",
+        "path": "src/product-catalog",
+        "sha": "e4a8ff8ebc9245c0152b8734cec975cede9d75e1",
+        "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/product-catalog?ref=main",
+        "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/trees/e4a8ff8ebc9245c0152b8734cec975cede9d75e1",
+        "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/tree/main/src/product-catalog",
+        "download_url": null
+      },
+      {
+        "type": "dir",
+        "size": 0,
+        "name": "product-reviews",
+        "path": "src/product-reviews",
+        "sha": "7a99cd3e52b101bbe4bc8d208107430b8664ed6d",
+        "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/product-reviews?ref=main",
+        "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/trees/7a99cd3e52b101bbe4bc8d208107430b8664ed6d",
+        "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/tree/main/src/product-reviews",
+        "download_url": null
+      },
+      {
+        "type": "dir",
+        "size": 0,
+        "name": "prometheus",
+        "path": "src/prometheus",
+        "sha": "59108943ea1b1b85d76f7e2e1842dfc8cc757da8",
+        "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/prometheus?ref=main",
+        "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/trees/59108943ea1b1b85d76f7e2e1842dfc8cc757da8",
+        "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/tree/main/src/prometheus",
+        "download_url": null
+      },
+      {
+        "type": "dir",
+        "size": 0,
+        "name": "quote",
+        "path": "src/quote",
+        "sha": "e7005ca9759fc716fa33485955b1dcb5ec3d407d",
+        "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/quote?ref=main",
+        "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/trees/e7005ca9759fc716fa33485955b1dcb5ec3d407d",
+        "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/tree/main/src/quote",
+        "download_url": null
+      },
+      {
+        "type": "dir",
+        "size": 0,
+        "name": "react-native-app",
+        "path": "src/react-native-app",
+        "sha": "138905be92cadd340c9dc10cb766388f1da4582f",
+        "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/react-native-app?ref=main",
+        "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/trees/138905be92cadd340c9dc10cb766388f1da4582f",
+        "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/tree/main/src/react-native-app",
+        "download_url": null
+      },
+      {
+        "type": "dir",
+        "size": 0,
+        "name": "recommendation",
+        "path": "src/recommendation",
+        "sha": "f43a00100b718ff767d9767b1a46bffa56b32265",
+        "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/recommendation?ref=main",
+        "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/trees/f43a00100b718ff767d9767b1a46bffa56b32265",
+        "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/tree/main/src/recommendation",
+        "download_url": null
+      },
+      {
+        "type": "dir",
+        "size": 0,
+        "name": "shipping",
+        "path": "src/shipping",
+        "sha": "4d40f214de4e1ee98bc00036d29c83b16220adbc",
+        "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/shipping?ref=main",
+        "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/trees/4d40f214de4e1ee98bc00036d29c83b16220adbc",
+        "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/tree/main/src/shipping",
+        "download_url": null
+      },
+      {
+        "type": "dir",
+        "size": 0,
+        "name": "telemetry-docs",
+        "path": "src/telemetry-docs",
+        "sha": "45f3813666cb4effd7a7a56d5e898344a6f17355",
+        "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/telemetry-docs?ref=main",
+        "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/trees/45f3813666cb4effd7a7a56d5e898344a6f17355",
+        "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/tree/main/src/telemetry-docs",
+        "download_url": null
+      }
+    ]
+  },
+  "6562ac52ef10122d": {
+    "tool": "get_file_contents",
+    "args": {
+      "owner": "Lucifer4255",
+      "path": "src/flagd",
+      "repo": "opentelemetry-demo"
+    },
+    "result": [
+      {
+        "type": "file",
+        "size": 4208,
+        "name": "demo.flagd.json",
+        "path": "src/flagd/demo.flagd.json",
+        "sha": "12704a2e85c922522f0fec883933a907fb165e33",
+        "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/flagd/demo.flagd.json?ref=main",
+        "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/blobs/12704a2e85c922522f0fec883933a907fb165e33",
+        "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/blob/main/src/flagd/demo.flagd.json",
+        "download_url": "https://raw.githubusercontent.com/Lucifer4255/opentelemetry-demo/main/src/flagd/demo.flagd.json"
+      }
+    ]
+  },
+  "e4b28d6c83223a5e": {
+    "tool": "search_code",
+    "args": {
+      "q": "getAdsByCategory repo:Lucifer4255/opentelemetry-demo language:java"
+    },
+    "result": {
+      "total_count": 0,
+      "incomplete_results": false,
+      "items": []
+    }
+  },
+  "2abc1b6ba762d50e": {
+    "tool": "search_code",
+    "args": {
+      "q": "AdService repo:Lucifer4255/opentelemetry-demo language:java"
+    },
+    "result": {
+      "total_count": 0,
+      "incomplete_results": false,
+      "items": []
+    }
+  },
+  "aa0de5cf4a4eec33": {
+    "tool": "search_code",
+    "args": {
+      "q": "oteldemo.AdService repo:Lucifer4255/opentelemetry-demo"
+    },
+    "result": {
+      "total_count": 0,
+      "incomplete_results": false,
+      "items": []
+    }
+  },
+  "a10458ded0a1636e": {
+    "tool": "search_code",
+    "args": {
+      "q": "\"no baggage found\" repo:Lucifer4255/opentelemetry-demo"
+    },
+    "result": {
+      "total_count": 0,
+      "incomplete_results": false,
+      "items": []
+    }
+  },
+  "f815880ffb7a1f2f": {
+    "tool": "get_file_contents",
+    "args": {
+      "owner": "Lucifer4255",
+      "path": "src/ad/src/main/java/oteldemo/problempattern/GarbageCollectionTrigger.java",
+      "repo": "opentelemetry-demo"
+    },
+    "result": {
+      "name": "GarbageCollectionTrigger.java",
+      "path": "src/ad/src/main/java/oteldemo/problempattern/GarbageCollectionTrigger.java",
+      "sha": "aa72bc1f2c696bffec698eed453e5fdcd0da03ae",
+      "size": 2781,
+      "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/ad/src/main/java/oteldemo/problempattern/GarbageCollectionTrigger.java?ref=main",
+      "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/blob/main/src/ad/src/main/java/oteldemo/problempattern/GarbageCollectionTrigger.java",
+      "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/blobs/aa72bc1f2c696bffec698eed453e5fdcd0da03ae",
+      "download_url": "https://raw.githubusercontent.com/Lucifer4255/opentelemetry-demo/main/src/ad/src/main/java/oteldemo/problempattern/GarbageCollectionTrigger.java",
+      "type": "file",
+      "content": "/*\n* Copyright The OpenTelemetry Authors\n* SPDX-License-Identifier: Apache-2.0\n*/\n\npackage oteldemo.problempattern;\n\nimport java.lang.management.ManagementFactory;\nimport java.util.concurrent.TimeUnit;\n\nimport org.apache.logging.log4j.LogManager;\nimport org.apache.logging.log4j.Logger;\n\n/**\n * The GarbageCollectionTrigger class is responsible for triggering manual garbage collection\n* at specified intervals to simulate memory pressure and measure the impact on performance.\n*/\npublic class GarbageCollectionTrigger {\n    private static final Logger logger = LogManager.getLogger(GarbageCollectionTrigger.class.getName());\n\n    private final long gc_delay;\n    private final int finalize_delay;\n    private final int maxObjects;\n\n    private long lastGC = 0;\n\n    private final MemoryUtils memUtils;\n\n    /**\n     * Constructs a new GarbageCollectionTrigger with default values.\n    */\n    public GarbageCollectionTrigger() {\n        memUtils = new MemoryUtils(ManagementFactory.getMemoryMXBean());\n        gc_delay = TimeUnit.SECONDS.toMillis(10);\n        finalize_delay = 500;\n        maxObjects = 500000;\n    }\n\n    /**\n     * Triggers manual garbage collection at specified intervals and measures the impact on performance.\n    * It creates Entry objects to fill up memory and initiates garbage collection.\n    */\n    public void doExecute() {\n        if (System.currentTimeMillis() - lastGC > gc_delay) {\n            logger.info(\"Triggering a manual garbage collection, next one in \" + (gc_delay/1000) + \" seconds.\");\n            // clear old data, we want to clear old Entry objects, because their finalization is expensive\n            System.gc();\n\n            long total = 0;\n            for (int i = 0; i < 10; i++) {\n                while (memUtils.getHeapUsage() < 0.9 && memUtils.getObjectPendingFinalizationCount() < maxObjects) {\n                    new Entry();\n                }\n                long start = System.currentTimeMillis();\n                System.gc();\n                total += System.currentTimeMillis() - start;\n            }\n            logger.info(\"The artificially triggered GCs took: \" + total + \" ms\");\n            lastGC = System.currentTimeMillis();\n        }\n\n    }\n\n    /**\n     * The Entry class represents objects created for the purpose of triggering garbage collection.\n    */\n    private class Entry {\n        /**\n         * Overrides the finalize method to introduce a delay, simulating finalization during garbage collection.\n        *\n        * @throws Throwable If an exception occurs during finalization.\n        */\n        @SuppressWarnings(\"removal\")\n        @Override\n        protected void finalize() throws Throwable {\n            TimeUnit.MILLISECONDS.sleep(finalize_delay);\n            super.finalize();\n        }\n    }\n}\n",
+      "encoding": "base64",
+      "_links": {
+        "self": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/ad/src/main/java/oteldemo/problempattern/GarbageCollectionTrigger.java?ref=main",
+        "git": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/blobs/aa72bc1f2c696bffec698eed453e5fdcd0da03ae",
+        "html": "https://github.com/Lucifer4255/opentelemetry-demo/blob/main/src/ad/src/main/java/oteldemo/problempattern/GarbageCollectionTrigger.java"
+      }
+    }
+  },
+  "e7dad60a8fe3acbd": {
+    "tool": "get_file_contents",
+    "args": {
+      "owner": "Lucifer4255",
+      "path": "src/ad/src/main/java/oteldemo/problempattern/CPULoad.java",
+      "repo": "opentelemetry-demo"
+    },
+    "result": {
+      "name": "CPULoad.java",
+      "path": "src/ad/src/main/java/oteldemo/problempattern/CPULoad.java",
+      "sha": "178f773370d00a4f221ee35e81bbdf935259a233",
+      "size": 3581,
+      "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/ad/src/main/java/oteldemo/problempattern/CPULoad.java?ref=main",
+      "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/blob/main/src/ad/src/main/java/oteldemo/problempattern/CPULoad.java",
+      "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/blobs/178f773370d00a4f221ee35e81bbdf935259a233",
+      "download_url": "https://raw.githubusercontent.com/Lucifer4255/opentelemetry-demo/main/src/ad/src/main/java/oteldemo/problempattern/CPULoad.java",
+      "type": "file",
+      "content": "/*\n* Copyright The OpenTelemetry Authors\n* SPDX-License-Identifier: Apache-2.0\n*/\npackage oteldemo.problempattern;\n\nimport java.util.ArrayList;\nimport java.util.List;\nimport java.util.Optional;\n\nimport io.grpc.ManagedChannelBuilder;\n\nimport org.apache.logging.log4j.LogManager;\nimport org.apache.logging.log4j.Logger;\n\n/**\n * This class is designed to simulate a high CPU load scenario.\n * It contains methods to start and stop a specified number of worker threads designed to\n * perform CPU-intensive calculations.\n */\npublic class CPULoad {\n    private static final Logger logger = LogManager.getLogger(CPULoad.class.getName());\n    private static final int THREAD_COUNT = 4;\n    private boolean running = false;\n    private final List<Logarithmizer> runningWorkers = new ArrayList<>();\n    \n    private static CPULoad instance;\n\n    /**\n     * Singleton pattern to get the instance of CPULoad.\n     * @return The singleton instance of CPULoad.\n     */\n    public static CPULoad getInstance() {\n        if (instance == null) {\n            instance = new CPULoad();\n        }\n        return instance;\n    }\n\n    /**\n     * Starts or stops the CPU load generation based on the input parameter.\n     * If enabled, it launches worker threads. If disabled, it stops any running threads.\n     * \n     * @param enabled Flag to start (true) or stop (false) the CPU load simulation.\n     */\n    public void execute(Boolean enabled) {\n        if (enabled) {\n            logger.info(\"High CPU-Load problempattern enabled\");\n            if (!running) {\n                spawnLoadWorkers(THREAD_COUNT);\n                running = true;\n            }\n        } else {\n            running = false;\n            stopWorkers();\n        }\n    }\n\n    /**\n     * Creates and starts a specified number of Logarithmizer threads to simulate CPU load.\n     * \n     * @param threadCount The number of threads to be started.\n     */\n    private void spawnLoadWorkers(int threadCount) {\n        synchronized(runningWorkers) {\n            for (int i = 0; i < threadCount; i++) {\n                Logarithmizer logarithmizer = new Logarithmizer();\n                Thread thread = new Thread(logarithmizer);\n                thread.setDaemon(true);\n                thread.start();\n                runningWorkers.add(logarithmizer);\n            }\n        }\n    }\n\n    /**\n     * Signals all running Logarithmizer threads to stop and clears the list of running workers.\n     */\n    private void stopWorkers() {\n        synchronized(runningWorkers) {\n            for (Logarithmizer logarithmizer : runningWorkers) {\n                logarithmizer.setShouldRun(false);\n            }\n            runningWorkers.clear();\n        }\n    }\n\n    /**\n     * Inner class representing a worker focused on calculating logarithms to consume CPU resources.\n     */\n    private static class Logarithmizer implements Runnable {\n\n        private volatile boolean shouldRun = true;\n\n        /**\n         * Continuously calculates the logarithm of the current system time until\n         * requested to stop.\n         */\n        @Override\n        public void run() {\n            while (shouldRun) {\n                Math.log(System.currentTimeMillis());\n            }\n        }\n\n        /**\n         * Sets the shouldRun flag to control whether this Logarithmizer should continue\n         * to run.\n         *\n         * @param shouldRun A boolean flag to continue (true) or stop (false) the logarithm computation.\n         */\n        public void setShouldRun(boolean shouldRun) {\n            this.shouldRun = shouldRun;\n       }\n    }\n}\n",
+      "encoding": "base64",
+      "_links": {
+        "self": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/ad/src/main/java/oteldemo/problempattern/CPULoad.java?ref=main",
+        "git": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/blobs/178f773370d00a4f221ee35e81bbdf935259a233",
+        "html": "https://github.com/Lucifer4255/opentelemetry-demo/blob/main/src/ad/src/main/java/oteldemo/problempattern/CPULoad.java"
+      }
+    }
+  }
+}

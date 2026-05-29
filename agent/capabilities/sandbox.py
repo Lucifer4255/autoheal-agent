@@ -11,7 +11,7 @@ from pydantic_ai.usage import UsageLimits
 
 import config
 from agent.models import AgentDeps, ErrorType, SandboxResult
-from agent.sandbox_subagent import build_sandbox_toolsets, sandbox_subagent
+from agent.subagents.sandbox import build_sandbox_toolsets, sandbox_subagent
 
 
 @dataclass
@@ -40,22 +40,30 @@ async def reproduce_in_sandbox(
         return _skipped(skip_reason)
 
     prompt = (
-        "Reproduce this suspected bug in an isolated E2B sandbox.\n\n"
+        "Reproduce this suspected bug by RUNNING code in an isolated E2B sandbox.\n\n"
         f"Repository: {ctx.deps.repo}\n"
-        f"Suspect file: {file_path}\n"
+        f"Suspect file (already located — do not search for it): {file_path}\n"
         f"Error type: {error_type}\n"
         f"Hypothesis: {hypothesis}\n\n"
-        "Use GitHub MCP for read-only source access. Create the smallest repro script, "
-        "run it in E2B, terminate the sandbox, and return SandboxResult."
+        "Create a sandbox, clone the repository into it, go straight to the known suspect "
+        "file, write the smallest repro that exercises it, run it, terminate the sandbox, "
+        "and return SandboxResult. Do not grep/find or call GitHub — the path is known."
     )
 
+    # No `usage=ctx.usage` — sub-agent gets its own token counter so the 300k
+    # cap applies only to sandbox work, not the parent's accumulated total.
     result = await sandbox_subagent.run(
         prompt,
         deps=ctx.deps,
-        usage=ctx.usage,
         toolsets=build_sandbox_toolsets(ctx.deps),
-        usage_limits=UsageLimits(request_limit=5, total_tokens_limit=20_000),
+        usage_limits=UsageLimits(request_limit=50, total_tokens_limit=300_000),
     )
+    # Record authoritative sandbox outcome to the per-run evidence ledger so
+    # the confidence governor can grant HIGH based on a real reproduction.
+    ev = ctx.deps.run_evidence
+    ev.sandbox_attempted = True
+    ev.sandbox_reproduced = result.output.reproduced
+    ev.sandbox_confirmed_file = result.output.confirmed_file
     return result.output
 
 

@@ -31,7 +31,13 @@ async def query_traces(
     time_window_minutes: int = 10,
     limit: int = 20,
 ) -> ToolResult:
-    """Query recent traces for a service."""
+    """Query recent traces for a service.
+
+    `service` is the OpenTelemetry `service.name` attribute and rarely matches the
+    class or module name visible inside log lines. If you guess and get zero traces,
+    do NOT keep guessing variants — read the repo's `docker-compose.yml` (or
+    `compose.yaml`) via the GitHub tools to see the real service names.
+    """
     if not ctx.deps.jaeger_url:
         return _failure("query_traces", "Jaeger URL is not configured.")
 

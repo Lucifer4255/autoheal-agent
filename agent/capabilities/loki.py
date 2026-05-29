@@ -32,7 +32,13 @@ async def query_logs(
     time_window_minutes: int = 10,
     limit: int = 100,
 ) -> ToolResult:
-    """Query recent Loki logs for a service and search term."""
+    """Query Loki logs for a service and a search term.
+
+    `service` is the value of the `compose_service` label and rarely matches the
+    class or module name visible inside log lines. If you guess and get an empty
+    result, do NOT keep guessing variants — read the repo's `docker-compose.yml`
+    (or `compose.yaml`) via the GitHub tools to see the real service names.
+    """
     if not ctx.deps.loki_url:
         return _failure("query_logs", "Loki URL is not configured.")
 
@@ -76,7 +82,11 @@ async def get_log_context(
     service: str,
     lines: int = 20,
 ) -> ToolResult:
-    """Fetch log lines around a timestamp for a service."""
+    """Fetch log lines around a timestamp for a service.
+
+    `service` must be a valid `compose_service` label value (see `query_logs`).
+    `timestamp` accepts epoch seconds/ms/µs/ns or ISO-8601 (e.g. "2026-05-28T19:26:40Z").
+    """
     if not ctx.deps.loki_url:
         return _failure("get_log_context", "Loki URL is not configured.")
 
@@ -140,6 +150,7 @@ def _flatten_streams(payload: dict[str, Any]) -> list[dict[str, Any]]:
 def _parse_loki_timestamp(timestamp: str) -> int:
     """Convert a timestamp string to Loki nanoseconds.
 
+    Accepts numeric epochs (sec/ms/µs/ns) and ISO-8601 strings (e.g. '2026-05-28T19:26:40Z').
     Jaeger returns startTime in microseconds. JavaScript Date.now() is milliseconds.
     Thresholds (powers of 10 midpoints):
       < 1e10  → seconds    → multiply by 1e9
@@ -147,7 +158,14 @@ def _parse_loki_timestamp(timestamp: str) -> int:
       < 1e16  → microseconds → multiply by 1e3
       >= 1e16 → already nanoseconds
     """
+    from datetime import datetime
+
     value = timestamp.strip()
+    # ISO-8601 with 'T' separator — LLMs sometimes pass this instead of an epoch
+    if "T" in value:
+        iso = value.replace("Z", "+00:00")
+        dt = datetime.fromisoformat(iso)
+        return int(dt.timestamp() * 1_000_000_000)
     if "." in value:
         return int(float(value) * 1_000_000_000)
     parsed = int(value)

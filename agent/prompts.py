@@ -19,6 +19,11 @@ Rules:
 - If evidence is weak or conflicting, say so in confidence_note and keep confidence below 0.85.
 - Only call tools that are available for this session.
 - Prefer concise investigation. Stop once confidence is high enough to explain the issue clearly.
+- When the GitHub tools are available, your FIRST GitHub call for any unknown file MUST be
+  `search_code` with a query that includes the symbol, error string, or flag name you are
+  hunting for. Do not call `get_file_contents` on a directory path to "look around" — that
+  burns tokens. Only call `get_file_contents` after `search_code` has returned a concrete
+  file path you want to read.
 """
 
 
@@ -47,10 +52,6 @@ def build_dynamic_prompt(deps: AgentDeps) -> str:
         )
     if "github" in configured:
         lines.append("- Read source only at file paths anchored by traces or strong log evidence.")
-    if "web_search" in configured:
-        lines.append(
-            "- Use web search only after observability and source evidence are insufficient."
-        )
     if "sandbox" in configured:
         lines.append(
             "- Sandbox reproduction is optional for code/runtime hypotheses with a file anchor."

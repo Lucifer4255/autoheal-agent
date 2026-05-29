@@ -3,41 +3,37 @@
 from __future__ import annotations
 
 import json
+import re
 from contextlib import asynccontextmanager
 from pathlib import Path
 from typing import Any
 from uuid import uuid4
 
 import httpx
+import logfire
 from fastapi import FastAPI
 from fastapi.responses import FileResponse, StreamingResponse
 from pydantic import BaseModel
 
+from agent.loop import stream_investigate
 from agent.models import AgentDeps, IssueContext
 
 STATIC_DIR = Path(__file__).parent / "static"
 
 sessions: dict[str, AgentDeps] = {}
+session_history: dict[str, list] = {}
 _http_client: httpx.AsyncClient | None = None
 
-# Keys the message parser recognises as config — anything else is free-form issue text
-_KNOWN_KEYS = {
-    "jaeger_url",
-    "loki_url",
-    "jaeger_auth",
-    "loki_auth",
-    "github_token",
-    "repo",
-    "e2b_api_key",
-    "e2b_key",
-    "tavily_key",
-    "tavily_api_key",
-    "service_name",
-}
+_GITHUB_URL_RE = re.compile(
+    r"https?://(?:www\.)?github\.com/[\w.-]+/[\w.-]+",
+    re.IGNORECASE,
+)
 
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
+    logfire.configure()
+    logfire.instrument_pydantic_ai()
     global _http_client
     _http_client = httpx.AsyncClient()
     yield
@@ -53,44 +49,14 @@ class ChatRequest(BaseModel):
     session_id: str | None = None
 
 
-def parse_message(text: str) -> tuple[dict[str, str], str]:
-    """Split a chat message into known key:value config pairs and free-form issue text.
-
-    Lines whose key matches a known config field are extracted as config.
-    Everything else (including lines with ':' in URLs or descriptions) stays as issue text.
-    """
-    kv: dict[str, str] = {}
-    free_lines: list[str] = []
-
-    for raw_line in text.splitlines():
-        line = raw_line.strip()
-        if not line:
-            continue
-        if ":" in line:
-            key, value = line.split(":", 1)
-            if key.strip().lower() in _KNOWN_KEYS:
-                kv[key.strip()] = value.strip()
-                continue
-        free_lines.append(line)
-
-    return kv, "\n".join(free_lines)
+def extract_repo_url(text: str) -> str | None:
+    """Pull the first GitHub URL out of the message, if any."""
+    match = _GITHUB_URL_RE.search(text)
+    return match.group(0) if match else None
 
 
 def sse_event(payload: dict[str, Any]) -> str:
     return f"data: {json.dumps(payload)}\n\n"
-
-
-def _setup_summary(deps: AgentDeps) -> str:
-    configured = deps.configured_capabilities()
-    needs = deps.needs_input()
-    parts = []
-    if configured:
-        parts.append(f"Configured: {', '.join(configured)}.")
-    if needs:
-        parts.append(f"Still needed: {', '.join(needs)}.")
-    else:
-        parts.append("All set — describe your issue to start investigating.")
-    return " ".join(parts)
 
 
 @app.get("/")
@@ -105,7 +71,6 @@ async def health() -> dict[str, str]:
 
 @app.post("/chat")
 async def chat(request: ChatRequest) -> StreamingResponse:
-    # Resolve or create session
     session_id = request.session_id
     if session_id and session_id in sessions:
         deps = sessions[session_id]
@@ -113,111 +78,33 @@ async def chat(request: ChatRequest) -> StreamingResponse:
         session_id = str(uuid4())
         deps = AgentDeps.from_env(http_client=_http_client)
 
-    kv_pairs, issue_text = parse_message(request.message)
-
-    if kv_pairs:
-        deps = deps.apply_overrides(kv_pairs)
+    repo_url = extract_repo_url(request.message)
+    if repo_url:
+        deps = deps.apply_overrides({"repo": repo_url})
 
     sessions[session_id] = deps
 
+    issue = IssueContext(description=request.message, service_name=deps.service_name)
+
+    history = session_history.get(session_id)
+
     async def stream():
-        # Acknowledge any config updates first
-        if kv_pairs:
+        try:
+            async for event in stream_investigate(issue, deps, message_history=history):
+                if event["type"] == "step":
+                    yield sse_event(event)
+                elif event["type"] == "result":
+                    session_history[session_id] = event["messages"]
+                    yield sse_event(
+                        {
+                            "type": "final",
+                            "session_id": session_id,
+                            "result": event["output"].model_dump(mode="json"),
+                        }
+                    )
+        except Exception as exc:
             yield sse_event(
-                {
-                    "type": "setup",
-                    "session_id": session_id,
-                    "configured": deps.configured_capabilities(),
-                    "unavailable": deps.unavailable_capabilities(),
-                    "needs_input": deps.needs_input(),
-                    "message": _setup_summary(deps),
-                }
-            )
-
-        if issue_text:
-            issue = IssueContext(
-                description=issue_text,
-                service_name=deps.service_name,
-            )
-
-            yield sse_event(
-                {
-                    "type": "step",
-                    "round": 0,
-                    "tool": "router",
-                    "result_summary": (
-                        f"Investigating ({issue.service_name or 'unspecified'}): {issue_text[:100]}"
-                    ),
-                    "confidence_after": 0.1,
-                }
-            )
-
-            yield sse_event(
-                {
-                    "type": "step",
-                    "round": 1,
-                    "tool": "session",
-                    "result_summary": (
-                        "Active capabilities: "
-                        f"{', '.join(deps.configured_capabilities()) or 'none'}"
-                    ),
-                    "confidence_after": 0.2,
-                }
-            )
-
-            unavailable = deps.unavailable_capabilities()
-            if unavailable:
-                yield sse_event(
-                    {
-                        "type": "elicit",
-                        "message": (
-                            f"I can go deeper with: **{', '.join(unavailable)}**. "
-                            "Paste the credentials in the chat to enable them and I'll continue."
-                        ),
-                        "wants": unavailable,
-                    }
-                )
-
-            # TODO Phase 5: replace body above with agent.loop.investigate(issue, deps)
-            yield sse_event(
-                {
-                    "type": "final",
-                    "session_id": session_id,
-                    "result": {
-                        "issue_summary": issue_text,
-                        "investigation_steps": [],
-                        "root_cause": {
-                            "description": "UI harness placeholder — real agent wires in Phase 5.",
-                            "file_path": None,
-                            "line_number": None,
-                            "confidence": 0.0,
-                            "evidence": ["Session and IssueContext are wired correctly."],
-                            "error_type": "unknown",
-                        },
-                        "recommended_fix": (
-                            "Continue with Phase 2 (fingerprint) and Phase 3 (capabilities)."
-                        ),
-                        "action_taken": "explained",
-                        "tools_used": [],
-                        "tools_unavailable": unavailable,
-                    },
-                }
-            )
-
-        elif not kv_pairs:
-            # Empty or unrecognised message — greet and guide
-            yield sse_event(
-                {
-                    "type": "setup",
-                    "session_id": session_id,
-                    "configured": deps.configured_capabilities(),
-                    "unavailable": deps.unavailable_capabilities(),
-                    "needs_input": deps.needs_input(),
-                    "message": (
-                        "Hi! Describe a production issue to start investigating, "
-                        "or paste credentials to configure tools (e.g. `repo: owner/name`)."
-                    ),
-                }
+                {"type": "error", "session_id": session_id, "message": str(exc)}
             )
 
     return StreamingResponse(

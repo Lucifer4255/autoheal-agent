@@ -11,7 +11,7 @@ dependencies = [
     "httpx",
     "python-dotenv",
     "e2b",
-    "tavily-python",
+    "logfire",
 ]
 
 [project.optional-dependencies]
@@ -19,6 +19,7 @@ dev = [
     "pytest",
     "pytest-asyncio",
     "ruff",
+    "pydantic-evals",
 ]
 
 [build-system]

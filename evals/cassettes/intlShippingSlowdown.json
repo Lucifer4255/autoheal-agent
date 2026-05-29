@@ -1,0 +1,1129 @@
+{
+  "4706f19fb7dfc41b": {
+    "tool": "query_logs",
+    "args": {
+      "service": "shipping",
+      "query": "error OR slow OR timeout OR quote",
+      "time_window_minutes": 10,
+      "limit": 100
+    },
+    "result": {
+      "tool_name": "query_logs",
+      "success": true,
+      "data": {
+        "service": "shipping",
+        "query": "error OR slow OR timeout OR quote",
+        "logql": "{compose_service=\"shipping\"} |= \"error OR slow OR timeout OR quote\"",
+        "entries": []
+      },
+      "error": null
+    }
+  },
+  "53191c87e062081d": {
+    "tool": "query_logs",
+    "args": {
+      "service": "shipping",
+      "query": "",
+      "time_window_minutes": 10,
+      "limit": 50
+    },
+    "result": {
+      "tool_name": "query_logs",
+      "success": true,
+      "data": {
+        "service": "shipping",
+        "query": "",
+        "logql": "{compose_service=\"shipping\"} |= \"\"",
+        "entries": []
+      },
+      "error": null
+    }
+  },
+  "74672f0d32cebc2a": {
+    "tool": "query_logs",
+    "args": {
+      "service": "shipping",
+      "query": "EUR OR GBP OR JPY OR CHF OR CAD OR AUD OR convert OR currency",
+      "time_window_minutes": 10,
+      "limit": 50
+    },
+    "result": {
+      "tool_name": "query_logs",
+      "success": true,
+      "data": {
+        "service": "shipping",
+        "query": "EUR OR GBP OR JPY OR CHF OR CAD OR AUD OR convert OR currency",
+        "logql": "{compose_service=\"shipping\"} |= \"EUR OR GBP OR JPY OR CHF OR CAD OR AUD OR convert OR currency\"",
+        "entries": []
+      },
+      "error": null
+    }
+  },
+  "c82372b741ca430c": {
+    "tool": "query_logs",
+    "args": {
+      "service": "shipping",
+      "query": "IntlShippingSlowdown",
+      "time_window_minutes": 10,
+      "limit": 50
+    },
+    "result": {
+      "tool_name": "query_logs",
+      "success": true,
+      "data": {
+        "service": "shipping",
+        "query": "IntlShippingSlowdown",
+        "logql": "{compose_service=\"shipping\"} |= \"IntlShippingSlowdown\"",
+        "entries": []
+      },
+      "error": null
+    }
+  },
+  "1ae4e41d899b7eb2": {
+    "tool": "query_logs",
+    "args": {
+      "service": "shipping",
+      "query": "\"Received Quote\"",
+      "time_window_minutes": 10,
+      "limit": 50
+    },
+    "result": {
+      "tool_name": "query_logs",
+      "success": true,
+      "data": {
+        "service": "shipping",
+        "query": "\"Received Quote\"",
+        "logql": "{compose_service=\"shipping\"} |= \"\\\"Received Quote\\\"\"",
+        "entries": []
+      },
+      "error": null
+    }
+  },
+  "dd283cd35cb9321f": {
+    "tool": "query_logs",
+    "args": {
+      "service": "shipping",
+      "query": "get-quote",
+      "time_window_minutes": 10,
+      "limit": 50
+    },
+    "result": {
+      "tool_name": "query_logs",
+      "success": true,
+      "data": {
+        "service": "shipping",
+        "query": "get-quote",
+        "logql": "{compose_service=\"shipping\"} |= \"get-quote\"",
+        "entries": []
+      },
+      "error": null
+    }
+  },
+  "6ee24917fda5152e": {
+    "tool": "query_logs",
+    "args": {
+      "service": "shipping",
+      "query": "intlShippingSlowdown",
+      "time_window_minutes": 10,
+      "limit": 50
+    },
+    "result": {
+      "tool_name": "query_logs",
+      "success": true,
+      "data": {
+        "service": "shipping",
+        "query": "intlShippingSlowdown",
+        "logql": "{compose_service=\"shipping\"} |= \"intlShippingSlowdown\"",
+        "entries": []
+      },
+      "error": null
+    }
+  },
+  "52eb7ac52d37399d": {
+    "tool": "query_logs",
+    "args": {
+      "service": "shipping",
+      "query": "slowdown",
+      "time_window_minutes": 10,
+      "limit": 50
+    },
+    "result": {
+      "tool_name": "query_logs",
+      "success": true,
+      "data": {
+        "service": "shipping",
+        "query": "slowdown",
+        "logql": "{compose_service=\"shipping\"} |= \"slowdown\"",
+        "entries": []
+      },
+      "error": null
+    }
+  },
+  "6944a816f6bc5777": {
+    "tool": "query_logs",
+    "args": {
+      "service": "shipping",
+      "query": "IntlShippingSlowdown OR intlShippingSlowdown OR ship-order OR ship_order",
+      "time_window_minutes": 10,
+      "limit": 100
+    },
+    "result": {
+      "tool_name": "query_logs",
+      "success": true,
+      "data": {
+        "service": "shipping",
+        "query": "IntlShippingSlowdown OR intlShippingSlowdown OR ship-order OR ship_order",
+        "logql": "{compose_service=\"shipping\"} |= \"IntlShippingSlowdown OR intlShippingSlowdown OR ship-order OR ship_order\"",
+        "entries": []
+      },
+      "error": null
+    }
+  },
+  "2dd802b5ed45c176": {
+    "tool": "query_logs",
+    "args": {
+      "service": "checkout",
+      "query": "feature_flag OR flagd",
+      "time_window_minutes": 10,
+      "limit": 100
+    },
+    "result": {
+      "tool_name": "query_logs",
+      "success": true,
+      "data": {
+        "service": "checkout",
+        "query": "feature_flag OR flagd",
+        "logql": "{compose_service=\"checkout\"} |= \"feature_flag OR flagd\"",
+        "entries": []
+      },
+      "error": null
+    }
+  },
+  "4a58f48b82b1c950": {
+    "tool": "query_logs",
+    "args": {
+      "service": "checkout",
+      "query": "intlShippingSlowdown OR shipping",
+      "time_window_minutes": 10,
+      "limit": 100
+    },
+    "result": {
+      "tool_name": "query_logs",
+      "success": true,
+      "data": {
+        "service": "checkout",
+        "query": "intlShippingSlowdown OR shipping",
+        "logql": "{compose_service=\"checkout\"} |= \"intlShippingSlowdown OR shipping\"",
+        "entries": []
+      },
+      "error": null
+    }
+  },
+  "636ddc3171e28d5c": {
+    "tool": "query_logs",
+    "args": {
+      "service": "shipping",
+      "query": "slow OR timeout OR error OR international OR country",
+      "time_window_minutes": 10,
+      "limit": 100
+    },
+    "result": {
+      "tool_name": "query_logs",
+      "success": true,
+      "data": {
+        "service": "shipping",
+        "query": "slow OR timeout OR error OR international OR country",
+        "logql": "{compose_service=\"shipping\"} |= \"slow OR timeout OR error OR international OR country\"",
+        "entries": []
+      },
+      "error": null
+    }
+  },
+  "1a3a138e616b6b14": {
+    "tool": "query_logs",
+    "args": {
+      "service": "shipping",
+      "query": "quote OR estimate OR shipping OR currency",
+      "time_window_minutes": 10,
+      "limit": 100
+    },
+    "result": {
+      "tool_name": "query_logs",
+      "success": true,
+      "data": {
+        "service": "shipping",
+        "query": "quote OR estimate OR shipping OR currency",
+        "logql": "{compose_service=\"shipping\"} |= \"quote OR estimate OR shipping OR currency\"",
+        "entries": []
+      },
+      "error": null
+    }
+  },
+  "dbf4c8eb95487f2a": {
+    "tool": "query_logs",
+    "args": {
+      "service": "shipping",
+      "query": "get-quote OR ship-order OR quote",
+      "time_window_minutes": 10,
+      "limit": 50
+    },
+    "result": {
+      "tool_name": "query_logs",
+      "success": true,
+      "data": {
+        "service": "shipping",
+        "query": "get-quote OR ship-order OR quote",
+        "logql": "{compose_service=\"shipping\"} |= \"get-quote OR ship-order OR quote\"",
+        "entries": []
+      },
+      "error": null
+    }
+  },
+  "2d2e82312af509f8": {
+    "tool": "query_logs",
+    "args": {
+      "service": "shipping",
+      "query": "error OR ERR OR warn OR panic",
+      "time_window_minutes": 15,
+      "limit": 100
+    },
+    "result": {
+      "tool_name": "query_logs",
+      "success": true,
+      "data": {
+        "service": "shipping",
+        "query": "error OR ERR OR warn OR panic",
+        "logql": "{compose_service=\"shipping\"} |= \"error OR ERR OR warn OR panic\"",
+        "entries": []
+      },
+      "error": null
+    }
+  },
+  "1ca2c02c61a634a0": {
+    "tool": "query_logs",
+    "args": {
+      "service": "shipping",
+      "query": "IntlShippingSlowdown OR intlShipping OR international",
+      "time_window_minutes": 15,
+      "limit": 50
+    },
+    "result": {
+      "tool_name": "query_logs",
+      "success": true,
+      "data": {
+        "service": "shipping",
+        "query": "IntlShippingSlowdown OR intlShipping OR international",
+        "logql": "{compose_service=\"shipping\"} |= \"IntlShippingSlowdown OR intlShipping OR international\"",
+        "entries": []
+      },
+      "error": null
+    }
+  },
+  "90418c9e8835e743": {
+    "tool": "search_code",
+    "args": {
+      "q": "repo:Lucifer4255/opentelemetry-demo shipping quote"
+    },
+    "result": {
+      "total_count": 0,
+      "incomplete_results": false,
+      "items": []
+    }
+  },
+  "3bf48777d55879bd": {
+    "tool": "search_code",
+    "args": {
+      "q": "repo:Lucifer4255/opentelemetry-demo shipping",
+      "per_page": 20
+    },
+    "result": {
+      "total_count": 0,
+      "incomplete_results": false,
+      "items": []
+    }
+  },
+  "b27d0134cb40292e": {
+    "tool": "get_file_contents",
+    "args": {
+      "owner": "Lucifer4255",
+      "repo": "opentelemetry-demo",
+      "path": "src"
+    },
+    "result": [
+      {
+        "type": "dir",
+        "size": 0,
+        "name": "accounting",
+        "path": "src/accounting",
+        "sha": "c43ed72e8428124f1274cff5a36311662196e1c3",
+        "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/accounting?ref=main",
+        "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/trees/c43ed72e8428124f1274cff5a36311662196e1c3",
+        "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/tree/main/src/accounting",
+        "download_url": null
+      },
+      {
+        "type": "dir",
+        "size": 0,
+        "name": "ad",
+        "path": "src/ad",
+        "sha": "e07bdb4c0ec320daf2cd12ea03aa6196cbfe154d",
+        "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/ad?ref=main",
+        "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/trees/e07bdb4c0ec320daf2cd12ea03aa6196cbfe154d",
+        "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/tree/main/src/ad",
+        "download_url": null
+      },
+      {
+        "type": "dir",
+        "size": 0,
+        "name": "cart",
+        "path": "src/cart",
+        "sha": "e1cfb284feb1095ad61cffbc7e4d95ed4f68d667",
+        "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/cart?ref=main",
+        "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/trees/e1cfb284feb1095ad61cffbc7e4d95ed4f68d667",
+        "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/tree/main/src/cart",
+        "download_url": null
+      },
+      {
+        "type": "dir",
+        "size": 0,
+        "name": "checkout",
+        "path": "src/checkout",
+        "sha": "4b06dcee4769f88a02cf2e1602b7bea758d5623c",
+        "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/checkout?ref=main",
+        "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/trees/4b06dcee4769f88a02cf2e1602b7bea758d5623c",
+        "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/tree/main/src/checkout",
+        "download_url": null
+      },
+      {
+        "type": "dir",
+        "size": 0,
+        "name": "currency",
+        "path": "src/currency",
+        "sha": "20c38ef048cebff4f3f55117acd60da03960a69e",
+        "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/currency?ref=main",
+        "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/trees/20c38ef048cebff4f3f55117acd60da03960a69e",
+        "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/tree/main/src/currency",
+        "download_url": null
+      },
+      {
+        "type": "dir",
+        "size": 0,
+        "name": "email",
+        "path": "src/email",
+        "sha": "036894a0ab52bb173bc01d33f332713b80063789",
+        "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/email?ref=main",
+        "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/trees/036894a0ab52bb173bc01d33f332713b80063789",
+        "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/tree/main/src/email",
+        "download_url": null
+      },
+      {
+        "type": "dir",
+        "size": 0,
+        "name": "flagd-ui",
+        "path": "src/flagd-ui",
+        "sha": "e13a91d463e3f2347d8f030628877417f50606fc",
+        "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/flagd-ui?ref=main",
+        "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/trees/e13a91d463e3f2347d8f030628877417f50606fc",
+        "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/tree/main/src/flagd-ui",
+        "download_url": null
+      },
+      {
+        "type": "dir",
+        "size": 0,
+        "name": "flagd",
+        "path": "src/flagd",
+        "sha": "5299de75eb52a2e0d6b14ff70b8c74e8c181c87f",
+        "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/flagd?ref=main",
+        "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/trees/5299de75eb52a2e0d6b14ff70b8c74e8c181c87f",
+        "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/tree/main/src/flagd",
+        "download_url": null
+      },
+      {
+        "type": "dir",
+        "size": 0,
+        "name": "fraud-detection",
+        "path": "src/fraud-detection",
+        "sha": "adb8a233b3fae55ceff7a631997cdf7b64839973",
+        "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/fraud-detection?ref=main",
+        "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/trees/adb8a233b3fae55ceff7a631997cdf7b64839973",
+        "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/tree/main/src/fraud-detection",
+        "download_url": null
+      },
+      {
+        "type": "dir",
+        "size": 0,
+        "name": "frontend-proxy",
+        "path": "src/frontend-proxy",
+        "sha": "3302821b2ff8daf27c17b9103c4c4f73ec7068ea",
+        "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/frontend-proxy?ref=main",
+        "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/trees/3302821b2ff8daf27c17b9103c4c4f73ec7068ea",
+        "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/tree/main/src/frontend-proxy",
+        "download_url": null
+      },
+      {
+        "type": "dir",
+        "size": 0,
+        "name": "frontend",
+        "path": "src/frontend",
+        "sha": "f7f2c1e4c47ffd0188a40fe897e09cbffa6cb503",
+        "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/frontend?ref=main",
+        "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/trees/f7f2c1e4c47ffd0188a40fe897e09cbffa6cb503",
+        "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/tree/main/src/frontend",
+        "download_url": null
+      },
+      {
+        "type": "dir",
+        "size": 0,
+        "name": "grafana",
+        "path": "src/grafana",
+        "sha": "4d9be83347c053b6d2bb0e1e0218b933f7cf9e9b",
+        "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/grafana?ref=main",
+        "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/trees/4d9be83347c053b6d2bb0e1e0218b933f7cf9e9b",
+        "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/tree/main/src/grafana",
+        "download_url": null
+      },
+      {
+        "type": "dir",
+        "size": 0,
+        "name": "image-provider",
+        "path": "src/image-provider",
+        "sha": "a4c1038b8f1fc2306efcc1aedffc92864aeb9f4b",
+        "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/image-provider?ref=main",
+        "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/trees/a4c1038b8f1fc2306efcc1aedffc92864aeb9f4b",
+        "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/tree/main/src/image-provider",
+        "download_url": null
+      },
+      {
+        "type": "dir",
+        "size": 0,
+        "name": "jaeger",
+        "path": "src/jaeger",
+        "sha": "110b96aecafd71a9f36a28f1448263a2e5c0ec2c",
+        "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/jaeger?ref=main",
+        "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/trees/110b96aecafd71a9f36a28f1448263a2e5c0ec2c",
+        "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/tree/main/src/jaeger",
+        "download_url": null
+      },
+      {
+        "type": "dir",
+        "size": 0,
+        "name": "kafka",
+        "path": "src/kafka",
+        "sha": "d77986666b99ef0732ad0d6745b646a002990e57",
+        "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/kafka?ref=main",
+        "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/trees/d77986666b99ef0732ad0d6745b646a002990e57",
+        "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/tree/main/src/kafka",
+        "download_url": null
+      },
+      {
+        "type": "dir",
+        "size": 0,
+        "name": "llm",
+        "path": "src/llm",
+        "sha": "31adc69008e3973ba7c0f86715f8057335860a94",
+        "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/llm?ref=main",
+        "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/trees/31adc69008e3973ba7c0f86715f8057335860a94",
+        "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/tree/main/src/llm",
+        "download_url": null
+      },
+      {
+        "type": "dir",
+        "size": 0,
+        "name": "load-generator",
+        "path": "src/load-generator",
+        "sha": "96358fbc234d74c336c964fa28d2954fb2126acb",
+        "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/load-generator?ref=main",
+        "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/trees/96358fbc234d74c336c964fa28d2954fb2126acb",
+        "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/tree/main/src/load-generator",
+        "download_url": null
+      },
+      {
+        "type": "dir",
+        "size": 0,
+        "name": "opensearch",
+        "path": "src/opensearch",
+        "sha": "6975cb5d5aa735935854d750693a16963c3bf0e1",
+        "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/opensearch?ref=main",
+        "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/trees/6975cb5d5aa735935854d750693a16963c3bf0e1",
+        "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/tree/main/src/opensearch",
+        "download_url": null
+      },
+      {
+        "type": "dir",
+        "size": 0,
+        "name": "otel-collector",
+        "path": "src/otel-collector",
+        "sha": "b4a7884bca9fa70d36bc034ca6a569260e6a282a",
+        "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/otel-collector?ref=main",
+        "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/trees/b4a7884bca9fa70d36bc034ca6a569260e6a282a",
+        "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/tree/main/src/otel-collector",
+        "download_url": null
+      },
+      {
+        "type": "dir",
+        "size": 0,
+        "name": "payment",
+        "path": "src/payment",
+        "sha": "bfd07ca549e57f176194e8378c40aa5d68f82748",
+        "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/payment?ref=main",
+        "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/trees/bfd07ca549e57f176194e8378c40aa5d68f82748",
+        "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/tree/main/src/payment",
+        "download_url": null
+      },
+      {
+        "type": "dir",
+        "size": 0,
+        "name": "postgresql",
+        "path": "src/postgresql",
+        "sha": "a496220429e31f2c04052d97948969a9762f91d5",
+        "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/postgresql?ref=main",
+        "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/trees/a496220429e31f2c04052d97948969a9762f91d5",
+        "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/tree/main/src/postgresql",
+        "download_url": null
+      },
+      {
+        "type": "dir",
+        "size": 0,
+        "name": "product-catalog",
+        "path": "src/product-catalog",
+        "sha": "e4a8ff8ebc9245c0152b8734cec975cede9d75e1",
+        "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/product-catalog?ref=main",
+        "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/trees/e4a8ff8ebc9245c0152b8734cec975cede9d75e1",
+        "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/tree/main/src/product-catalog",
+        "download_url": null
+      },
+      {
+        "type": "dir",
+        "size": 0,
+        "name": "product-reviews",
+        "path": "src/product-reviews",
+        "sha": "7a99cd3e52b101bbe4bc8d208107430b8664ed6d",
+        "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/product-reviews?ref=main",
+        "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/trees/7a99cd3e52b101bbe4bc8d208107430b8664ed6d",
+        "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/tree/main/src/product-reviews",
+        "download_url": null
+      },
+      {
+        "type": "dir",
+        "size": 0,
+        "name": "prometheus",
+        "path": "src/prometheus",
+        "sha": "59108943ea1b1b85d76f7e2e1842dfc8cc757da8",
+        "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/prometheus?ref=main",
+        "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/trees/59108943ea1b1b85d76f7e2e1842dfc8cc757da8",
+        "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/tree/main/src/prometheus",
+        "download_url": null
+      },
+      {
+        "type": "dir",
+        "size": 0,
+        "name": "quote",
+        "path": "src/quote",
+        "sha": "e7005ca9759fc716fa33485955b1dcb5ec3d407d",
+        "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/quote?ref=main",
+        "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/trees/e7005ca9759fc716fa33485955b1dcb5ec3d407d",
+        "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/tree/main/src/quote",
+        "download_url": null
+      },
+      {
+        "type": "dir",
+        "size": 0,
+        "name": "react-native-app",
+        "path": "src/react-native-app",
+        "sha": "138905be92cadd340c9dc10cb766388f1da4582f",
+        "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/react-native-app?ref=main",
+        "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/trees/138905be92cadd340c9dc10cb766388f1da4582f",
+        "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/tree/main/src/react-native-app",
+        "download_url": null
+      },
+      {
+        "type": "dir",
+        "size": 0,
+        "name": "recommendation",
+        "path": "src/recommendation",
+        "sha": "f43a00100b718ff767d9767b1a46bffa56b32265",
+        "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/recommendation?ref=main",
+        "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/trees/f43a00100b718ff767d9767b1a46bffa56b32265",
+        "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/tree/main/src/recommendation",
+        "download_url": null
+      },
+      {
+        "type": "dir",
+        "size": 0,
+        "name": "shipping",
+        "path": "src/shipping",
+        "sha": "4d40f214de4e1ee98bc00036d29c83b16220adbc",
+        "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/shipping?ref=main",
+        "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/trees/4d40f214de4e1ee98bc00036d29c83b16220adbc",
+        "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/tree/main/src/shipping",
+        "download_url": null
+      },
+      {
+        "type": "dir",
+        "size": 0,
+        "name": "telemetry-docs",
+        "path": "src/telemetry-docs",
+        "sha": "45f3813666cb4effd7a7a56d5e898344a6f17355",
+        "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/telemetry-docs?ref=main",
+        "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/trees/45f3813666cb4effd7a7a56d5e898344a6f17355",
+        "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/tree/main/src/telemetry-docs",
+        "download_url": null
+      }
+    ]
+  },
+  "c94a910c1fad22e5": {
+    "tool": "get_file_contents",
+    "args": {
+      "owner": "Lucifer4255",
+      "repo": "opentelemetry-demo",
+      "path": "src/shipping"
+    },
+    "result": [
+      {
+        "type": "file",
+        "size": 19,
+        "name": ".dockerignore",
+        "path": "src/shipping/.dockerignore",
+        "sha": "342ee837ac13855defb5b0c672be739d1ec1789f",
+        "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/shipping/.dockerignore?ref=main",
+        "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/blobs/342ee837ac13855defb5b0c672be739d1ec1789f",
+        "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/blob/main/src/shipping/.dockerignore",
+        "download_url": "https://raw.githubusercontent.com/Lucifer4255/opentelemetry-demo/main/src/shipping/.dockerignore"
+      },
+      {
+        "type": "file",
+        "size": 73504,
+        "name": "Cargo.lock",
+        "path": "src/shipping/Cargo.lock",
+        "sha": "8ab8b5130f8ae3f07424c3712e1358f735a6e421",
+        "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/shipping/Cargo.lock?ref=main",
+        "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/blobs/8ab8b5130f8ae3f07424c3712e1358f735a6e421",
+        "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/blob/main/src/shipping/Cargo.lock",
+        "download_url": "https://raw.githubusercontent.com/Lucifer4255/opentelemetry-demo/main/src/shipping/Cargo.lock"
+      },
+      {
+        "type": "file",
+        "size": 1167,
+        "name": "Cargo.toml",
+        "path": "src/shipping/Cargo.toml",
+        "sha": "50698fd4a6492d0804ca6c1bf1880160cdd7b6e1",
+        "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/shipping/Cargo.toml?ref=main",
+        "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/blobs/50698fd4a6492d0804ca6c1bf1880160cdd7b6e1",
+        "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/blob/main/src/shipping/Cargo.toml",
+        "download_url": "https://raw.githubusercontent.com/Lucifer4255/opentelemetry-demo/main/src/shipping/Cargo.toml"
+      },
+      {
+        "type": "file",
+        "size": 1578,
+        "name": "Dockerfile",
+        "path": "src/shipping/Dockerfile",
+        "sha": "b4a198d7134a3733e47fd71469f0b6bcb97a28a6",
+        "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/shipping/Dockerfile?ref=main",
+        "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/blobs/b4a198d7134a3733e47fd71469f0b6bcb97a28a6",
+        "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/blob/main/src/shipping/Dockerfile",
+        "download_url": "https://raw.githubusercontent.com/Lucifer4255/opentelemetry-demo/main/src/shipping/Dockerfile"
+      },
+      {
+        "type": "file",
+        "size": 918,
+        "name": "README.md",
+        "path": "src/shipping/README.md",
+        "sha": "4253312005fcda6a796a5a6da64e56104a785685",
+        "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/shipping/README.md?ref=main",
+        "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/blobs/4253312005fcda6a796a5a6da64e56104a785685",
+        "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/blob/main/src/shipping/README.md",
+        "download_url": "https://raw.githubusercontent.com/Lucifer4255/opentelemetry-demo/main/src/shipping/README.md"
+      },
+      {
+        "type": "dir",
+        "size": 0,
+        "name": "src",
+        "path": "src/shipping/src",
+        "sha": "b7e251f5d23ae12fe8de769606840f45d2fdbcd0",
+        "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/shipping/src?ref=main",
+        "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/trees/b7e251f5d23ae12fe8de769606840f45d2fdbcd0",
+        "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/tree/main/src/shipping/src",
+        "download_url": null
+      }
+    ]
+  },
+  "11067065bd203afa": {
+    "tool": "get_file_contents",
+    "args": {
+      "owner": "Lucifer4255",
+      "repo": "opentelemetry-demo",
+      "path": "src/shipping/src"
+    },
+    "result": [
+      {
+        "type": "file",
+        "size": 1886,
+        "name": "main.rs",
+        "path": "src/shipping/src/main.rs",
+        "sha": "2b9b3eb7c3d404718cbf028e7b72ff3cf11a4301",
+        "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/shipping/src/main.rs?ref=main",
+        "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/blobs/2b9b3eb7c3d404718cbf028e7b72ff3cf11a4301",
+        "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/blob/main/src/shipping/src/main.rs",
+        "download_url": "https://raw.githubusercontent.com/Lucifer4255/opentelemetry-demo/main/src/shipping/src/main.rs"
+      },
+      {
+        "type": "file",
+        "size": 5738,
+        "name": "shipping_service.rs",
+        "path": "src/shipping/src/shipping_service.rs",
+        "sha": "d112da7e6d855cf43b652bf9a375267e6846e64c",
+        "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/shipping/src/shipping_service.rs?ref=main",
+        "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/blobs/d112da7e6d855cf43b652bf9a375267e6846e64c",
+        "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/blob/main/src/shipping/src/shipping_service.rs",
+        "download_url": "https://raw.githubusercontent.com/Lucifer4255/opentelemetry-demo/main/src/shipping/src/shipping_service.rs"
+      },
+      {
+        "type": "dir",
+        "size": 0,
+        "name": "shipping_service",
+        "path": "src/shipping/src/shipping_service",
+        "sha": "ba5c2e0ea75cc112055a87f6f0f5c9d4eb7f581f",
+        "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/shipping/src/shipping_service?ref=main",
+        "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/trees/ba5c2e0ea75cc112055a87f6f0f5c9d4eb7f581f",
+        "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/tree/main/src/shipping/src/shipping_service",
+        "download_url": null
+      },
+      {
+        "type": "file",
+        "size": 2474,
+        "name": "telemetry_conf.rs",
+        "path": "src/shipping/src/telemetry_conf.rs",
+        "sha": "b3b8d5c1e518109ca6eb7654b2972240cb2b3c4b",
+        "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/shipping/src/telemetry_conf.rs?ref=main",
+        "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/blobs/b3b8d5c1e518109ca6eb7654b2972240cb2b3c4b",
+        "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/blob/main/src/shipping/src/telemetry_conf.rs",
+        "download_url": "https://raw.githubusercontent.com/Lucifer4255/opentelemetry-demo/main/src/shipping/src/telemetry_conf.rs"
+      }
+    ]
+  },
+  "6622efc371272938": {
+    "tool": "get_file_contents",
+    "args": {
+      "owner": "Lucifer4255",
+      "repo": "opentelemetry-demo",
+      "path": "src/shipping/src/main.rs"
+    },
+    "result": {
+      "name": "main.rs",
+      "path": "src/shipping/src/main.rs",
+      "sha": "2b9b3eb7c3d404718cbf028e7b72ff3cf11a4301",
+      "size": 1886,
+      "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/shipping/src/main.rs?ref=main",
+      "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/blob/main/src/shipping/src/main.rs",
+      "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/blobs/2b9b3eb7c3d404718cbf028e7b72ff3cf11a4301",
+      "download_url": "https://raw.githubusercontent.com/Lucifer4255/opentelemetry-demo/main/src/shipping/src/main.rs",
+      "type": "file",
+      "content": "// Copyright The OpenTelemetry Authors\n// SPDX-License-Identifier: Apache-2.0\n\nuse actix_web::{web, App, HttpServer};\nuse open_feature::provider::FeatureProvider;\nuse open_feature_flagd::{FlagdOptions, FlagdProvider};\nuse opentelemetry_instrumentation_actix_web::{RequestMetrics, RequestTracing};\nuse std::env;\nuse std::sync::Arc;\nuse tracing::info;\n\nmod telemetry_conf;\nuse telemetry_conf::init_otel;\nmod shipping_service;\nuse shipping_service::{get_quote, ship_order};\n\n#[actix_web::main]\nasync fn main() -> std::io::Result<()> {\n    match init_otel() {\n        Ok(_) => {\n            info!(\"Successfully configured OTel\");\n        }\n        Err(err) => {\n            panic!(\"Couldn't start OTel: {0}\", err);\n        }\n    };\n\n    let port: u16 = env::var(\"SHIPPING_PORT\")\n        .expect(\"$SHIPPING_PORT is not set\")\n        .parse()\n        .expect(\"$SHIPPING_PORT is not a valid port\");\n\n    let mut ip = \"0.0.0.0\".to_string();\n\n    if let Ok(ipv6_enabled) = env::var(\"IPV6_ENABLED\") {\n        if ipv6_enabled == \"true\" {\n            ip = \"[::]\".to_string();\n            info!(\"Overwriting Localhost IP:  {ip}\");\n        }\n    }\n\n    let addr = format!(\"{}:{}\", ip, port);\n    info!(\n        name = \"ServerStartedSuccessfully\",\n        addr = addr.as_str(),\n        message = \"Shipping service is running\"\n    );\n\n    let provider = FlagdProvider::new(FlagdOptions {\n        cache_settings: None,\n        ..Default::default()\n    })\n    .await\n    .expect(\"Failed to initialize flagd provider\");\n\n    let flag_provider = web::Data::from(Arc::new(provider) as Arc<dyn FeatureProvider>);\n\n    HttpServer::new(move || {\n        App::new()\n            .app_data(flag_provider.clone())\n            .wrap(RequestTracing::new())\n            .wrap(RequestMetrics::default())\n            .service(get_quote)\n            .service(ship_order)\n    })\n    .bind(&addr)?\n    .run()\n    .await\n}\n",
+      "encoding": "base64",
+      "_links": {
+        "self": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/shipping/src/main.rs?ref=main",
+        "git": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/blobs/2b9b3eb7c3d404718cbf028e7b72ff3cf11a4301",
+        "html": "https://github.com/Lucifer4255/opentelemetry-demo/blob/main/src/shipping/src/main.rs"
+      }
+    }
+  },
+  "145d3ac1e83d8fd1": {
+    "tool": "get_file_contents",
+    "args": {
+      "owner": "Lucifer4255",
+      "repo": "opentelemetry-demo",
+      "path": "src/shipping/src/shipping_service.rs"
+    },
+    "result": {
+      "name": "shipping_service.rs",
+      "path": "src/shipping/src/shipping_service.rs",
+      "sha": "d112da7e6d855cf43b652bf9a375267e6846e64c",
+      "size": 5738,
+      "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/shipping/src/shipping_service.rs?ref=main",
+      "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/blob/main/src/shipping/src/shipping_service.rs",
+      "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/blobs/d112da7e6d855cf43b652bf9a375267e6846e64c",
+      "download_url": "https://raw.githubusercontent.com/Lucifer4255/opentelemetry-demo/main/src/shipping/src/shipping_service.rs",
+      "type": "file",
+      "content": "// Copyright The OpenTelemetry Authors\n// SPDX-License-Identifier: Apache-2.0\n\nuse actix_web::{post, web, HttpResponse, Responder};\nuse open_feature::provider::FeatureProvider;\nuse open_feature::EvaluationContext;\nuse tracing::{info, warn};\n\nmod quote;\nuse quote::create_quote_from_count;\n\nmod tracking;\nuse tracking::create_tracking_id;\n\nmod shipping_types;\npub use shipping_types::*;\n\nconst NANOS_MULTIPLE: u32 = 10000000u32;\n\n#[post(\"/get-quote\")]\npub async fn get_quote(req: web::Json<GetQuoteRequest>) -> impl Responder {\n    let itemct: u32 = req.items.iter().map(|item| item.quantity as u32).sum();\n\n    let quote = match create_quote_from_count(itemct).await {\n        Ok(q) => q,\n        Err(e) => {\n            return HttpResponse::InternalServerError().body(format!(\"Failed to get quote: {}\", e));\n        }\n    };\n\n    let reply = GetQuoteResponse {\n        cost_usd: Some(Money {\n            currency_code: \"USD\".into(),\n            units: quote.dollars,\n            nanos: quote.cents * NANOS_MULTIPLE,\n        }),\n    };\n\n    info!(\n        name = \"SendingQuoteValue\",\n        quote.dollars = quote.dollars,\n        quote.cents = quote.cents,\n        message = \"Sending Quote\"\n    );\n\n    HttpResponse::Ok().json(reply)\n}\n\n#[post(\"/ship-order\")]\npub async fn ship_order(\n    req: web::Json<ShipOrderRequest>,\n    flag_provider: web::Data<dyn FeatureProvider>,\n) -> impl Responder {\n    let is_outside_us = req\n        .address\n        .as_ref()\n        .map(|addr| {\n            !matches!(\n                addr.country.to_uppercase().trim(),\n                \"US\" | \"USA\" | \"UNITED STATES\" | \"UNITED STATES OF AMERICA\"\n            )\n        })\n        .unwrap_or(false);\n\n    let slowdown_secs = if is_outside_us {\n        flag_provider\n            .resolve_int_value(\"intlShippingSlowdown\", &EvaluationContext::default())\n            .await\n            .map(|res| {\n                info!(\n                    feature_flag.key = \"intlShippingSlowdown\",\n                    feature_flag.provider_name = \"flagd\",\n                    feature_flag.variant = res.variant.as_deref().unwrap_or(\"unknown\"),\n                    message = \"feature flag evaluated\"\n                );\n                res.value\n            })\n            .unwrap_or_else(|e| {\n                warn!(\"Failed to evaluate feature flag intlShippingSlowdown: {:?}\", e);\n                0\n            })\n    } else {\n        0\n    };\n\n    if slowdown_secs > 0 {\n        info!(\n            name = \"IntlShippingSlowdown\",\n            shipping.delay_secs = slowdown_secs,\n            message = \"Delaying international shipment due to intlShippingSlowdown feature flag\"\n        );\n        actix_web::rt::time::sleep(std::time::Duration::from_secs(slowdown_secs as u64)).await;\n    }\n\n    let tid = create_tracking_id();\n    info!(\n        name = \"CreatingTrackingId\",\n        tracking_id = tid.as_str(),\n        message = \"Tracking ID Created\"\n    );\n    HttpResponse::Ok().json(ShipOrderResponse { tracking_id: tid })\n}\n\n#[cfg(test)]\nmod tests {\n    use actix_web::{http::header::ContentType, test, App};\n    use open_feature::provider::{MockFeatureProvider, ResolutionDetails};\n    use std::sync::Arc;\n\n    use super::*;\n\n    fn mock_provider(value: i64) -> web::Data<dyn FeatureProvider> {\n        let mut mock = MockFeatureProvider::new();\n        mock.expect_resolve_int_value()\n            .returning(move |_, _| Ok(ResolutionDetails::new(value)));\n        web::Data::from(Arc::new(mock) as Arc<dyn FeatureProvider>)\n    }\n\n    async fn call_ship_order(\n        address: Option<Address>,\n        provider: web::Data<dyn FeatureProvider>,\n    ) -> ShipOrderResponse {\n        let app = test::init_service(\n            App::new()\n                .app_data(provider)\n                .service(ship_order),\n        )\n        .await;\n        let req = test::TestRequest::post()\n            .uri(\"/ship-order\")\n            .insert_header(ContentType::json())\n            .set_json(&ShipOrderRequest { address, items: vec![] })\n            .to_request();\n        let resp = test::call_service(&app, req).await;\n        assert!(resp.status().is_success());\n        test::read_body_json(resp).await\n    }\n\n    fn make_address(country: &str) -> Address {\n        Address {\n            street_address: \"123 Main St\".into(),\n            city: \"Anytown\".into(),\n            state: \"CA\".into(),\n            country: country.into(),\n            zip_code: \"00000\".into(),\n        }\n    }\n\n    #[actix_web::test]\n    async fn test_ship_order_no_address() {\n        let order = call_ship_order(None, mock_provider(0)).await;\n        assert!(!order.tracking_id.is_empty());\n    }\n\n    #[actix_web::test]\n    async fn test_ship_order_us_address() {\n        let order = call_ship_order(Some(make_address(\"US\")), mock_provider(0)).await;\n        assert!(!order.tracking_id.is_empty());\n    }\n\n    #[actix_web::test]\n    async fn test_ship_order_international_flag_off() {\n        let order = call_ship_order(Some(make_address(\"FR\")), mock_provider(0)).await;\n        assert!(!order.tracking_id.is_empty());\n    }\n\n    #[actix_web::test]\n    async fn test_ship_order_international_flag_on() {\n        let start = std::time::Instant::now();\n        let order = call_ship_order(Some(make_address(\"FR\")), mock_provider(1)).await;\n        assert!(start.elapsed() >= std::time::Duration::from_secs(1));\n        assert!(!order.tracking_id.is_empty());\n    }\n\n    #[actix_web::test]\n    async fn test_ship_order_us_flag_on() {\n        let start = std::time::Instant::now();\n        let order = call_ship_order(Some(make_address(\"US\")), mock_provider(10)).await;\n        assert!(start.elapsed() < std::time::Duration::from_secs(1));\n        assert!(!order.tracking_id.is_empty());\n    }\n}\n",
+      "encoding": "base64",
+      "_links": {
+        "self": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/shipping/src/shipping_service.rs?ref=main",
+        "git": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/blobs/d112da7e6d855cf43b652bf9a375267e6846e64c",
+        "html": "https://github.com/Lucifer4255/opentelemetry-demo/blob/main/src/shipping/src/shipping_service.rs"
+      }
+    }
+  },
+  "97893c60a06aa3e6": {
+    "tool": "search_code",
+    "args": {
+      "q": "repo:Lucifer4255/opentelemetry-demo intlShippingSlowdown"
+    },
+    "result": {
+      "total_count": 0,
+      "incomplete_results": false,
+      "items": []
+    }
+  },
+  "b240c580cd054d9c": {
+    "tool": "get_file_contents",
+    "args": {
+      "owner": "Lucifer4255",
+      "repo": "opentelemetry-demo",
+      "path": "src/shipping/src/shipping_service"
+    },
+    "result": [
+      {
+        "type": "file",
+        "size": 3480,
+        "name": "quote.rs",
+        "path": "src/shipping/src/shipping_service/quote.rs",
+        "sha": "840ba1231fe8effcbc0e04e8be16b38f06d7e013",
+        "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/shipping/src/shipping_service/quote.rs?ref=main",
+        "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/blobs/840ba1231fe8effcbc0e04e8be16b38f06d7e013",
+        "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/blob/main/src/shipping/src/shipping_service/quote.rs",
+        "download_url": "https://raw.githubusercontent.com/Lucifer4255/opentelemetry-demo/main/src/shipping/src/shipping_service/quote.rs"
+      },
+      {
+        "type": "file",
+        "size": 1214,
+        "name": "shipping_types.rs",
+        "path": "src/shipping/src/shipping_service/shipping_types.rs",
+        "sha": "c86d63bcbc7282be937a4b311c239183ed3174a8",
+        "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/shipping/src/shipping_service/shipping_types.rs?ref=main",
+        "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/blobs/c86d63bcbc7282be937a4b311c239183ed3174a8",
+        "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/blob/main/src/shipping/src/shipping_service/shipping_types.rs",
+        "download_url": "https://raw.githubusercontent.com/Lucifer4255/opentelemetry-demo/main/src/shipping/src/shipping_service/shipping_types.rs"
+      },
+      {
+        "type": "file",
+        "size": 195,
+        "name": "tracking.rs",
+        "path": "src/shipping/src/shipping_service/tracking.rs",
+        "sha": "debbecf231c49d9698677de7ee96862f86114b24",
+        "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/shipping/src/shipping_service/tracking.rs?ref=main",
+        "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/blobs/debbecf231c49d9698677de7ee96862f86114b24",
+        "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/blob/main/src/shipping/src/shipping_service/tracking.rs",
+        "download_url": "https://raw.githubusercontent.com/Lucifer4255/opentelemetry-demo/main/src/shipping/src/shipping_service/tracking.rs"
+      }
+    ]
+  },
+  "6562ac52ef10122d": {
+    "tool": "get_file_contents",
+    "args": {
+      "owner": "Lucifer4255",
+      "repo": "opentelemetry-demo",
+      "path": "src/flagd"
+    },
+    "result": [
+      {
+        "type": "file",
+        "size": 4208,
+        "name": "demo.flagd.json",
+        "path": "src/flagd/demo.flagd.json",
+        "sha": "12704a2e85c922522f0fec883933a907fb165e33",
+        "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/flagd/demo.flagd.json?ref=main",
+        "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/blobs/12704a2e85c922522f0fec883933a907fb165e33",
+        "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/blob/main/src/flagd/demo.flagd.json",
+        "download_url": "https://raw.githubusercontent.com/Lucifer4255/opentelemetry-demo/main/src/flagd/demo.flagd.json"
+      }
+    ]
+  },
+  "f162214a7ce01f94": {
+    "tool": "get_file_contents",
+    "args": {
+      "owner": "Lucifer4255",
+      "repo": "opentelemetry-demo",
+      "path": "src/shipping/src/shipping_service/quote.rs"
+    },
+    "result": {
+      "name": "quote.rs",
+      "path": "src/shipping/src/shipping_service/quote.rs",
+      "sha": "840ba1231fe8effcbc0e04e8be16b38f06d7e013",
+      "size": 3480,
+      "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/shipping/src/shipping_service/quote.rs?ref=main",
+      "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/blob/main/src/shipping/src/shipping_service/quote.rs",
+      "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/blobs/840ba1231fe8effcbc0e04e8be16b38f06d7e013",
+      "download_url": "https://raw.githubusercontent.com/Lucifer4255/opentelemetry-demo/main/src/shipping/src/shipping_service/quote.rs",
+      "type": "file",
+      "content": "// Copyright The OpenTelemetry Authors\n// SPDX-License-Identifier: Apache-2.0\n\nuse core::fmt;\nuse opentelemetry::global;\nuse opentelemetry_instrumentation_actix_web::ClientExt;\nuse std::{collections::HashMap, env};\n\nuse anyhow::{Context, Result};\nuse opentelemetry::{trace::get_active_span, KeyValue};\nuse tracing::info;\n\nuse super::shipping_types::Quote;\n\npub async fn create_quote_from_count(count: u32) -> Result<Quote, tonic::Status> {\n    let f = match request_quote(count).await {\n        Ok(float) => float,\n        Err(err) => {\n            let msg = format!(\"{}\", err);\n            return Err(tonic::Status::unknown(msg));\n        }\n    };\n\n    let meter = global::meter(\"otel_demo.shipping.quote\");\n    let counter = meter.u64_counter(\"demo.shipping.items_count\").build();\n    counter.add(count as u64, &[]);\n\n    Ok(get_active_span(|span| {\n        let q = create_quote_from_float(f);\n        span.add_event(\n            \"Received Quote\".to_string(),\n            vec![KeyValue::new(\"demo.shipping.cost.total\", format!(\"{}\", q))],\n        );\n        span.set_attribute(KeyValue::new(\"demo.shipping.cost.total\", format!(\"{}\", q)));\n        q\n    }))\n}\n\nasync fn request_quote(count: u32) -> Result<f64, anyhow::Error> {\n    let client = awc::Client::new();\n    let quote_service_addr: String = format!(\n        \"{}{}\",\n        env::var(\"QUOTE_ADDR\")\n            .unwrap_or_else(|_| \"http://quote:8090\".to_string())\n            .parse::<String>()\n            .expect(\"Invalid quote service address\"),\n        \"/getquote\"\n    );\n\n    info!(\n        name = \"RequestingQuote\",\n        quote_service_addr = quote_service_addr.as_str(),\n        message = \"Requesting quote\"\n    );\n\n    let mut reqbody = HashMap::new();\n    reqbody.insert(\"numberOfItems\", count);\n\n    let mut response = client\n        .post(quote_service_addr)\n        .trace_request()\n        .send_json(&reqbody)\n        .await\n        .map_err(|err| anyhow::anyhow!(\"Failed to call quote service: {err}\"))?;\n\n    let bytes = response\n        .body()\n        .await\n        .context(\"Failed to read response body from quote service\")?;\n\n    let resp = std::str::from_utf8(&bytes)\n        .context(\"Failed to parse quote service response as UTF-8\")?\n        .to_owned();\n\n    let f = resp\n        .parse::<f64>()\n        .context(\"Failed to parse quote value as f64\")?;\n\n    Ok(f)\n}\n\npub fn create_quote_from_float(value: f64) -> Quote {\n    Quote {\n        dollars: value.floor() as u64,\n        cents: ((value * 100_f64) as u32) % 100,\n    }\n}\n\nimpl fmt::Display for Quote {\n    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {\n        write!(f, \"{}.{}\", self.dollars, self.cents)\n    }\n}\n\n#[cfg(test)]\nmod tests {\n    use super::*;\n\n    #[test]\n    fn test_create_quote_from_float() {\n        let quote = create_quote_from_float(10.99);\n        assert_eq!(quote.dollars, 10);\n        assert_eq!(quote.cents, 99);\n\n        let quote = create_quote_from_float(0.01);\n        assert_eq!(quote.dollars, 0);\n        assert_eq!(quote.cents, 1);\n\n        let quote = create_quote_from_float(100.00);\n        assert_eq!(quote.dollars, 100);\n        assert_eq!(quote.cents, 0);\n    }\n\n    #[test]\n    fn test_quote_display() {\n        let quote = Quote {\n            dollars: 10,\n            cents: 99,\n        };\n        assert_eq!(format!(\"{}\", quote), \"10.99\");\n\n        let quote = Quote {\n            dollars: 0,\n            cents: 1,\n        };\n        assert_eq!(format!(\"{}\", quote), \"0.1\");\n    }\n}\n",
+      "encoding": "base64",
+      "_links": {
+        "self": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/shipping/src/shipping_service/quote.rs?ref=main",
+        "git": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/blobs/840ba1231fe8effcbc0e04e8be16b38f06d7e013",
+        "html": "https://github.com/Lucifer4255/opentelemetry-demo/blob/main/src/shipping/src/shipping_service/quote.rs"
+      }
+    }
+  },
+  "2123728924a2f894": {
+    "tool": "get_file_contents",
+    "args": {
+      "owner": "Lucifer4255",
+      "repo": "opentelemetry-demo",
+      "path": "src/flagd/demo.flagd.json"
+    },
+    "result": {
+      "name": "demo.flagd.json",
+      "path": "src/flagd/demo.flagd.json",
+      "sha": "12704a2e85c922522f0fec883933a907fb165e33",
+      "size": 4208,
+      "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/flagd/demo.flagd.json?ref=main",
+      "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/blob/main/src/flagd/demo.flagd.json",
+      "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/blobs/12704a2e85c922522f0fec883933a907fb165e33",
+      "download_url": "https://raw.githubusercontent.com/Lucifer4255/opentelemetry-demo/main/src/flagd/demo.flagd.json",
+      "type": "file",
+      "content": "{\n  \"$schema\": \"https://flagd.dev/schema/v0/flags.json\",\n  \"flags\": {\n    \"llmInaccurateResponse\": {\n      \"defaultVariant\": \"off\",\n      \"description\": \"LLM returns an inaccurate product summary for product ID L9ECAV7KIM\",\n      \"state\": \"ENABLED\",\n      \"variants\": {\n        \"off\": false,\n        \"on\": true\n      }\n    },\n    \"llmRateLimitError\": {\n      \"defaultVariant\": \"off\",\n      \"description\": \"LLM intermittently returns a rate limit error\",\n      \"state\": \"ENABLED\",\n      \"variants\": {\n        \"off\": false,\n        \"on\": true\n      }\n    },\n    \"productCatalogFailure\": {\n      \"description\": \"Fail product catalog service on a specific product\",\n      \"state\": \"ENABLED\",\n      \"variants\": {\n        \"on\": true,\n        \"off\": false\n      },\n      \"defaultVariant\": \"off\",\n      \"targeting\": {\n        \"if\": [\n          {\n            \"==\": [\n              {\n                \"var\": \"product_id\"\n              },\n              \"OLJCESPC7Z\"\n            ]\n          },\n          \"on\",\n          \"off\"\n        ]\n      }\n    },\n    \"recommendationCacheFailure\": {\n      \"description\": \"Fail recommendation service cache\",\n      \"state\": \"ENABLED\",\n      \"variants\": {\n        \"on\": true,\n        \"off\": false\n      },\n      \"defaultVariant\": \"off\"\n    },\n    \"adManualGc\": {\n      \"description\": \"Triggers full manual garbage collections in the ad service\",\n      \"state\": \"ENABLED\",\n      \"variants\": {\n        \"on\": true,\n        \"off\": false\n      },\n      \"defaultVariant\": \"off\"\n    },\n    \"adHighCpu\": {\n      \"description\": \"Triggers high cpu load in the ad service\",\n      \"state\": \"ENABLED\",\n      \"variants\": {\n        \"on\": true,\n        \"off\": false\n      },\n      \"defaultVariant\": \"off\"\n    },\n    \"adFailure\": {\n      \"description\": \"Fail ad service\",\n      \"state\": \"ENABLED\",\n      \"variants\": {\n        \"on\": true,\n        \"off\": false\n      },\n      \"defaultVariant\": \"off\"\n    },\n    \"kafkaQueueProblems\": {\n      \"description\": \"Overloads Kafka queue while simultaneously introducing a consumer side delay leading to a lag spike\",\n      \"state\": \"ENABLED\",\n      \"variants\": {\n        \"on\": 100,\n        \"off\": 0\n      },\n      \"defaultVariant\": \"off\"\n    },\n    \"cartFailure\": {\n      \"description\": \"Fail cart service\",\n      \"state\": \"ENABLED\",\n      \"variants\": {\n        \"on\": true,\n        \"off\": false\n      },\n      \"defaultVariant\": \"off\"\n    },\n    \"paymentFailure\": {\n      \"description\": \"Fail payment service charge requests n%\",\n      \"state\": \"ENABLED\",\n      \"variants\": {\n        \"100%\": 1,\n        \"90%\": 0.95,\n        \"75%\": 0.75,\n        \"50%\": 0.5,\n        \"25%\": 0.25,\n        \"10%\": 0.1,\n        \"off\": 0\n      },\n      \"defaultVariant\": \"off\"\n    },\n    \"paymentUnreachable\": {\n      \"description\": \"Payment service is unavailable\",\n      \"state\": \"ENABLED\",\n      \"variants\": {\n        \"on\": true,\n        \"off\": false\n      },\n      \"defaultVariant\": \"off\"\n    },\n    \"loadGeneratorFloodHomepage\": {\n      \"description\": \"Flood the frontend with a large amount of requests.\",\n      \"state\": \"ENABLED\",\n      \"variants\": {\n        \"on\": 100,\n        \"off\": 0\n      },\n      \"defaultVariant\": \"off\"\n    },\n    \"imageSlowLoad\": {\n      \"description\": \"slow loading images in the frontend\",\n      \"state\": \"ENABLED\",\n      \"variants\": {\n        \"10sec\": 10000,\n        \"5sec\": 5000,\n        \"off\": 0\n      },\n      \"defaultVariant\": \"off\"\n    },\n    \"failedReadinessProbe\": {\n      \"description\": \"readiness probe failure for cart service\",\n      \"state\": \"ENABLED\",\n      \"variants\": {\n        \"on\": true,\n        \"off\": false\n      },\n      \"defaultVariant\": \"off\"\n    },\n    \"emailMemoryLeak\": {\n      \"description\": \"Memory leak in the email service.\",\n      \"state\": \"ENABLED\",\n      \"variants\": {\n        \"off\": 0,\n        \"1x\": 1,\n        \"10x\": 10,\n        \"100x\": 100,\n        \"1000x\": 1000,\n        \"10000x\": 10000\n      },\n      \"defaultVariant\": \"off\"\n    },\n    \"intlShippingSlowdown\": {\n      \"description\": \"Delays international shipping responses to simulate overseas shipping delay\",\n      \"state\": \"ENABLED\",\n      \"variants\": {\n        \"10sec\": 10,\n        \"5sec\": 5,\n        \"off\": 0\n      },\n      \"defaultVariant\": \"off\"\n    }\n  }\n}\n",
+      "encoding": "base64",
+      "_links": {
+        "self": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/flagd/demo.flagd.json?ref=main",
+        "git": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/blobs/12704a2e85c922522f0fec883933a907fb165e33",
+        "html": "https://github.com/Lucifer4255/opentelemetry-demo/blob/main/src/flagd/demo.flagd.json"
+      }
+    }
+  },
+  "e8c08ee7070f4bcf": {
+    "tool": "get_file_contents",
+    "args": {
+      "owner": "Lucifer4255",
+      "repo": "opentelemetry-demo",
+      "path": "src/checkout"
+    },
+    "result": [
+      {
+        "type": "file",
+        "size": 672,
+        "name": "Dockerfile",
+        "path": "src/checkout/Dockerfile",
+        "sha": "53f19f9a223774dacae3062edb74c8855fdcd1eb",
+        "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/checkout/Dockerfile?ref=main",
+        "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/blobs/53f19f9a223774dacae3062edb74c8855fdcd1eb",
+        "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/blob/main/src/checkout/Dockerfile",
+        "download_url": "https://raw.githubusercontent.com/Lucifer4255/opentelemetry-demo/main/src/checkout/Dockerfile"
+      },
+      {
+        "type": "file",
+        "size": 734,
+        "name": "README.md",
+        "path": "src/checkout/README.md",
+        "sha": "8f8baeb97e1566dc42ad38f80688586cf8a64684",
+        "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/checkout/README.md?ref=main",
+        "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/blobs/8f8baeb97e1566dc42ad38f80688586cf8a64684",
+        "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/blob/main/src/checkout/README.md",
+        "download_url": "https://raw.githubusercontent.com/Lucifer4255/opentelemetry-demo/main/src/checkout/README.md"
+      },
+      {
+        "type": "file",
+        "size": 428,
+        "name": "flags.json",
+        "path": "src/checkout/flags.json",
+        "sha": "65f727e088b44be570d8fe5b618549c1e297bca4",
+        "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/checkout/flags.json?ref=main",
+        "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/blobs/65f727e088b44be570d8fe5b618549c1e297bca4",
+        "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/blob/main/src/checkout/flags.json",
+        "download_url": "https://raw.githubusercontent.com/Lucifer4255/opentelemetry-demo/main/src/checkout/flags.json"
+      },
+      {
+        "type": "dir",
+        "size": 0,
+        "name": "flags",
+        "path": "src/checkout/flags",
+        "sha": "8a3426a93c0afa93adc95e75471930436f5f2d3b",
+        "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/checkout/flags?ref=main",
+        "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/trees/8a3426a93c0afa93adc95e75471930436f5f2d3b",
+        "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/tree/main/src/checkout/flags",
+        "download_url": null
+      },
+      {
+        "type": "dir",
+        "size": 0,
+        "name": "genproto",
+        "path": "src/checkout/genproto",
+        "sha": "45a2b1d02323458d19c3254e0228ed2e68bf66da",
+        "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/checkout/genproto?ref=main",
+        "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/trees/45a2b1d02323458d19c3254e0228ed2e68bf66da",
+        "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/tree/main/src/checkout/genproto",
+        "download_url": null
+      },
+      {
+        "type": "file",
+        "size": 4005,
+        "name": "go.mod",
+        "path": "src/checkout/go.mod",
+        "sha": "d5d20afddab6f31795b1ad449410d1132c63b1da",
+        "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/checkout/go.mod?ref=main",
+        "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/blobs/d5d20afddab6f31795b1ad449410d1132c63b1da",
+        "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/blob/main/src/checkout/go.mod",
+        "download_url": "https://raw.githubusercontent.com/Lucifer4255/opentelemetry-demo/main/src/checkout/go.mod"
+      },
+      {
+        "type": "file",
+        "size": 20725,
+        "name": "go.sum",
+        "path": "src/checkout/go.sum",
+        "sha": "e0c34b858454c476bc1f97c1d787e542eaf97c38",
+        "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/checkout/go.sum?ref=main",
+        "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/blobs/e0c34b858454c476bc1f97c1d787e542eaf97c38",
+        "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/blob/main/src/checkout/go.sum",
+        "download_url": "https://raw.githubusercontent.com/Lucifer4255/opentelemetry-demo/main/src/checkout/go.sum"
+      },
+      {
+        "type": "dir",
+        "size": 0,
+        "name": "kafka",
+        "path": "src/checkout/kafka",
+        "sha": "45262ea127bdb873620608c127d84925e3ed5473",
+        "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/checkout/kafka?ref=main",
+        "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/trees/45262ea127bdb873620608c127d84925e3ed5473",
+        "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/tree/main/src/checkout/kafka",
+        "download_url": null
+      },
+      {
+        "type": "file",
+        "size": 23468,
+        "name": "main.go",
+        "path": "src/checkout/main.go",
+        "sha": "8539afe19ccb867b55bd7976d4db5c1d2ca33b35",
+        "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/checkout/main.go?ref=main",
+        "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/blobs/8539afe19ccb867b55bd7976d4db5c1d2ca33b35",
+        "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/blob/main/src/checkout/main.go",
+        "download_url": "https://raw.githubusercontent.com/Lucifer4255/opentelemetry-demo/main/src/checkout/main.go"
+      },
+      {
+        "type": "dir",
+        "size": 0,
+        "name": "money",
+        "path": "src/checkout/money",
+        "sha": "be30a8222516c6f95f2afdd93dc387f44e5c8154",
+        "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/checkout/money?ref=main",
+        "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/trees/be30a8222516c6f95f2afdd93dc387f44e5c8154",
+        "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/tree/main/src/checkout/money",
+        "download_url": null
+      }
+    ]
+  },
+  "a150896aa077f63f": {
+    "tool": "get_file_contents",
+    "args": {
+      "owner": "Lucifer4255",
+      "path": "src/checkout/main.go",
+      "repo": "opentelemetry-demo"
+    },
+    "result": {
+      "name": "main.go",
+      "path": "src/checkout/main.go",
+      "sha": "8539afe19ccb867b55bd7976d4db5c1d2ca33b35",
+      "size": 23468,
+      "url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/checkout/main.go?ref=main",
+      "html_url": "https://github.com/Lucifer4255/opentelemetry-demo/blob/main/src/checkout/main.go",
+      "git_url": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/blobs/8539afe19ccb867b55bd7976d4db5c1d2ca33b35",
+      "download_url": "https://raw.githubusercontent.com/Lucifer4255/opentelemetry-demo/main/src/checkout/main.go",
+      "type": "file",
+      "content": "// Copyright The OpenTelemetry Authors\n// SPDX-License-Identifier: Apache-2.0\npackage main\n\nimport (\n\t\"bytes\"\n\t\"context\"\n\t\"encoding/json\"\n\t\"fmt\"\n\t\"io\"\n\t\"log/slog\"\n\t\"net\"\n\t\"net/http\"\n\t\"os\"\n\t\"os/signal\"\n\t\"strconv\"\n\t\"sync\"\n\t\"syscall\"\n\t\"time\"\n\n\t\"go.opentelemetry.io/otel/attribute\"\n\t\"go.opentelemetry.io/otel/log/global\"\n\tsemconv \"go.opentelemetry.io/otel/semconv/v1.24.0\"\n\t\"go.opentelemetry.io/otel/trace\"\n\n\t\"github.com/IBM/sarama\"\n\t\"github.com/google/uuid\"\n\totelhooks \"github.com/open-feature/go-sdk-contrib/hooks/open-telemetry/pkg\"\n\tflagd \"github.com/open-feature/go-sdk-contrib/providers/flagd/pkg\"\n\t\"github.com/open-feature/go-sdk/openfeature\"\n\n\t\"go.opentelemetry.io/contrib/bridges/otelslog\"\n\t\"go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc/otelgrpc\"\n\t\"go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp\"\n\t\"go.opentelemetry.io/contrib/instrumentation/runtime\"\n\t\"go.opentelemetry.io/otel\"\n\totelcodes \"go.opentelemetry.io/otel/codes\"\n\t\"go.opentelemetry.io/otel/exporters/otlp/otlplog/otlploggrpc\"\n\t\"go.opentelemetry.io/otel/exporters/otlp/otlpmetric/otlpmetricgrpc\"\n\t\"go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracegrpc\"\n\t\"go.opentelemetry.io/otel/propagation\"\n\n\tsdklog \"go.opentelemetry.io/otel/sdk/log\"\n\tsdkmetric \"go.opentelemetry.io/otel/sdk/metric\"\n\tsdkresource \"go.opentelemetry.io/otel/sdk/resource\"\n\tsdktrace \"go.opentelemetry.io/otel/sdk/trace\"\n\n\t\"google.golang.org/grpc\"\n\t\"google.golang.org/grpc/codes\"\n\t\"google.golang.org/grpc/credentials/insecure\"\n\t\"google.golang.org/grpc/health\"\n\thealthpb \"google.golang.org/grpc/health/grpc_health_v1\"\n\t\"google.golang.org/grpc/status\"\n\t\"google.golang.org/protobuf/proto\"\n\n\tflags \"github.com/open-telemetry/opentelemetry-demo/src/checkout/flags\"\n\tpb \"github.com/open-telemetry/opentelemetry-demo/src/checkout/genproto/oteldemo\"\n\t\"github.com/open-telemetry/opentelemetry-demo/src/checkout/kafka\"\n\t\"github.com/open-telemetry/opentelemetry-demo/src/checkout/money\"\n)\n\n//go:generate go install google.golang.org/protobuf/cmd/protoc-gen-go\n//go:generate go install google.golang.org/grpc/cmd/protoc-gen-go-grpc\n//go:generate protoc --go_out=./ --go-grpc_out=./ --proto_path=../../pb ../../pb/demo.proto\n//go:generate go install github.com/open-feature/cli/cmd/openfeature@v0.4.0\n//go:generate openfeature generate -o flags --package-name flags go\n\nvar (\n\tlogger            *slog.Logger\n\ttracer            trace.Tracer\n\tresource          *sdkresource.Resource\n\tinitResourcesOnce sync.Once\n)\n\nfunc initResource() *sdkresource.Resource {\n\tinitResourcesOnce.Do(func() {\n\t\textraResources, _ := sdkresource.New(\n\t\t\tcontext.Background(),\n\t\t\tsdkresource.WithOS(),\n\t\t\tsdkresource.WithProcess(),\n\t\t\tsdkresource.WithContainer(),\n\t\t\tsdkresource.WithHost(),\n\t\t)\n\t\tresource, _ = sdkresource.Merge(\n\t\t\tsdkresource.Default(),\n\t\t\textraResources,\n\t\t)\n\t})\n\treturn resource\n}\n\nfunc initTracerProvider() *sdktrace.TracerProvider {\n\tctx := context.Background()\n\n\texporter, err := otlptracegrpc.New(ctx)\n\tif err != nil {\n\t\tlogger.Error(fmt.Sprintf(\"new otlp trace grpc exporter failed: %v\", err))\n\t}\n\ttp := sdktrace.NewTracerProvider(\n\t\tsdktrace.WithBatcher(exporter),\n\t\tsdktrace.WithResource(initResource()),\n\t)\n\totel.SetTracerProvider(tp)\n\totel.SetTextMapPropagator(propagation.NewCompositeTextMapPropagator(propagation.TraceContext{}, propagation.Baggage{}))\n\treturn tp\n}\n\nfunc initMeterProvider() *sdkmetric.MeterProvider {\n\tctx := context.Background()\n\n\texporter, err := otlpmetricgrpc.New(ctx)\n\tif err != nil {\n\t\tlogger.Error(fmt.Sprintf(\"new otlp metric grpc exporter failed: %v\", err))\n\t}\n\n\tmp := sdkmetric.NewMeterProvider(\n\t\tsdkmetric.WithReader(sdkmetric.NewPeriodicReader(exporter)),\n\t\tsdkmetric.WithResource(initResource()),\n\t)\n\totel.SetMeterProvider(mp)\n\treturn mp\n}\n\nfunc initLoggerProvider() *sdklog.LoggerProvider {\n\tctx := context.Background()\n\n\tlogExporter, err := otlploggrpc.New(ctx)\n\tif err != nil {\n\t\treturn nil\n\t}\n\n\tloggerProvider := sdklog.NewLoggerProvider(\n\t\tsdklog.WithProcessor(sdklog.NewBatchProcessor(logExporter)),\n\t)\n\tglobal.SetLoggerProvider(loggerProvider)\n\n\treturn loggerProvider\n}\n\ntype checkout struct {\n\tproductCatalogSvcAddr string\n\tcartSvcAddr           string\n\tcurrencySvcAddr       string\n\tshippingSvcAddr       string\n\temailSvcAddr          string\n\tpaymentSvcAddr        string\n\tkafkaBrokerSvcAddr    string\n\tpb.UnimplementedCheckoutServiceServer\n\tKafkaProducerClient     sarama.AsyncProducer\n\tshippingSvcClient       pb.ShippingServiceClient\n\tproductCatalogSvcClient pb.ProductCatalogServiceClient\n\tcartSvcClient           pb.CartServiceClient\n\tcurrencySvcClient       pb.CurrencyServiceClient\n\temailSvcClient          pb.EmailServiceClient\n\tpaymentSvcClient        pb.PaymentServiceClient\n\thttpClient              *http.Client\n}\n\nfunc main() {\n\tvar port string\n\tmustMapEnv(&port, \"CHECKOUT_PORT\")\n\n\ttp := initTracerProvider()\n\tdefer func() {\n\t\tif err := tp.Shutdown(context.Background()); err != nil {\n\t\t\tlogger.Error(fmt.Sprintf(\"Error shutting down tracer provider: %v\", err))\n\t\t}\n\t}()\n\n\tmp := initMeterProvider()\n\tdefer func() {\n\t\tif err := mp.Shutdown(context.Background()); err != nil {\n\t\t\tlogger.Error(fmt.Sprintf(\"Error shutting down meter provider: %v\", err))\n\t\t}\n\t}()\n\n\tlp := initLoggerProvider()\n\tdefer func() {\n\t\tif err := lp.Shutdown(context.Background()); err != nil {\n\t\t\tlogger.Error(fmt.Sprintf(\"Error shutting down logger provider: %v\", err))\n\t\t}\n\t}()\n\n\t// this *must* be called after the logger provider is initialized\n\t// otherwise the Sarama producer in kafka/producer.go will not be\n\t// able to log properly\n\tlogger = otelslog.NewLogger(\"checkout\")\n\tslog.SetDefault(logger)\n\n\terr := runtime.Start(runtime.WithMinimumReadMemStatsInterval(time.Second))\n\tif err != nil {\n\t\tlogger.Error((err.Error()))\n\t}\n\n\tprovider, err := flagd.NewProvider()\n\tif err != nil {\n\t\tlogger.Error(\"Error creating flagd provider\", slog.Any(\"error\", err))\n\t}\n\n\terr = openfeature.SetProvider(provider)\n\tif err != nil {\n\t\tlogger.Error(\"Failed to set flagd as the provider\", slog.Any(\"error\", err))\n\t}\n\tdefer openfeature.Shutdown()\n\topenfeature.AddHooks(otelhooks.NewTracesHook())\n\n\ttracer = tp.Tracer(\"checkout\")\n\n\tsvc := new(checkout)\n\tsvc.httpClient = &http.Client{\n\t\tTransport: otelhttp.NewTransport(http.DefaultTransport),\n\t}\n\n\tmustMapEnv(&svc.shippingSvcAddr, \"SHIPPING_ADDR\")\n\tc := mustCreateClient(svc.shippingSvcAddr)\n\tsvc.shippingSvcClient = pb.NewShippingServiceClient(c)\n\tdefer c.Close()\n\n\tmustMapEnv(&svc.productCatalogSvcAddr, \"PRODUCT_CATALOG_ADDR\")\n\tc = mustCreateClient(svc.productCatalogSvcAddr)\n\tsvc.productCatalogSvcClient = pb.NewProductCatalogServiceClient(c)\n\tdefer c.Close()\n\n\tmustMapEnv(&svc.cartSvcAddr, \"CART_ADDR\")\n\tc = mustCreateClient(svc.cartSvcAddr)\n\tsvc.cartSvcClient = pb.NewCartServiceClient(c)\n\tdefer c.Close()\n\n\tmustMapEnv(&svc.currencySvcAddr, \"CURRENCY_ADDR\")\n\tc = mustCreateClient(svc.currencySvcAddr)\n\tsvc.currencySvcClient = pb.NewCurrencyServiceClient(c)\n\tdefer c.Close()\n\n\tmustMapEnv(&svc.emailSvcAddr, \"EMAIL_ADDR\")\n\tc = mustCreateClient(svc.emailSvcAddr)\n\tsvc.emailSvcClient = pb.NewEmailServiceClient(c)\n\tdefer c.Close()\n\n\tmustMapEnv(&svc.paymentSvcAddr, \"PAYMENT_ADDR\")\n\tc = mustCreateClient(svc.paymentSvcAddr)\n\tsvc.paymentSvcClient = pb.NewPaymentServiceClient(c)\n\tdefer c.Close()\n\n\tsvc.kafkaBrokerSvcAddr = os.Getenv(\"KAFKA_ADDR\")\n\n\tif svc.kafkaBrokerSvcAddr != \"\" {\n\t\tsvc.KafkaProducerClient, err = kafka.CreateKafkaProducer([]string{svc.kafkaBrokerSvcAddr}, logger)\n\t\tif err != nil {\n\t\t\tlogger.Error(err.Error())\n\t\t}\n\t}\n\n\tlogger.Info(fmt.Sprintf(\"service config: %+v\", svc))\n\n\tlis, err := net.Listen(\"tcp\", fmt.Sprintf(\":%s\", port))\n\tif err != nil {\n\t\tlogger.Error(err.Error())\n\t}\n\n\tsrv := grpc.NewServer(\n\t\tgrpc.StatsHandler(otelgrpc.NewServerHandler()),\n\t)\n\tpb.RegisterCheckoutServiceServer(srv, svc)\n\n\thealthcheck := health.NewServer()\n\thealthpb.RegisterHealthServer(srv, healthcheck)\n\tlogger.Info(fmt.Sprintf(\"starting to listen on tcp: %q\", lis.Addr().String()))\n\terr = srv.Serve(lis)\n\tlogger.Error(err.Error())\n\n\tctx, cancel := signal.NotifyContext(context.Background(), os.Interrupt, syscall.SIGTERM, syscall.SIGKILL)\n\tdefer cancel()\n\n\tgo func() {\n\t\tif err := srv.Serve(lis); err != nil {\n\t\t\tlogger.Error(err.Error())\n\t\t}\n\t}()\n\n\t<-ctx.Done()\n\n\tsrv.GracefulStop()\n\tlogger.Info(\"Checkout gRPC server stopped\")\n}\n\nfunc mustMapEnv(target *string, envKey string) {\n\tv := os.Getenv(envKey)\n\tif v == \"\" {\n\t\tpanic(fmt.Sprintf(\"environment variable %q not set\", envKey))\n\t}\n\t*target = v\n}\n\nfunc (cs *checkout) Check(ctx context.Context, req *healthpb.HealthCheckRequest) (*healthpb.HealthCheckResponse, error) {\n\treturn &healthpb.HealthCheckResponse{Status: healthpb.HealthCheckResponse_SERVING}, nil\n}\n\nfunc (cs *checkout) Watch(req *healthpb.HealthCheckRequest, ws healthpb.Health_WatchServer) error {\n\treturn status.Errorf(codes.Unimplemented, \"health check via Watch not implemented\")\n}\n\nfunc (cs *checkout) PlaceOrder(ctx context.Context, req *pb.PlaceOrderRequest) (*pb.PlaceOrderResponse, error) {\n\tspan := trace.SpanFromContext(ctx)\n\tspan.SetAttributes(\n\t\tattribute.String(\"user.id\", req.UserId),\n\t\tattribute.String(\"demo.user_context.selected_currency\", req.UserCurrency),\n\t)\n\tlogger.LogAttrs(\n\t\tctx,\n\t\tslog.LevelInfo, \"[PlaceOrder]\",\n\t\tslog.String(\"user_id\", req.UserId),\n\t\tslog.String(\"user_currency\", req.UserCurrency),\n\t)\n\n\tvar err error\n\tdefer func() {\n\t\tif err != nil {\n\t\t\tspan.RecordError(err)\n\t\t}\n\t}()\n\n\torderID, err := uuid.NewUUID()\n\tif err != nil {\n\t\treturn nil, status.Errorf(codes.Internal, \"failed to generate order uuid\")\n\t}\n\n\tprep, err := cs.prepareOrderItemsAndShippingQuoteFromCart(ctx, req.UserId, req.UserCurrency, req.Address)\n\tif err != nil {\n\t\treturn nil, status.Error(codes.Internal, err.Error())\n\t}\n\tspan.AddEvent(\"prepared\")\n\n\ttotal := &pb.Money{\n\t\tCurrencyCode: req.UserCurrency,\n\t\tUnits:        0,\n\t\tNanos:        0,\n\t}\n\ttotal = money.Must(money.Sum(total, prep.shippingCostLocalized))\n\tfor _, it := range prep.orderItems {\n\t\tmultPrice := money.MultiplySlow(it.Cost, uint32(it.GetItem().GetQuantity()))\n\t\ttotal = money.Must(money.Sum(total, multPrice))\n\t}\n\n\ttxID, err := cs.chargeCard(ctx, total, req.CreditCard)\n\tif err != nil {\n\t\treturn nil, status.Errorf(codes.Internal, \"failed to charge card: %+v\", err)\n\t}\n\n\tspan.AddEvent(\"charged\",\n\t\ttrace.WithAttributes(attribute.String(\"demo.payment.transaction.id\", txID)))\n\tlogger.LogAttrs(\n\t\tctx,\n\t\tslog.LevelInfo, \"payment went through\",\n\t\tslog.String(\"transaction_id\", txID),\n\t)\n\n\tshippingTrackingID, err := cs.shipOrder(ctx, req.Address, prep.cartItems)\n\tif err != nil {\n\t\treturn nil, status.Errorf(codes.Unavailable, \"shipping error: %+v\", err)\n\t}\n\tshippingTrackingAttribute := attribute.String(\"demo.shipping.tracking.id\", shippingTrackingID)\n\tspan.AddEvent(\"shipped\", trace.WithAttributes(shippingTrackingAttribute))\n\n\t_ = cs.emptyUserCart(ctx, req.UserId)\n\n\torderResult := &pb.OrderResult{\n\t\tOrderId:            orderID.String(),\n\t\tShippingTrackingId: shippingTrackingID,\n\t\tShippingCost:       prep.shippingCostLocalized,\n\t\tShippingAddress:    req.Address,\n\t\tItems:              prep.orderItems,\n\t}\n\n\tshippingCostFloat, _ := strconv.ParseFloat(fmt.Sprintf(\"%d.%02d\", prep.shippingCostLocalized.GetUnits(), prep.shippingCostLocalized.GetNanos()/1000000000), 64)\n\ttotalPriceFloat, _ := strconv.ParseFloat(fmt.Sprintf(\"%d.%02d\", total.GetUnits(), total.GetNanos()/1000000000), 64)\n\n\tspan.SetAttributes(\n\t\tattribute.String(\"demo.order.id\", orderID.String()),\n\t\tattribute.Float64(\"demo.shipping.amount\", shippingCostFloat),\n\t\tattribute.Float64(\"demo.order.amount\", totalPriceFloat),\n\t\tattribute.Int(\"demo.order.items.count\", len(prep.orderItems)),\n\t\tshippingTrackingAttribute,\n\t)\n\tlogger.LogAttrs(\n\t\tctx,\n\t\tslog.LevelInfo, \"order placed\",\n\t\tslog.String(\"demo.order.id\", orderID.String()),\n\t\tslog.Float64(\"demo.shipping.amount\", shippingCostFloat),\n\t\tslog.Float64(\"demo.order.amount\", totalPriceFloat),\n\t\tslog.Int(\"demo.order.items.count\", len(prep.orderItems)),\n\t\tslog.String(\"demo.shipping.tracking.id\", shippingTrackingID),\n\t)\n\n\tif err := cs.sendOrderConfirmation(ctx, req.Email, orderResult); err != nil {\n\t\tlogger.Warn(fmt.Sprintf(\"failed to send order confirmation: %+v\", err))\n\t} else {\n\t\tlogger.Info(\"order confirmation email sent\")\n\t}\n\n\t// send to kafka only if kafka broker address is set\n\tif cs.kafkaBrokerSvcAddr != \"\" {\n\t\tlogger.Info(\"sending to postProcessor\")\n\t\tcs.sendToPostProcessor(ctx, orderResult)\n\t}\n\n\tresp := &pb.PlaceOrderResponse{Order: orderResult}\n\treturn resp, nil\n}\n\ntype orderPrep struct {\n\torderItems            []*pb.OrderItem\n\tcartItems             []*pb.CartItem\n\tshippingCostLocalized *pb.Money\n}\n\nfunc (cs *checkout) prepareOrderItemsAndShippingQuoteFromCart(ctx context.Context, userID, userCurrency string, address *pb.Address) (orderPrep, error) {\n\tctx, span := tracer.Start(ctx, \"prepareOrderItemsAndShippingQuoteFromCart\")\n\tdefer span.End()\n\n\tvar out orderPrep\n\tcartItems, err := cs.getUserCart(ctx, userID)\n\tif err != nil {\n\t\treturn out, fmt.Errorf(\"cart failure: %+v\", err)\n\t}\n\torderItems, err := cs.prepOrderItems(ctx, cartItems, userCurrency)\n\tif err != nil {\n\t\treturn out, fmt.Errorf(\"failed to prepare order: %+v\", err)\n\t}\n\tshippingUSD, err := cs.quoteShipping(ctx, address, cartItems)\n\tif err != nil {\n\t\treturn out, fmt.Errorf(\"shipping quote failure: %+v\", err)\n\t}\n\tshippingPrice, err := cs.convertCurrency(ctx, shippingUSD, userCurrency)\n\tif err != nil {\n\t\treturn out, fmt.Errorf(\"failed to convert shipping cost to currency: %+v\", err)\n\t}\n\n\tout.shippingCostLocalized = shippingPrice\n\tout.cartItems = cartItems\n\tout.orderItems = orderItems\n\n\tvar totalCart int32\n\tfor _, ci := range cartItems {\n\t\ttotalCart += ci.Quantity\n\t}\n\tshippingCostFloat, _ := strconv.ParseFloat(fmt.Sprintf(\"%d.%02d\", shippingPrice.GetUnits(), shippingPrice.GetNanos()/1000000000), 64)\n\n\tspan.SetAttributes(\n\t\tattribute.Float64(\"demo.shipping.amount\", shippingCostFloat),\n\t\tattribute.Int(\"demo.cart.items.count\", int(totalCart)),\n\t\tattribute.Int(\"demo.order.items.count\", len(orderItems)),\n\t)\n\treturn out, nil\n}\n\nfunc mustCreateClient(svcAddr string) *grpc.ClientConn {\n\tc, err := grpc.NewClient(svcAddr,\n\t\tgrpc.WithTransportCredentials(insecure.NewCredentials()),\n\t\tgrpc.WithStatsHandler(otelgrpc.NewClientHandler()),\n\t)\n\tif err != nil {\n\t\tlogger.Error(fmt.Sprintf(\"could not connect to %s service, err: %+v\", svcAddr, err))\n\t}\n\n\treturn c\n}\n\nfunc (cs *checkout) quoteShipping(ctx context.Context, address *pb.Address, items []*pb.CartItem) (*pb.Money, error) {\n\tquotePayload, err := json.Marshal(map[string]interface{}{\n\t\t\"address\": address,\n\t\t\"items\":   items,\n\t})\n\tif err != nil {\n\t\treturn nil, fmt.Errorf(\"failed to marshal ship order request: %+v\", err)\n\t}\n\n\treq, err := http.NewRequestWithContext(ctx, \"POST\", cs.shippingSvcAddr+\"/get-quote\", bytes.NewBuffer(quotePayload))\n\tif err != nil {\n\t\treturn nil, fmt.Errorf(\"failed to create request: %+v\", err)\n\t}\n\treq.Header.Set(\"Content-Type\", \"application/json\")\n\tresp, err := cs.httpClient.Do(req)\n\tif err != nil {\n\t\treturn nil, fmt.Errorf(\"failed POST to shipping service: %+v\", err)\n\t}\n\tdefer resp.Body.Close()\n\n\tif resp.StatusCode != http.StatusOK {\n\t\treturn nil, fmt.Errorf(\"failed POST to email service: expected 200, got %d\", resp.StatusCode)\n\t}\n\n\tshippingQuoteBytes, err := io.ReadAll(resp.Body)\n\tif err != nil {\n\t\treturn nil, fmt.Errorf(\"failed to read shipping quote response: %+v\", err)\n\t}\n\n\tvar quoteResp struct {\n\t\tCostUsd *pb.Money `json:\"cost_usd\"`\n\t}\n\tif err := json.Unmarshal(shippingQuoteBytes, &quoteResp); err != nil {\n\t\treturn nil, fmt.Errorf(\"failed to unmarshal shipping quote: %+v\", err)\n\t}\n\tif quoteResp.CostUsd == nil {\n\t\treturn nil, fmt.Errorf(\"shipping quote missing cost_usd field\")\n\t}\n\n\treturn quoteResp.CostUsd, nil\n}\n\nfunc (cs *checkout) getUserCart(ctx context.Context, userID string) ([]*pb.CartItem, error) {\n\tcart, err := cs.cartSvcClient.GetCart(ctx, &pb.GetCartRequest{UserId: userID})\n\tif err != nil {\n\t\treturn nil, fmt.Errorf(\"failed to get user cart during checkout: %+v\", err)\n\t}\n\treturn cart.GetItems(), nil\n}\n\nfunc (cs *checkout) emptyUserCart(ctx context.Context, userID string) error {\n\tif _, err := cs.cartSvcClient.EmptyCart(ctx, &pb.EmptyCartRequest{UserId: userID}); err != nil {\n\t\treturn fmt.Errorf(\"failed to empty user cart during checkout: %+v\", err)\n\t}\n\treturn nil\n}\n\nfunc (cs *checkout) prepOrderItems(ctx context.Context, items []*pb.CartItem, userCurrency string) ([]*pb.OrderItem, error) {\n\tout := make([]*pb.OrderItem, len(items))\n\n\tfor i, item := range items {\n\t\tproduct, err := cs.productCatalogSvcClient.GetProduct(ctx, &pb.GetProductRequest{Id: item.GetProductId()})\n\t\tif err != nil {\n\t\t\treturn nil, fmt.Errorf(\"failed to get product #%q\", item.GetProductId())\n\t\t}\n\t\tprice, err := cs.convertCurrency(ctx, product.GetPriceUsd(), userCurrency)\n\t\tif err != nil {\n\t\t\treturn nil, fmt.Errorf(\"failed to convert price of %q to %s\", item.GetProductId(), userCurrency)\n\t\t}\n\t\tout[i] = &pb.OrderItem{\n\t\t\tItem: item,\n\t\t\tCost: price,\n\t\t}\n\t}\n\treturn out, nil\n}\n\nfunc (cs *checkout) convertCurrency(ctx context.Context, from *pb.Money, toCurrency string) (*pb.Money, error) {\n\tresult, err := cs.currencySvcClient.Convert(ctx, &pb.CurrencyConversionRequest{\n\t\tFrom:   from,\n\t\tToCode: toCurrency,\n\t})\n\tif err != nil {\n\t\treturn nil, fmt.Errorf(\"failed to convert currency: %+v\", err)\n\t}\n\treturn result, err\n}\n\nfunc (cs *checkout) chargeCard(ctx context.Context, amount *pb.Money, paymentInfo *pb.CreditCardInfo) (string, error) {\n\tpaymentService := cs.paymentSvcClient\n\tif flags.PaymentUnreachable.Value(ctx, openfeature.EvaluationContext{}) {\n\t\tbadAddress := \"badAddress:50051\"\n\t\tc := mustCreateClient(badAddress)\n\t\tpaymentService = pb.NewPaymentServiceClient(c)\n\t}\n\n\tpaymentResp, err := paymentService.Charge(ctx, &pb.ChargeRequest{\n\t\tAmount:     amount,\n\t\tCreditCard: paymentInfo,\n\t})\n\tif err != nil {\n\t\treturn \"\", fmt.Errorf(\"could not charge the card: %+v\", err)\n\t}\n\treturn paymentResp.GetTransactionId(), nil\n}\n\nfunc (cs *checkout) sendOrderConfirmation(ctx context.Context, email string, order *pb.OrderResult) error {\n\temailPayload, err := json.Marshal(map[string]interface{}{\n\t\t\"email\": email,\n\t\t\"order\": order,\n\t})\n\tif err != nil {\n\t\treturn fmt.Errorf(\"failed to marshal order to JSON: %+v\", err)\n\t}\n\n\treq, err := http.NewRequestWithContext(ctx, \"POST\", cs.emailSvcAddr+\"/send_order_confirmation\", bytes.NewBuffer(emailPayload))\n\tif err != nil {\n\t\treturn fmt.Errorf(\"failed to create request: %+v\", err)\n\t}\n\treq.Header.Set(\"Content-Type\", \"application/json\")\n\tresp, err := cs.httpClient.Do(req)\n\tif err != nil {\n\t\treturn fmt.Errorf(\"failed POST to email service: %+v\", err)\n\t}\n\tdefer resp.Body.Close()\n\n\tif resp.StatusCode != http.StatusOK {\n\t\treturn fmt.Errorf(\"failed POST to email service: expected 200, got %d\", resp.StatusCode)\n\t}\n\n\treturn err\n}\n\nfunc (cs *checkout) shipOrder(ctx context.Context, address *pb.Address, items []*pb.CartItem) (string, error) {\n\tshipPayload, err := json.Marshal(map[string]interface{}{\n\t\t\"address\": address,\n\t\t\"items\":   items,\n\t})\n\tif err != nil {\n\t\treturn \"\", fmt.Errorf(\"failed to marshal ship order request: %+v\", err)\n\t}\n\n\treq, err := http.NewRequestWithContext(ctx, \"POST\", cs.shippingSvcAddr+\"/ship-order\", bytes.NewBuffer(shipPayload))\n\tif err != nil {\n\t\treturn \"\", fmt.Errorf(\"failed to create request: %+v\", err)\n\t}\n\treq.Header.Set(\"Content-Type\", \"application/json\")\n\tresp, err := cs.httpClient.Do(req)\n\tif err != nil {\n\t\treturn \"\", fmt.Errorf(\"failed POST to shipping service: %+v\", err)\n\t}\n\tdefer resp.Body.Close()\n\n\tif resp.StatusCode != http.StatusOK {\n\t\treturn \"\", fmt.Errorf(\"failed POST to email service: expected 200, got %d\", resp.StatusCode)\n\t}\n\n\ttrackingRespBytes, err := io.ReadAll(resp.Body)\n\tif err != nil {\n\t\treturn \"\", fmt.Errorf(\"failed to read ship order response: %+v\", err)\n\t}\n\n\tvar shipResp struct {\n\t\tTrackingID string `json:\"tracking_id\"`\n\t}\n\tif err := json.Unmarshal(trackingRespBytes, &shipResp); err != nil {\n\t\treturn \"\", fmt.Errorf(\"failed to unmarshal ship order response: %+v\", err)\n\t}\n\tif shipResp.TrackingID == \"\" {\n\t\treturn \"\", fmt.Errorf(\"ship order response missing tracking_id field\")\n\t}\n\n\treturn shipResp.TrackingID, nil\n}\n\nfunc (cs *checkout) sendToPostProcessor(ctx context.Context, result *pb.OrderResult) {\n\tmessage, err := proto.Marshal(result)\n\tif err != nil {\n\t\tlogger.Error(fmt.Sprintf(\"Failed to marshal message to protobuf: %+v\", err))\n\t\treturn\n\t}\n\n\tmsg := sarama.ProducerMessage{\n\t\tTopic: kafka.Topic,\n\t\tValue: sarama.ByteEncoder(message),\n\t}\n\n\t// Inject tracing info into message\n\tspan := createProducerSpan(ctx, &msg)\n\tdefer span.End()\n\n\t// Send message and handle response\n\tstartTime := time.Now()\n\tselect {\n\tcase cs.KafkaProducerClient.Input() <- &msg:\n\t\tselect {\n\t\tcase successMsg := <-cs.KafkaProducerClient.Successes():\n\t\t\tspan.SetAttributes(\n\t\t\t\tattribute.Bool(\"messaging.kafka.producer.success\", true),\n\t\t\t\tattribute.Int(\"messaging.kafka.producer.duration_ms\", int(time.Since(startTime).Milliseconds())),\n\t\t\t\tattribute.KeyValue(semconv.MessagingKafkaMessageOffset(int(successMsg.Offset))),\n\t\t\t)\n\t\t\tlogger.Info(fmt.Sprintf(\"Successful to write message. offset: %v, duration: %v\", successMsg.Offset, time.Since(startTime)))\n\t\tcase errMsg := <-cs.KafkaProducerClient.Errors():\n\t\t\tspan.SetAttributes(\n\t\t\t\tattribute.Bool(\"messaging.kafka.producer.success\", false),\n\t\t\t\tattribute.Int(\"messaging.kafka.producer.duration_ms\", int(time.Since(startTime).Milliseconds())),\n\t\t\t)\n\t\t\tspan.SetStatus(otelcodes.Error, errMsg.Err.Error())\n\t\t\tlogger.Error(fmt.Sprintf(\"Failed to write message: %v\", errMsg.Err))\n\t\tcase <-ctx.Done():\n\t\t\tspan.SetAttributes(\n\t\t\t\tattribute.Bool(\"messaging.kafka.producer.success\", false),\n\t\t\t\tattribute.Int(\"messaging.kafka.producer.duration_ms\", int(time.Since(startTime).Milliseconds())),\n\t\t\t)\n\t\t\tspan.SetStatus(otelcodes.Error, \"Context cancelled: \"+ctx.Err().Error())\n\t\t\tlogger.Warn(fmt.Sprintf(\"Context canceled before success message received: %v\", ctx.Err()))\n\t\t}\n\tcase <-ctx.Done():\n\t\tspan.SetAttributes(\n\t\t\tattribute.Bool(\"messaging.kafka.producer.success\", false),\n\t\t\tattribute.Int(\"messaging.kafka.producer.duration_ms\", int(time.Since(startTime).Milliseconds())),\n\t\t)\n\t\tspan.SetStatus(otelcodes.Error, \"Failed to send: \"+ctx.Err().Error())\n\t\tlogger.Error(fmt.Sprintf(\"Failed to send message to Kafka within context deadline: %v\", ctx.Err()))\n\t\treturn\n\t}\n\n\tffValue := flags.KafkaQueueProblems.Value(ctx, openfeature.EvaluationContext{})\n\tif ffValue > 0 {\n\t\tlogger.Info(\"Warning: FeatureFlag 'kafkaQueueProblems' is activated, overloading queue now.\")\n\t\tfor range ffValue {\n\t\t\tgo func(msg sarama.ProducerMessage) {\n\t\t\t\tcs.KafkaProducerClient.Input() <- &msg\n\t\t\t\t<-cs.KafkaProducerClient.Successes()\n\t\t\t}(msg)\n\t\t}\n\t\tlogger.Info(fmt.Sprintf(\"Done with #%d messages for overload simulation.\", ffValue))\n\t}\n}\n\nfunc createProducerSpan(ctx context.Context, msg *sarama.ProducerMessage) trace.Span {\n\tspanContext, span := tracer.Start(\n\t\tctx,\n\t\tfmt.Sprintf(\"%s publish\", msg.Topic),\n\t\ttrace.WithSpanKind(trace.SpanKindProducer),\n\t\ttrace.WithAttributes(\n\t\t\tsemconv.PeerService(\"kafka\"),\n\t\t\tsemconv.NetworkTransportTCP,\n\t\t\tsemconv.MessagingSystemKafka,\n\t\t\tsemconv.MessagingDestinationName(msg.Topic),\n\t\t\tsemconv.MessagingOperationPublish,\n\t\t\tsemconv.MessagingKafkaDestinationPartition(int(msg.Partition)),\n\t\t),\n\t)\n\n\tcarrier := propagation.MapCarrier{}\n\tpropagator := otel.GetTextMapPropagator()\n\tpropagator.Inject(spanContext, carrier)\n\n\tfor key, value := range carrier {\n\t\tmsg.Headers = append(msg.Headers, sarama.RecordHeader{Key: []byte(key), Value: []byte(value)})\n\t}\n\n\treturn span\n}\n",
+      "encoding": "base64",
+      "_links": {
+        "self": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/contents/src/checkout/main.go?ref=main",
+        "git": "https://api.github.com/repos/Lucifer4255/opentelemetry-demo/git/blobs/8539afe19ccb867b55bd7976d4db5c1d2ca33b35",
+        "html": "https://github.com/Lucifer4255/opentelemetry-demo/blob/main/src/checkout/main.go"
+      }
+    }
+  }
+}

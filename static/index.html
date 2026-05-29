@@ -229,6 +229,35 @@
         border: 1px solid rgba(110,231,183,0.25);
         color: var(--accent);
       }
+      .conf-badge {
+        font: 12px var(--mono);
+        font-weight: 700;
+        padding: 4px 12px;
+        border-radius: 999px;
+        letter-spacing: 0.05em;
+      }
+      .conf-badge.high {
+        background: rgba(110,231,183,0.12);
+        border: 1px solid rgba(110,231,183,0.4);
+        color: #6ee7b7;
+      }
+      .conf-badge.medium {
+        background: rgba(251,191,36,0.1);
+        border: 1px solid rgba(251,191,36,0.35);
+        color: #fbbf24;
+      }
+      .conf-badge.low {
+        background: rgba(122,143,168,0.1);
+        border: 1px solid rgba(122,143,168,0.3);
+        color: #7a8fa8;
+      }
+      .conf-note {
+        margin-top: 6px;
+        font-size: 12px;
+        color: var(--muted);
+        line-height: 1.5;
+        font-style: italic;
+      }
 
       /* typing indicator */
       .typing {
@@ -321,8 +350,8 @@
       const sendBtn = document.getElementById('send');
       const capsBar = document.getElementById('capsBar');
 
-      const ALL_CAPS = ['jaeger', 'loki', 'github', 'web_search', 'sandbox'];
-      let sessionId = localStorage.getItem('autoheal_session') || null;
+      const ALL_CAPS = ['jaeger', 'loki', 'github'];
+      let sessionId = null;
 
       // ── Capability bar ──────────────────────────────────────────────
       function updateCapsBar(configured = []) {
@@ -398,7 +427,6 @@
         if (payload.configured) updateCapsBar(payload.configured);
         if (payload.session_id) {
           sessionId = payload.session_id;
-          localStorage.setItem('autoheal_session', sessionId);
         }
       }
 
@@ -423,6 +451,10 @@
       function renderFinal(payload, bubble) {
         const r = payload.result;
         const rc = r?.root_cause;
+        const level = rc?.confidence_level || 'low';
+        const levelLabel = level.toUpperCase();
+        const pct = ((rc?.confidence || 0) * 100).toFixed(0);
+
         const card = document.createElement('div');
         card.className = 'result-card';
         card.innerHTML = `
@@ -445,9 +477,11 @@
             </div>
             <div class="rc-field">
               <label>Confidence</label>
-              <p>${((rc?.confidence || 0) * 100).toFixed(0)}%
-                ${rc?.error_type ? `· <span style="color:var(--muted)">${rc.error_type}</span>` : ''}
-              </p>
+              <div style="display:flex;align-items:center;gap:10px;margin-top:4px;flex-wrap:wrap">
+                <span class="conf-badge ${level}">${levelLabel}</span>
+                <span style="color:var(--muted);font:12px var(--mono)">${pct}%${rc?.error_type ? ' · ' + rc.error_type : ''}</span>
+              </div>
+              ${r?.confidence_note ? `<p class="conf-note">${r.confidence_note}</p>` : ''}
             </div>
           </div>
         `;
@@ -455,7 +489,6 @@
 
         if (payload.session_id) {
           sessionId = payload.session_id;
-          localStorage.setItem('autoheal_session', sessionId);
         }
         if (r?.tools_unavailable) updateCapsBar(
           ALL_CAPS.filter(c => !r.tools_unavailable.includes(c))
@@ -507,11 +540,10 @@
 
           if (!response.ok || !response.body) throw new Error(`HTTP ${response.status}`);
 
-          // Grab session_id from header if present
+          // Grab session_id from header if present (in-memory only, not persisted)
           const headerSid = response.headers.get('X-Session-Id');
           if (headerSid) {
             sessionId = headerSid;
-            localStorage.setItem('autoheal_session', sessionId);
           }
 
           const reader = response.body.getReader();
@@ -533,19 +565,19 @@
 
               removeTyping();
 
-              if (payload.type === 'setup') {
-                renderSetup(payload, agentBubble);
-              } else if (payload.type === 'step') {
+              if (payload.type === 'step') {
                 renderStep(payload, ensureSteps());
-              } else if (payload.type === 'elicit') {
-                renderElicit(payload, agentBubble);
               } else if (payload.type === 'final') {
                 renderFinal(payload, agentBubble);
+                reader.cancel();
+                return;
               } else if (payload.type === 'error') {
                 const p = document.createElement('p');
                 p.style.color = 'var(--bad)';
                 p.textContent = payload.message || 'Unknown error';
                 agentBubble.appendChild(p);
+                reader.cancel();
+                return;
               }
             }
           }
@@ -574,9 +606,7 @@
       // Welcome message on load
       (function greet() {
         const content = document.createElement('p');
-        content.textContent = sessionId
-          ? 'Session restored. Describe an issue or paste credentials to update tools.'
-          : 'Hi! Describe a production issue to start, or paste credentials first (e.g. repo: owner/name).';
+        content.textContent = 'Hi! Describe a production issue to start, or paste credentials first (e.g. repo: owner/name).';
         appendRow('agent', content);
       })();
     </script>
