@@ -3,6 +3,8 @@
 from __future__ import annotations
 
 from pydantic_ai import Agent, ModelRetry, RunContext
+from pydantic_evals.evaluators import LLMJudge
+from pydantic_evals.online_capability import OnlineEvaluation
 
 import config
 from agent.aimodel import make_model
@@ -11,6 +13,40 @@ from agent.models import AgentDeps, HealResult
 from agent.prompts import SYSTEM_PROMPT_BASE, build_dynamic_prompt
 from agent.subagents.sandbox import sandbox_subagent as sandbox_subagent
 from agent.verification.verifier import run_verifier
+
+# ---------------------------------------------------------------------------
+# Online LLM judge — fires in the background after every agent run and streams
+# pass/fail + reason to Logfire's Live Evaluations page. Attached as a
+# capability so it covers BOTH run paths (agent.run and agent.iter).
+# ---------------------------------------------------------------------------
+
+_ONLINE_JUDGE_RUBRIC = """
+You are evaluating an autonomous debugging agent's root cause diagnosis (a HealResult).
+
+Pass if the diagnosis is specific and internally consistent:
+1. SERVICE — names a specific responsible service (not vague or "unknown").
+2. EVIDENCE — backed by real evidence (traces/logs/source) in the evidence field.
+3. FILE ANCHOR — if a file_path is given, it plausibly belongs to that service.
+4. CONFIDENCE HONESTY — stated confidence_level matches the strength of evidence.
+5. FIX — recommended fix is actionable and consistent with the root cause.
+
+Fail if the agent guessed without evidence, anchored to the wrong service's code,
+claimed HIGH confidence on weak evidence, or gave a generic/vague root cause.
+"""
+
+_online_capabilities = []
+if config.ONLINE_EVAL_ENABLED:
+    _online_capabilities.append(
+        OnlineEvaluation(
+            evaluators=[
+                LLMJudge(
+                    rubric=_ONLINE_JUDGE_RUBRIC,
+                    model=make_model(config.ONLINE_EVAL_MODEL),
+                    include_input=True,
+                )
+            ]
+        )
+    )
 
 # ---------------------------------------------------------------------------
 # Main investigation agent
@@ -32,6 +68,7 @@ agent: Agent[AgentDeps, HealResult] = Agent(
     output_type=HealResult,
     instructions=SYSTEM_PROMPT_BASE,
     retries=config.OUTPUT_RETRIES,
+    capabilities=_online_capabilities,
 )
 
 

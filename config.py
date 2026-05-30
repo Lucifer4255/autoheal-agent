@@ -43,6 +43,11 @@ SANDBOX_ERROR_TYPES: set[str] = {
 CAPABILITY_NAMES: tuple[str, ...] = ("jaeger", "loki", "github", "sandbox")
 
 # Verifier sub-agent (Phase 3 — off by default until evals justify it)
-VERIFIER_ENABLED = os.getenv("VERIFIER_ENABLED", "false").lower() == "true"
+VERIFIER_ENABLED = os.getenv("VERIFIER_ENABLED", "true").lower() == "true"
 VERIFIER_MODEL = os.getenv("VERIFIER_MODEL", "openrouter/deepseek/deepseek-v4-flash")
 VERIFIER_MIN_BAND = os.getenv("VERIFIER_MIN_BAND", "medium")
+
+# Online LLM judge — fires in the background on every agent run, streams pass/fail
+# to Logfire's Live Evaluations page. Uses the same cheap model as the verifier.
+ONLINE_EVAL_ENABLED = os.getenv("ONLINE_EVAL_ENABLED", "true").lower() == "true"
+ONLINE_EVAL_MODEL = os.getenv("ONLINE_EVAL_MODEL", VERIFIER_MODEL)

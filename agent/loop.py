@@ -2,18 +2,12 @@
 
 from __future__ import annotations
 
-import asyncio
 from collections.abc import AsyncIterator
 
 import httpx
 from pydantic_ai import Agent, FunctionToolCallEvent
 from pydantic_ai.usage import UsageLimits
-from pydantic_evals.evaluators import LLMJudge
-from pydantic_evals.evaluators.context import EvaluatorContext
-from pydantic_evals.online import evaluate, run_evaluators
 
-import config
-from agent.aimodel import make_model
 from agent.capabilities.github import GitHubCapability
 from agent.core import agent
 from agent.fingerprint import fingerprint
@@ -21,51 +15,6 @@ from agent.models import AgentDeps, HealResult, IssueContext, RunEvidence
 from agent.prompts import build_user_prompt
 from agent.registry import build_capabilities
 from agent.verification.ledger import LedgerToolset
-
-# ---------------------------------------------------------------------------
-# Online LLM judge — runs in background on every production investigation.
-# Uses deepseek-v4-flash (same cheap model as the verifier) so it's fast
-# and doesn't add meaningful cost. Results flow to Logfire automatically.
-# ---------------------------------------------------------------------------
-
-_JUDGE_RUBRIC = """
-You are evaluating the output of an autonomous debugging agent that investigated a production issue.
-
-Judge whether the diagnosis is valid and well-reasoned. Consider:
-1. SERVICE — Does the root cause clearly identify a specific service (not vague or "unknown")?
-2. EVIDENCE — Is the diagnosis backed by real evidence (traces, logs, source code) as listed in the evidence field?
-3. FILE ANCHOR — If a file_path is given, does it plausibly belong to the identified service?
-4. CONFIDENCE HONESTY — Is the stated confidence_level (HIGH/MEDIUM/LOW) consistent with the strength of evidence listed?
-5. FIX — Is the recommended fix actionable and consistent with the root cause?
-
-Pass if the diagnosis is specific, evidence-backed, and internally consistent.
-Fail if the agent: guessed without evidence, pointed at the wrong service's code, claimed HIGH confidence with weak evidence, or gave a vague/generic root cause.
-"""
-
-_online_judge = LLMJudge(
-    rubric=_JUDGE_RUBRIC,
-    model=make_model(config.VERIFIER_MODEL),
-    include_input=False,
-    include_expected_output=False,
-)
-
-
-async def _run_online_judge_bg(output: HealResult, issue: IssueContext) -> None:
-    """Fire-and-forget: run the online judge in the background, log to Logfire."""
-    try:
-        ctx = EvaluatorContext(
-            name=f"investigate:{issue.service_name or 'unknown'}",
-            inputs={"description": issue.description},
-            metadata=None,
-            expected_output=None,
-            output=output,
-            duration=0.0,
-            _span_tree=None,  # type: ignore[arg-type]
-            attributes={},
-        )
-        await run_evaluators([_online_judge], ctx)
-    except Exception:
-        pass  # online eval is best-effort — never block or crash the main flow
 
 
 # ---------------------------------------------------------------------------
@@ -101,14 +50,11 @@ async def _build_toolsets(deps: AgentDeps) -> list:
 
 
 # ---------------------------------------------------------------------------
-# investigate — non-streaming path, decorated for online eval
+# investigate — non-streaming path
+# Online LLM judge fires automatically via the OnlineEvaluation capability on
+# the agent (see core.py), covering this path and stream_investigate alike.
 # ---------------------------------------------------------------------------
 
-@evaluate(
-    _online_judge,
-    target="autoheal_investigate",
-    record_return=False,  # HealResult can be large; Logfire span holds the trace
-)
 async def investigate(issue: IssueContext, deps: AgentDeps) -> HealResult:
     """Run a full investigation and return a structured HealResult.
 
@@ -172,12 +118,8 @@ async def stream_investigate(
                                 "confidence_after": 0.0,
                             }
 
-    output = run.result.output
-    # Fire online judge in the background — doesn't block the SSE response
-    asyncio.create_task(_run_online_judge_bg(output, issue))
-
     yield {
         "type": "result",
-        "output": output,
+        "output": run.result.output,
         "messages": run.result.all_messages(),
     }
