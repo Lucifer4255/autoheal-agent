@@ -207,6 +207,19 @@ def normalize_repo(value: str) -> str:
     return value
 
 
+def normalize_service_name(name: str) -> str:
+    """Canonicalize a service / compose-label name for cross-source matching.
+
+    Jaeger's `service.name` and Loki's `compose_service` label often differ only
+    cosmetically (cart / cartservice / cart-service / cart_service). Lowercase, strip
+    non-alphanumerics, and drop a trailing 'service' so they compare equal.
+    """
+    cleaned = re.sub(r"[^a-z0-9]", "", name.lower())
+    if cleaned.endswith("service") and cleaned != "service":
+        cleaned = cleaned[: -len("service")]
+    return cleaned
+
+
 def _empty_to_none(value: str | None) -> str | None:
     if value is None:
         return None

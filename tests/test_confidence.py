@@ -127,6 +127,17 @@ def test_obs_corroboration_different_services_is_low():
     assert band == "low"
 
 
+def test_obs_corroboration_cosmetic_name_difference_still_agrees():
+    # Jaeger service.name "cart" vs Loki compose_service "cartservice" are the same
+    # service — normalization must let them corroborate (the LOW-clamp bug we hit).
+    result = _result(_rc())
+    band, _ = assess_allowed_band(result, _ev(_jaeger("cart"), _loki("cartservice")))
+    assert band == "medium"
+
+    band2, _ = assess_allowed_band(result, _ev(_jaeger("cart"), _loki("cart-service")))
+    assert band2 == "medium"
+
+
 def test_source_anchored_gives_medium():
     result = _result(_rc(file_path="src/Foo.java"))
     band, _ = assess_allowed_band(result, _ev(_github()))

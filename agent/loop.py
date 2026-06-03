@@ -9,13 +9,13 @@ from pydantic_ai import Agent, FunctionToolCallEvent
 from pydantic_ai.usage import UsageLimits
 
 from agent.capabilities.github import GitHubCapability
+from agent.capabilities.source import SourceCapability
 from agent.core import agent
 from agent.fingerprint import fingerprint
 from agent.models import AgentDeps, HealResult, IssueContext, RunEvidence
 from agent.prompts import build_user_prompt
 from agent.registry import build_capabilities
 from agent.verification.ledger import LedgerToolset
-
 
 # ---------------------------------------------------------------------------
 # Toolset builder (shared by both run paths)
@@ -41,7 +41,8 @@ async def _build_toolsets(deps: AgentDeps) -> list:
     github_ok = await _github_repo_reachable(deps)
     toolsets = []
     for cap in capabilities:
-        if isinstance(cap, GitHubCapability) and not github_ok:
+        # GitHub MCP and the get_file_slice source reader both need a reachable repo.
+        if isinstance(cap, (GitHubCapability, SourceCapability)) and not github_ok:
             continue
         ts = cap.get_toolset()
         if ts is not None:

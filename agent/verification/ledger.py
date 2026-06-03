@@ -27,7 +27,7 @@ from agent.models import AgentDeps, ToolCallRecord, ToolResult
 JAEGER_TOOLS: frozenset[str] = frozenset({"query_traces", "get_trace", "extract_error_spans"})
 LOKI_TOOLS: frozenset[str] = frozenset({"query_logs", "get_log_context"})
 GITHUB_TOOLS: frozenset[str] = frozenset({
-    "search_code", "get_file_contents", "list_files",
+    "search_code", "get_file_contents", "get_file_slice", "list_files",
     "create_or_update_file", "push_files",
 })
 
@@ -70,6 +70,7 @@ def _normalize_jaeger(tool_name: str, result: Any) -> ToolCallRecord:
     elif isinstance(result, str) and "failed" in result.lower():
         success = False
 
+    print(f"JAEGER: {tool_name} {success} {service} {file_path}")
     return ToolCallRecord(
         tool=tool_name, family="jaeger",
         success=success, service=service, file_path=file_path,
@@ -102,6 +103,7 @@ def _normalize_loki(tool_name: str, result: Any, tool_args: dict[str, Any]) -> T
     elif isinstance(result, str) and "failed" in result.lower():
         success = False
 
+    print(f"LOKI: {tool_name} {success} {service} {error_signal}")
     return ToolCallRecord(
         tool=tool_name, family="loki",
         success=success, service=service, error_signal=error_signal,
@@ -131,6 +133,7 @@ def _normalize_github(tool_name: str, result: Any, tool_args: dict[str, Any]) ->
     if not file_path:
         file_path = tool_args.get("path") or tool_args.get("file_path")
 
+    print(f"GITHUB: {tool_name} {success} {file_path}")
     return ToolCallRecord(
         tool=tool_name, family="github",
         success=success, file_path=file_path,

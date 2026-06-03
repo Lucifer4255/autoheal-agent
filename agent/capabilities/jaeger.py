@@ -22,7 +22,37 @@ class JaegerCapability(AbstractCapability[AgentDeps]):
     def get_toolset(self) -> AgentToolset[AgentDeps] | None:
         if not self.enabled:
             return None
-        return FunctionToolset(tools=[query_traces, get_trace, extract_error_spans])
+        return FunctionToolset(
+            tools=[list_trace_services, query_traces, get_trace, extract_error_spans]
+        )
+
+
+async def list_trace_services(ctx: RunContext[AgentDeps]) -> ToolResult:
+    """List the exact `service.name` values Jaeger knows about.
+
+    Call this BEFORE query_traces so you use real names instead of guessing — the OTel
+    service.name is often shorter than the code/module name (e.g. `ad`, not `adservice`).
+    """
+    if not ctx.deps.jaeger_url:
+        return _failure("list_trace_services", "Jaeger URL is not configured.")
+
+    try:
+        response = await ctx.deps.http_client.get(
+            _api_url(ctx.deps.jaeger_url, "/api/services"),
+            headers=_headers(ctx.deps.jaeger_auth),
+            timeout=20.0,
+        )
+        response.raise_for_status()
+        payload = response.json()
+    except Exception as exc:
+        return _failure("list_trace_services", str(exc))
+
+    services = payload.get("data") or []
+    return ToolResult(
+        tool_name="list_trace_services",
+        success=True,
+        data={"services": sorted(services), "count": len(services)},
+    )
 
 
 async def query_traces(
@@ -37,6 +67,10 @@ async def query_traces(
     class or module name visible inside log lines. If you guess and get zero traces,
     do NOT keep guessing variants — read the repo's `docker-compose.yml` (or
     `compose.yaml`) via the GitHub tools to see the real service names.
+
+    Returns a summary of each recent trace (services touched and which spans look like
+    errors). To dig into a specific trace, pass it to `extract_error_spans`, or fetch the
+    full trace with `get_trace`.
     """
     if not ctx.deps.jaeger_url:
         return _failure("query_traces", "Jaeger URL is not configured.")
@@ -62,6 +96,30 @@ async def query_traces(
         return _failure("query_traces", str(exc))
 
     traces = payload.get("data", [])
+
+    # Zero traces means the service.name is almost certainly wrong (not that the service
+    # is healthy). Return a FAILURE so it doesn't count as evidence, and steer the agent
+    # toward finding the real name.
+    if not traces:
+        return ToolResult(
+            tool_name="query_traces",
+            success=False,
+            data={
+                "service": service,
+                "time_window_minutes": time_window_minutes,
+                "trace_count": 0,
+                "traces": [],
+            },
+            error=(
+                f'No traces for service.name="{service}" in the last {time_window_minutes}m. '
+                f"Two likely causes: (1) the time window is too narrow — retry with a larger "
+                f"time_window_minutes (e.g. 30 or 60); (2) the name is wrong — the OTel "
+                f"service.name rarely matches the class/module name, so call list_trace_services "
+                f"for the exact value. Widen the window first, then correct the name. Do NOT "
+                f"keep guessing variants."
+            ),
+        )
+
     return ToolResult(
         tool_name="query_traces",
         success=True,
@@ -109,34 +167,42 @@ async def extract_error_spans(
 
     error_spans: list[dict[str, Any]] = []
     for trace_item in traces if isinstance(traces, list) else []:
-        processes = trace_item.get("processes", {})
-        for span in trace_item.get("spans", []):
-            tags = _tags_to_dict(span.get("tags", []))
-            logs = span.get("logs", [])
-            is_error = _is_error_span(tags, logs)
-            if not is_error:
-                continue
-
-            process = processes.get(span.get("processID"), {})
-            error_spans.append(
-                {
-                    "trace_id": trace_item.get("traceID"),
-                    "span_id": span.get("spanID"),
-                    "operation": span.get("operationName"),
-                    "service": process.get("serviceName"),
-                    "duration": span.get("duration"),
-                    "start_time": span.get("startTime"),
-                    "tags": tags,
-                    "logs": logs,
-                    "file_hint": _file_hint(tags, logs),
-                }
-            )
+        error_spans.extend(_error_spans_for_trace(trace_item))
 
     return ToolResult(
         tool_name="extract_error_spans",
         success=True,
         data={"error_span_count": len(error_spans), "error_spans": error_spans},
     )
+
+
+def _error_spans_for_trace(trace_item: dict[str, Any]) -> list[dict[str, Any]]:
+    """Return the error spans in one Jaeger trace, each enriched with a file hint.
+
+    Used by `extract_error_spans` to surface the failing spans in a trace.
+    """
+    processes = trace_item.get("processes", {})
+    spans: list[dict[str, Any]] = []
+    for span in trace_item.get("spans", []):
+        tags = _tags_to_dict(span.get("tags", []))
+        logs = span.get("logs", [])
+        if not _is_error_span(tags, logs):
+            continue
+        process = processes.get(span.get("processID"), {})
+        spans.append(
+            {
+                "trace_id": trace_item.get("traceID"),
+                "span_id": span.get("spanID"),
+                "operation": span.get("operationName"),
+                "service": process.get("serviceName"),
+                "duration": span.get("duration"),
+                "start_time": span.get("startTime"),
+                "tags": tags,
+                "logs": logs,
+                "file_hint": _file_hint(tags, logs),
+            }
+        )
+    return spans
 
 
 def _api_url(base_url: str, path: str) -> str:

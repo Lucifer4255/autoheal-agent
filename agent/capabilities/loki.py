@@ -22,22 +22,56 @@ class LokiCapability(AbstractCapability[AgentDeps]):
     def get_toolset(self) -> AgentToolset[AgentDeps] | None:
         if not self.enabled:
             return None
-        return FunctionToolset(tools=[query_logs, get_log_context])
+        return FunctionToolset(tools=[list_log_services, query_logs, get_log_context])
+
+
+async def list_log_services(ctx: RunContext[AgentDeps]) -> ToolResult:
+    """List the exact `compose_service` label values Loki knows about.
+
+    Call this BEFORE query_logs so you use real labels instead of guessing — the
+    compose_service label rarely matches the class/module name visible in log lines.
+    """
+    if not ctx.deps.loki_url:
+        return _failure("list_log_services", "Loki URL is not configured.")
+
+    try:
+        response = await ctx.deps.http_client.get(
+            _api_url(ctx.deps.loki_url, "/loki/api/v1/label/compose_service/values"),
+            headers=_headers(ctx.deps.loki_auth),
+            timeout=20.0,
+        )
+        response.raise_for_status()
+        payload = response.json()
+    except Exception as exc:
+        return _failure("list_log_services", str(exc))
+
+    services = payload.get("data") or []
+    return ToolResult(
+        tool_name="list_log_services",
+        success=True,
+        data={"services": sorted(services), "count": len(services)},
+    )
 
 
 async def query_logs(
     ctx: RunContext[AgentDeps],
     service: str,
-    query: str,
+    query: str = "",
     time_window_minutes: int = 10,
     limit: int = 100,
 ) -> ToolResult:
-    """Query Loki logs for a service and a search term.
+    """Query Loki logs for a service over a time window.
+
+    PREFER calling this with `query` left empty: you get the latest `limit` log lines
+    for the service over the window, and YOU decide which lines matter. A search term is
+    a blunt `|=` substring filter — pass one only once you know the exact text to grep
+    for. Guessing a term (e.g. "error") silently drops the real failure lines, which
+    often say something else ("UNAVAILABLE", "panic", "5xx", an exception class name).
 
     `service` is the value of the `compose_service` label and rarely matches the
-    class or module name visible inside log lines. If you guess and get an empty
-    result, do NOT keep guessing variants — read the repo's `docker-compose.yml`
-    (or `compose.yaml`) via the GitHub tools to see the real service names.
+    class or module name visible inside log lines. If you get an empty result, do NOT
+    keep guessing — widen `time_window_minutes`, then call `list_log_services` for the
+    real label.
     """
     if not ctx.deps.loki_url:
         return _failure("query_logs", "Loki URL is not configured.")
@@ -64,16 +98,27 @@ async def query_logs(
     except Exception as exc:
         return _failure("query_logs", str(exc))
 
-    return ToolResult(
-        tool_name="query_logs",
-        success=True,
-        data={
-            "service": service,
-            "query": query,
-            "logql": logql,
-            "entries": _flatten_streams(payload),
-        },
-    )
+    entries = _flatten_streams(payload)
+    data = {"service": service, "query": query, "logql": logql, "entries": entries}
+
+    # An empty result almost always means the compose_service label is wrong — not that
+    # the service is healthy. Return it as a FAILURE so it does not count as observability
+    # evidence, and tell the agent to find the real label instead of guessing again.
+    if not entries:
+        return ToolResult(
+            tool_name="query_logs",
+            success=False,
+            data=data,
+            error=(
+                f'No logs for compose_service="{service}" in the last {time_window_minutes}m. '
+                f"Two likely causes: (1) the time window is too narrow — retry with a larger "
+                f"time_window_minutes (e.g. 30 or 60); (2) the label is wrong — call "
+                f"list_log_services for the exact compose_service value. Widen the window first, "
+                f"then correct the name. Do NOT keep guessing variants."
+            ),
+        )
+
+    return ToolResult(tool_name="query_logs", success=True, data=data)
 
 
 async def get_log_context(
@@ -122,8 +167,13 @@ async def get_log_context(
     )
 
 
-def build_logql(service: str, query: str) -> str:
-    return f'{{compose_service="{_escape_label(service)}"}} |= "{_escape_query(query)}"'
+def build_logql(service: str, query: str = "") -> str:
+    selector = f'{{compose_service="{_escape_label(service)}"}}'
+    if not query.strip():
+        # No search term: return the latest lines for the service and let the agent
+        # decide what's relevant, rather than pre-filtering on a (possibly wrong) word.
+        return selector
+    return f'{selector} |= "{_escape_query(query)}"'
 
 
 def _api_url(base_url: str, path: str) -> str:

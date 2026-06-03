@@ -23,7 +23,7 @@ import config
 # Tool-family sets are the single source of truth in ledger.py; import them here so
 # confidence.py doesn't duplicate them.
 from agent.verification.ledger import GITHUB_TOOLS, JAEGER_TOOLS, LOKI_TOOLS  # noqa: F401 (re-exported)
-from agent.models import ConfidenceLevel, HealResult, RunEvidence
+from agent.models import ConfidenceLevel, HealResult, RunEvidence, normalize_service_name
 
 BAND_RANK: dict[ConfidenceLevel, int] = {"low": 0, "medium": 1, "high": 2}
 
@@ -41,6 +41,49 @@ def clamp_to_band(confidence: float, band: ConfidenceLevel) -> float:
     return min(confidence, ceiling)
 
 
+def evidence_signals(result: HealResult, run_evidence: RunEvidence) -> dict[str, object]:
+    """Raw + derived evidence signals behind the band decision (pure, no side effects).
+
+    Exposed so the governor can log exactly WHY a band was assigned — in particular
+    whether `obs_corroboration` was killed by a Jaeger/Loki service-name mismatch
+    (``services_compared=True`` but ``services_agree=False``).
+    """
+    rc = result.root_cause
+
+    jaeger_ok = run_evidence.family_ok("jaeger")
+    loki_ok = run_evidence.family_ok("loki")
+    github_ok = run_evidence.family_ok("github")
+    github_file = any(c.file_path for c in run_evidence.calls if c.family == "github" and c.success)
+
+    jaeger_services = run_evidence.services_seen("jaeger")
+    loki_services = run_evidence.services_seen("loki")
+
+    both_obs = jaeger_ok and loki_ok
+    # Service agreement only matters when both families actually named a service.
+    # Compare canonicalized names so cosmetic differences (cart vs cartservice vs
+    # cart-service) still count as the same service.
+    services_compared = both_obs and bool(jaeger_services) and bool(loki_services)
+    jaeger_norm = {normalize_service_name(s) for s in jaeger_services}
+    loki_norm = {normalize_service_name(s) for s in loki_services}
+    services_agree = (not services_compared) or bool(jaeger_norm & loki_norm)
+    obs_corroboration = both_obs and services_agree
+
+    return {
+        "error_type_known": rc.error_type != "unknown",
+        "jaeger_ok": jaeger_ok,
+        "loki_ok": loki_ok,
+        "github_ok": github_ok,
+        "github_file": github_file,
+        "sandbox_reproduced": run_evidence.sandbox_reproduced,
+        "jaeger_services": sorted(jaeger_services),
+        "loki_services": sorted(loki_services),
+        "services_compared": services_compared,
+        "services_agree": services_agree,
+        "obs_corroboration": obs_corroboration,
+        "source_anchored": github_ok and github_file,
+    }
+
+
 def assess_allowed_band(
     result: HealResult,
     run_evidence: RunEvidence,
@@ -50,27 +93,11 @@ def assess_allowed_band(
     Reads from RunEvidence.calls (code-stamped receipts) — not result.tools_used.
     The message names exactly what's needed to reach the next band.
     """
-    rc = result.root_cause
-
-    error_type_known = rc.error_type != "unknown"
-
-    # Ledger-grounded signals
-    jaeger_ok = run_evidence.family_ok("jaeger")
-    loki_ok = run_evidence.family_ok("loki")
-    github_ok = run_evidence.family_ok("github")
-    github_file = any(c.file_path for c in run_evidence.calls if c.family == "github" and c.success)
-
-    obs_corroboration = jaeger_ok and loki_ok
-    source_anchored = github_ok and github_file
-    sandbox_reproduced = run_evidence.sandbox_reproduced
-
-    # Phase 2b: if both obs families present, require services agree (same service seen)
-    if obs_corroboration:
-        jaeger_services = run_evidence.services_seen("jaeger")
-        loki_services = run_evidence.services_seen("loki")
-        if jaeger_services and loki_services:
-            # They must share at least one service name
-            obs_corroboration = bool(jaeger_services & loki_services)
+    s = evidence_signals(result, run_evidence)
+    error_type_known = bool(s["error_type_known"])
+    obs_corroboration = bool(s["obs_corroboration"])
+    source_anchored = bool(s["source_anchored"])
+    sandbox_reproduced = bool(s["sandbox_reproduced"])
 
     if error_type_known and source_anchored and (sandbox_reproduced or obs_corroboration):
         return "high", ""

@@ -10,13 +10,19 @@ import pytest
 from pydantic_ai.mcp import MCPToolset
 from pydantic_ai.toolsets import FunctionToolset
 
-from agent.subagents import sandbox as sandbox_module
 from agent.capabilities.github import GitHubCapability
-from agent.capabilities.jaeger import JaegerCapability, extract_error_spans, query_traces
-from agent.capabilities.loki import LokiCapability, build_logql, query_logs
+from agent.capabilities.jaeger import (
+    JaegerCapability,
+    extract_error_spans,
+    list_trace_services,
+    query_traces,
+)
+from agent.capabilities.loki import LokiCapability, build_logql, list_log_services, query_logs
 from agent.capabilities.sandbox import SandboxCapability, reproduce_in_sandbox
+from agent.capabilities.source import SourceCapability, get_file_slice
 from agent.models import AgentDeps, RunEvidence, SandboxResult
 from agent.registry import build_capabilities
+from agent.subagents import sandbox as sandbox_module
 
 
 def make_deps(
@@ -117,6 +123,53 @@ async def test_jaeger_returns_tool_result_on_http_error() -> None:
 
 
 @pytest.mark.asyncio
+async def test_extract_error_spans_returns_only_failing_spans_with_file_hint() -> None:
+    trace = {
+        "data": [
+            {
+                "traceID": "trace-1",
+                "processes": {"p1": {"serviceName": "cart"}},
+                "spans": [
+                    {
+                        "spanID": "ok-span",
+                        "processID": "p1",
+                        "operationName": "GetCart",
+                        "duration": 10,
+                        "startTime": 1,
+                        "tags": [],
+                        "logs": [],
+                    },
+                    {
+                        "spanID": "err-span",
+                        "processID": "p1",
+                        "operationName": "EmptyCart",
+                        "duration": 200,
+                        "startTime": 2,
+                        "tags": [
+                            {"key": "error", "value": True},
+                            {"key": "exception.message", "value": "refused badhost:1234"},
+                            {"key": "code.filepath", "value": "src/cart/.../CartService.cs"},
+                            {"key": "code.lineno", "value": 83},
+                        ],
+                        "logs": [],
+                    },
+                ],
+            }
+        ]
+    }
+
+    result = await extract_error_spans(ctx_for(make_deps(None)), trace)
+
+    assert result.success is True
+    # Only the failing span comes back, not the healthy one.
+    assert result.data["error_span_count"] == 1
+    span = result.data["error_spans"][0]
+    assert span["service"] == "cart"
+    assert span["operation"] == "EmptyCart"
+    assert span["file_hint"] == "src/cart/.../CartService.cs:83"
+
+
+@pytest.mark.asyncio
 async def test_loki_returns_tool_result_on_http_error() -> None:
     async def handler(request: httpx.Request) -> httpx.Response:
         return httpx.Response(500, request=request, json={"error": "boom"})
@@ -133,13 +186,89 @@ async def test_loki_returns_tool_result_on_http_error() -> None:
 
 
 @pytest.mark.asyncio
+async def test_list_trace_services_returns_sorted_names() -> None:
+    async def handler(request: httpx.Request) -> httpx.Response:
+        assert request.url.path.endswith("/api/services")
+        return httpx.Response(200, request=request, json={"data": ["frontend", "ad", "cart"]})
+
+    client = httpx.AsyncClient(transport=httpx.MockTransport(handler))
+    try:
+        result = await list_trace_services(ctx_for(make_deps(client)))
+    finally:
+        await client.aclose()
+
+    assert result.success is True
+    assert result.data["services"] == ["ad", "cart", "frontend"]
+    assert result.data["count"] == 3
+
+
+@pytest.mark.asyncio
+async def test_list_log_services_returns_label_values() -> None:
+    async def handler(request: httpx.Request) -> httpx.Response:
+        assert "label/compose_service/values" in request.url.path
+        return httpx.Response(
+            200, request=request, json={"status": "success", "data": ["cart", "ad"]}
+        )
+
+    client = httpx.AsyncClient(transport=httpx.MockTransport(handler))
+    try:
+        result = await list_log_services(ctx_for(make_deps(client)))
+    finally:
+        await client.aclose()
+
+    assert result.success is True
+    assert result.data["services"] == ["ad", "cart"]
+
+
+@pytest.mark.asyncio
+async def test_get_file_slice_returns_window_around_line() -> None:
+    body = "\n".join(f"line{i}" for i in range(1, 101))  # 100 lines
+
+    async def handler(request: httpx.Request) -> httpx.Response:
+        assert "/contents/src/cart/CartService.cs" in str(request.url)
+        return httpx.Response(200, request=request, text=body)
+
+    client = httpx.AsyncClient(transport=httpx.MockTransport(handler))
+    try:
+        result = await get_file_slice(
+            ctx_for(make_deps(client)),
+            path="src/cart/CartService.cs",
+            around_line=50,
+            context=5,
+        )
+    finally:
+        await client.aclose()
+
+    assert result.success is True
+    assert result.data["path"] == "src/cart/CartService.cs"
+    assert result.data["start_line"] == 45 and result.data["end_line"] == 55
+    assert result.data["total_lines"] == 100
+    assert "50: line50" in result.data["slice"]
+    assert "line44" not in result.data["slice"] and "line56" not in result.data["slice"]
+
+
+@pytest.mark.asyncio
+async def test_registry_includes_source_capability_when_configured() -> None:
+    client = httpx.AsyncClient()
+    try:
+        caps = build_capabilities(make_deps(client))
+    finally:
+        await client.aclose()
+    assert any(isinstance(c, SourceCapability) for c in caps)
+
+
+@pytest.mark.asyncio
 async def test_jaeger_includes_auth_header_and_uses_relative_api_path() -> None:
     seen: dict[str, str] = {}
 
     async def handler(request: httpx.Request) -> httpx.Response:
         seen["authorization"] = request.headers["Authorization"]
         seen["url"] = str(request.url)
-        return httpx.Response(200, request=request, json={"data": []})
+        return httpx.Response(
+            200,
+            request=request,
+            json={"data": [{"traceID": "t1", "processes": {}, "spans": []}]},
+        )
 
     client = httpx.AsyncClient(transport=httpx.MockTransport(handler))
     try:
@@ -154,6 +283,24 @@ async def test_jaeger_includes_auth_header_and_uses_relative_api_path() -> None:
 
 
 @pytest.mark.asyncio
+async def test_query_traces_empty_is_failure_with_hint() -> None:
+    async def handler(request: httpx.Request) -> httpx.Response:
+        return httpx.Response(200, request=request, json={"data": []})
+
+    client = httpx.AsyncClient(transport=httpx.MockTransport(handler))
+    try:
+        result = await query_traces(ctx_for(make_deps(client)), service="cartservice")
+    finally:
+        await client.aclose()
+
+    assert result.success is False
+    assert result.data["trace_count"] == 0
+    assert "cartservice" in result.error
+    assert "time_window_minutes" in result.error
+    assert "list_trace_services" in result.error
+
+
+@pytest.mark.asyncio
 async def test_loki_includes_auth_header_and_compose_service_query() -> None:
     seen: dict[str, str] = {}
 
@@ -163,7 +310,13 @@ async def test_loki_includes_auth_header_and_compose_service_query() -> None:
         return httpx.Response(
             200,
             request=request,
-            json={"data": {"result": [{"stream": {}, "values": []}]}},
+            json={
+                "data": {
+                    "result": [
+                        {"stream": {"compose_service": "ad"}, "values": [["123", "boom"]]}
+                    ]
+                }
+            },
         )
 
     client = httpx.AsyncClient(transport=httpx.MockTransport(handler))
@@ -179,10 +332,41 @@ async def test_loki_includes_auth_header_and_compose_service_query() -> None:
     assert result.data["logql"] == '{compose_service="ad"} |= "NullPointerException"'
 
 
+@pytest.mark.asyncio
+async def test_query_logs_empty_is_failure_with_hint() -> None:
+    async def handler(request: httpx.Request) -> httpx.Response:
+        return httpx.Response(
+            200,
+            request=request,
+            json={"data": {"result": [{"stream": {}, "values": []}]}},
+        )
+
+    client = httpx.AsyncClient(transport=httpx.MockTransport(handler))
+    try:
+        result = await query_logs(
+            ctx_for(make_deps(client)), service="cartservice", query="redis"
+        )
+    finally:
+        await client.aclose()
+
+    assert result.success is False
+    assert result.data["entries"] == []
+    assert "cartservice" in result.error
+    assert "time_window_minutes" in result.error
+    assert "list_log_services" in result.error
+
+
 def test_build_logql_escapes_label_and_query() -> None:
     assert build_logql('ad"svc', 'error "boom"') == (
         '{compose_service="ad\\"svc"} |= "error \\"boom\\""'
     )
+
+
+def test_build_logql_omits_filter_when_query_empty() -> None:
+    # Default/blank query returns the bare selector so the agent gets the latest lines
+    # instead of pre-filtering on a (possibly wrong) keyword.
+    assert build_logql("ad") == '{compose_service="ad"}'
+    assert build_logql("ad", "   ") == '{compose_service="ad"}'
 
 
 @pytest.mark.asyncio

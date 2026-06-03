@@ -2,16 +2,23 @@
 
 from __future__ import annotations
 
+import logfire
 from pydantic_ai import Agent, ModelRetry, RunContext
 from pydantic_evals.evaluators import LLMJudge
 from pydantic_evals.online_capability import OnlineEvaluation
 
 import config
 from agent.aimodel import make_model
-from agent.verification.confidence import BAND_RANK, assess_allowed_band, band_of_float, clamp_to_band
 from agent.models import AgentDeps, HealResult
 from agent.prompts import SYSTEM_PROMPT_BASE, build_dynamic_prompt
 from agent.subagents.sandbox import sandbox_subagent as sandbox_subagent
+from agent.verification.confidence import (
+    BAND_RANK,
+    assess_allowed_band,
+    band_of_float,
+    clamp_to_band,
+    evidence_signals,
+)
 from agent.verification.verifier import run_verifier
 
 # ---------------------------------------------------------------------------
@@ -122,6 +129,17 @@ async def govern_confidence(ctx: RunContext[AgentDeps], result: HealResult) -> H
     allowed_band, missing_msg = assess_allowed_band(result, ev)
     claimed_band = band_of_float(rc.confidence)
 
+    # Visibility: why was this band assigned? Surfaces a Jaeger/Loki service mismatch
+    # (services_compared=True, services_agree=False) and any deterministic clamp.
+    logfire.info(
+        "confidence_governor",
+        claimed_band=claimed_band,
+        allowed_band=allowed_band,
+        claimed_confidence=rc.confidence,
+        will_clamp=BAND_RANK[claimed_band] > BAND_RANK[allowed_band],
+        **evidence_signals(result, ev),
+    )
+
     if BAND_RANK[claimed_band] > BAND_RANK[allowed_band]:
         if not ev.overclaim_retried:
             ev.overclaim_retried = True
@@ -139,7 +157,15 @@ async def govern_confidence(ctx: RunContext[AgentDeps], result: HealResult) -> H
 
     # 4. Optional receipt-reading verifier (downgrade-only, gated by config)
     if config.VERIFIER_ENABLED and BAND_RANK[rc.confidence_level] >= BAND_RANK[config.VERIFIER_MIN_BAND]:
+        band_before_verifier = rc.confidence_level
         verdict = await run_verifier(result, ev, rc.confidence_level)
+        logfire.info(
+            "confidence_verifier",
+            band_before=band_before_verifier,
+            decision=verdict.decision,
+            target_band=verdict.target_band,
+            reason=verdict.reason,
+        )
         if verdict.decision == "downgrade" and BAND_RANK[verdict.target_band] < BAND_RANK[rc.confidence_level]:
             rc.confidence = clamp_to_band(rc.confidence, verdict.target_band)
             rc.confidence_level = band_of_float(rc.confidence)
